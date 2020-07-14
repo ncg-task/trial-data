@@ -4,10 +4,7 @@
 261	74	127	effectiveness of the various parts of our joint model
 262	4	18	performance of
 262	23	30	RE task
-262	81	87	remove
-262	92	114	label embeddings layer
-262	119	127	only use
-262	132	150	LSTM hidden states
+262	119	149	only use the LSTM hidden state
 262	27	29	as
 262	154	160	inputs
 264	0	8	Removing
@@ -46,10 +43,13 @@
 209	77	90	learning rate
 209	91	93	of
 209	94	99	10 ?3
-214	4	24	hidden dimension for
+214	4	20	hidden dimension
+214	21	24	for
 214	29	49	characterbased LSTMs
 214	50	52	is
-214	53	78	25 ( for each direction )
+214	53	55	25
+214	21	24	for
+214	62	76	each direction
 210	3	6	fix
 210	11	27	size of the LSTM
 210	28	30	to

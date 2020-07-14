@@ -4,13 +4,12 @@
 167	34	60	without scheduled sampling
 167	71	105	performance significantly degraded
 167	114	140	removed entity pretraining
-180	149	168	significantly worse
-180	8	15	removed
+180	134	168	performance is significantly worse
+180	169	196	than SP - Tree ( p < 0.01 )
 180	46	64	scheduled sampling
 180	67	85	entity pretraining
 180	88	103	label embedding
 180	110	127	shared parameters
-180	169	173	than
 154	3	14	implemented
 154	15	24	our model
 154	25	30	using
@@ -66,6 +65,7 @@
 4	19	93	end - to - end neural model to extract entities and relations between them
 6	25	111	jointly represent both entities and relations with shared parameters in a single model
 12	0	54	Extracting semantic relations between entities in text
+13	82	86	name
 13	82	86	name
 13	172	228	end - to - end ( joint ) modeling of entity and relation
 165	17	26	our model

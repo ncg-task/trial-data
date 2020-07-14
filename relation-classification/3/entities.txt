@@ -106,7 +106,13 @@
 120	74	88	baseline model
 120	79	81	in
 120	96	109	joint setting
-126	10	13	for
+119	4	8	show
+119	34	83	adversarial training on top of the baseline model
+122	15	18	for
+122	19	24	ACE04
+122	39	53	improvement in
+122	54	64	both tasks
+122	83	116	overall F 1 performance ( 0.4 % )
 126	14	17	ADE
 126	24	32	AT model
 126	33	38	beats

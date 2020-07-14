@@ -101,8 +101,7 @@
 165	66	79	C - GCN model
 165	80	91	outperforms
 165	92	137	all existing dependency - based neural models
-166	61	70	our model
-166	71	82	outperforms
+166	61	82	our model outperforms
 166	87	149	previous shortest dependency path - based model ( SDP - LSTM )
 166	10	35	by properly incorporating
 166	36	58	off - path information
@@ -122,8 +121,7 @@
 170	135	141	varied
 172	18	32	performance of
 172	33	49	all three models
-172	50	55	peaks
-172	56	60	when
+172	50	60	peaks when
 172	61	66	K = 1
 172	69	82	outperforming
 172	89	145	respective dependency path - based counterpart ( K = 0 )

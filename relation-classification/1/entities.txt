@@ -8,9 +8,14 @@
 72	34	38	 tag
 72	47	52	means
 72	62	120	corresponding word is independent of the extracted results
+74	3	6	use
 74	13	17	BIES
 74	63	72	represent
-74	77	121	position information of a word in the entity
+74	77	97	position information
+74	98	102	of a
+74	103	107	word
+74	25	27	in
+74	115	121	entity
 99	55	62	produce
 99	67	80	tags sequence
 100	3	11	contains
