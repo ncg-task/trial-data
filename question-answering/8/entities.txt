@@ -4,8 +4,7 @@
 38	82	111	machine comprehension problem
 38	112	125	as defined in
 38	130	143	SQuAD dataset
-41	11	19	two ways
-41	20	28	to apply
+41	11	28	two ways to apply
 41	66	80	sequence model
 41	87	101	boundary model
 42	42	46	with
@@ -26,8 +25,6 @@
 176	3	6	use
 176	7	22	word embeddings
 176	28	33	GloVe
-176	34	47	to initialize
-176	52	57	model
 180	7	13	ADAMAX
 180	14	18	with
 180	23	61	coefficients ? 1 = 0.9 and ? 2 = 0.999

@@ -24,7 +24,8 @@
 191	11	17	tested
 191	22	55	influence of various filter types
 192	3	14	constructed
-192	15	34	5 groups of filters
+192	15	26	5 groups of
+192	27	34	filters
 192	45	53	contains
 192	54	78	only the unigram filters
 192	81	88	win - 2
