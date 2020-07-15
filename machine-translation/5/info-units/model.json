@@ -1,6 +1,6 @@
 {
   "has" : {
-    "Systems" : {
+    "Model" : {
       "submitted" : [
         "both constrained and unconstrained NMT systems",
         {"from sentence" : "For the WMT 2018 shared task on news translation , Tilde submitted both constrained and unconstrained NMT systems ( 7 in total ) ."}
