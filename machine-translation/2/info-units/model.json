@@ -1,6 +1,6 @@
 {
   "has" : {
-    "Architecture" : {
+    "Model" : {
       "has" : [
         {"Encoder and Decoder Stacks" : {
           "has" : {

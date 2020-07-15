@@ -1,6 +1,6 @@
 {
   "has" : {
-    "Architecture" : {
+    "Model" : {
       "has" : {
         "neural network architecture" : {
           "refer to as" : "RNN Encoder - Decoder",
