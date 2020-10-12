@@ -1,17 +1,25 @@
-87	20	23	CNN
-87	28	31	DAN
+84	0	3	For
+84	4	23	word level transfer
+84	29	32	use
+84	33	83	word embeddings from a word2 vec skip - gram model
+84	84	94	trained on
+84	97	103	corpus
+84	104	106	of
+84	107	116	news data
+85	47	55	input to
+85	76	111	convolutional neural network models
+85	114	117	CNN
+85	124	127	DAN
 87	0	19	Additional baseline
 87	20	38	CNN and DAN models
 87	39	64	are trained without using
 87	69	107	pretrained word or sentence embeddings
 32	88	141	https://tfhub.dev/google/universal-sentence-encoder/1
-44	108	110	of
 44	16	21	based
 44	22	45	sentence encoding model
 44	46	56	constructs
 44	57	76	sentence embeddings
 44	77	82	using
-45	17	20	use
 45	17	21	uses
 45	22	31	attention
 45	32	42	to compute
@@ -63,9 +71,7 @@
 59	41	43	is
 59	22	24	of
 59	93	107	input sequence
-2	0	26	Universal Sentence Encoder
 4	22	106	encoding sentences into embedding vectors that specifically target transfer learning
-9	77	96	word level transfer
 9	13	56	transfer learning using sentence embeddings
 10	5	46	transfer learning via sentence embeddings
 112	3	10	observe

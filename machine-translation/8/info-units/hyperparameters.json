@@ -38,8 +38,8 @@ The first one is an RNN Encoder - Decoder ( RNNencdec , , and the other is the p
         },
         "from sentence" : "The encoder of the RNNsearch consists of forward and backward recurrent neural networks ( RNN ) each having 1000 hidden units ."        
       },
-      "decoder" : {
-        "has" : {
+      "has" : {
+        "decoder" : {
           "hidden units" : "1000"
         },
         "from sentence" : "It s decoder has 1000 hidden units ."
