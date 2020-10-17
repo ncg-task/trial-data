@@ -37,7 +37,7 @@
         "training set size increases" : {
           "has" : {
             "models that do not make use of transfer learning" : {
-              "approach performance of" : "other models"
+              "approach the performance of" : "other models"
             }
           }
         },

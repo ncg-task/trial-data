@@ -1,4 +1,4 @@
-166	16	18	on
+166	143	145	on
 166	150	171	ACE05 development set
 167	4	33	performance slightly degraded
 167	34	60	without scheduled sampling
@@ -6,6 +6,7 @@
 167	114	140	removed entity pretraining
 180	134	168	performance is significantly worse
 180	169	196	than SP - Tree ( p < 0.01 )
+180	8	36	removed all the enhancements
 180	46	64	scheduled sampling
 180	67	85	entity pretraining
 180	88	103	label embedding
@@ -32,16 +33,19 @@
 157	3	14	initialized
 157	15	27	word vectors
 157	28	31	via
+157	32	41	word2 vec
 27	3	10	present
 27	13	39	novel end - to - end model
 27	40	50	to extract
 27	51	77	relations between entities
-27	57	59	on
+27	78	80	on
 27	86	99	word sequence
 27	104	130	dependency tree structures
 28	10	16	allows
 28	17	57	joint modeling of entities and relations
 28	79	84	using
+28	90	158	bidirectional sequential ( left - to - right and right - to - left )
+28	163	237	bidirectional tree - structured ( bottom - up and top - down ) LSTM - RNNs
 29	16	23	detects
 29	24	32	entities
 29	37	50	then extracts
@@ -52,21 +56,20 @@
 29	99	142	single incrementally - decoded NN structure
 29	171	186	jointly updated
 29	153	166	NN parameters
-29	91	96	using
+29	187	192	using
 29	193	224	both entity and relation labels
 30	93	105	incorporates
 30	106	122	two enhancements
 30	139	157	entity pretraining
 30	199	217	scheduled sampling
 31	19	28	alleviate
+31	44	106	low - performance entity detection in early stages of training
 31	120	125	allow
 31	126	195	entity information to further help downstream relation classification
 2	0	34	End - to - End Relation Extraction
 4	19	93	end - to - end neural model to extract entities and relations between them
 6	25	111	jointly represent both entities and relations with shared parameters in a single model
 12	0	54	Extracting semantic relations between entities in text
-13	82	86	name
-13	82	86	name
 13	172	228	end - to - end ( joint ) modeling of entity and relation
 165	17	26	our model
 165	127	147	performs better than

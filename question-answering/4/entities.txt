@@ -4,8 +4,8 @@
 259	72	103	almost 5 % accuracy improvement
 262	19	42	contributes very little
 262	4	18	top N function
-262	72	82	suggesting
-262	88	168	most multi questions have their evidence distributed across contiguous sentences
+262	73	83	suggesting
+262	89	169	most multi questions have their evidence distributed across contiguous sentences
 263	13	33	sentential component
 263	34	38	made
 263	43	70	most significant difference
@@ -61,6 +61,7 @@
 27	8	10	to
 27	83	87	text
 27	88	93	using
+27	94	123	several distinct perspectives
 29	4	24	semantic perspective
 29	25	33	compares
 29	38	48	hypothesis
@@ -69,6 +70,7 @@
 29	62	64	in
 29	69	73	text
 29	74	83	viewed as
+29	84	118	single , self - contained thoughts
 29	131	148	represented using
 29	151	199	sum and transformation of word embedding vectors
 30	4	32	word - by - word perspective
@@ -86,7 +88,7 @@
 33	117	122	where
 33	123	158	words appear in their natural order
 33	169	184	dependency view
-33	117	122	where
+33	187	192	where
 33	193	212	words are reordered
 33	213	221	based on
 33	224	273	linearization of the sentence 's dependency graph
@@ -97,6 +99,7 @@
 16	0	21	Machine comprehension
 16	24	26	MC
 247	0	2	On
+247	3	15	MCTest - 500
 247	22	49	Parallel Hierarchical model
 247	90	92	on
 247	93	109	single questions
@@ -104,4 +107,4 @@
 247	50	75	significantly outperforms
 247	124	144	slightly outperforms
 247	163	190	multi questions ( ? 0.3 % )
-247	195	212	overall ( ? 1 % )
+247	195	213	over all ( ? 1 % )

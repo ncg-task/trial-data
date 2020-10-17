@@ -70,9 +70,9 @@ In the boundaries evaluation , the baseline has an improvement of ? 3 % on both 
         "adversarial training on top of the baseline model" : {
           "for" : {
             "ACE04" : {
-              "improvement in" : ["both tasks", "overall F 1 performance ( 0.4 % )"],
+              "improvement in" : ["both tasks", "over all F 1 performance ( 0.4 % )"],
               "from sentence" : "and show the effectiveness of the adversarial training on top of the baseline model .
-Specifically , for ACE04 , there is an improvement in both tasks as well as in the overall F 1 performance ( 0.4 % ) ."
+Specifically , for ACE04 , there is an improvement in both tasks as well as in the over all F 1 performance ( 0.4 % ) ."
 
             },
             "ADE" : {
@@ -91,18 +91,18 @@ Specifically , for ACE04 , there is an improvement in both tasks as well as in t
           "For" : {
             "CoNLL04" : {
               "note an improvement" : {
-                "overall F 1 of 0.4 %" : {
+                "over all F 1 of 0.4 %" : {
                   "for" : "EC"
                 },
                 "0.8 %" : {
                   "for" : "NER tasks"
                 }
               },
-              "from sentence" : "For CoNLL04 , we note an improvement in the overall F 1 of 0.4 % for the EC and 0.8 % for the NER tasks , respectively ."              
+              "from sentence" : "For CoNLL04 , we note an improvement in the over all F 1 of 0.4 % for the EC and 0.8 % for the NER tasks , respectively ."              
             },
             "DREC dataset" : {
-              "there is" : "overall improvement of ? 1 %",
-              "from sentence" : "For the DREC dataset , in both settings , there is an overall improvement of ? 1 % ."
+              "there is" : "over all improvement of ? 1 %",
+              "from sentence" : "For the DREC dataset , in both settings , there is an over all improvement of ? 1 % ."
             }
           }
         }

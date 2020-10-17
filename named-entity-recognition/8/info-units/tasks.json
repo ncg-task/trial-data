@@ -3,14 +3,16 @@
     "Tasks" : {
       "has" : {
         "GLUE" : {
-          "name" : ["General Language Understanding Evaluation ( GLUE )", {"from sentence" : "The General Language Understanding Evaluation ( GLUE ) benchmark ( Wang et al. , 2018 a ) is a collection of diverse natural language understanding tasks ."}],
+          "name" : ["General Language Understanding Evaluation ( GLUE )", {"from sentence" : "GLUE
+          The General Language Understanding Evaluation ( GLUE ) benchmark ( Wang et al. , 2018 a ) is a collection of diverse natural language understanding tasks ."
+          
+          }],
           "has" : {
             "Hyperparameters" : {
               "use" : {
                 "batch size" : {
                   "of" : "32"
-                },
-                "from sentence" : "We use a batch size of 32 and fine - tune for 3 epochs over the data for all GLUE tasks ."
+                }
               },
               "fine - tune" : {
                 "for 3 epochs" : {
@@ -67,7 +69,10 @@
           }
         },
         "SQuAD v 1.1" : {
-          "name" : ["Stanford Question Answering Dataset ( SQuAD v1.1 )", {"from sentence" : "The Stanford Question Answering Dataset ( SQuAD v1.1 ) is a collection of 100 k crowdsourced question / answer pairs ."}],
+          "name" : ["Stanford Question Answering Dataset ( SQuAD v1.1 )", {"from sentence" : "SQuAD v 1.1
+          The Stanford Question Answering Dataset ( SQuAD v1.1 ) is a collection of 100 k crowdsourced question / answer pairs ."
+          
+          }],
           "has" : {
             "Hyperparameters" : {
               "fine - tune" : {
@@ -107,7 +112,9 @@
                   "learning rate" : "5 e - 5",
                   "batch size" : "48"
                 },
-                "from sentence" : "We fine - tuned for 2 epochs with a learning rate of 5 e - 5 and a batch size of 48 ."   
+                "from sentence" : "SQuAD v 2.0
+We fine - tuned for 2 epochs with a learning rate of 5 e - 5 and a batch size of 48 ."   
+
               }
             },
             "Results" : {
@@ -121,7 +128,10 @@
           }
         },
         "SWAG" : {
-          "name" : ["Situations With Adversarial Generations", {"from sentence" : "The Situations With Adversarial Generations ( SWAG ) dataset contains 113 k sentence - pair completion examples that evaluate grounded commonsense inference ."}],
+          "name" : ["Situations With Adversarial Generations", {"from sentence" : "SWAG
+The Situations With Adversarial Generations ( SWAG ) dataset contains 113 k sentence - pair completion examples that evaluate grounded commonsense inference ."
+            
+          }],
           "has" : {
             "Hyperparameters" : {
               "fine - tune" : {

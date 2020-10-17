@@ -8,4 +8,4 @@
 (Model||propose||Universal Language Model Fine - tuning)
 (Universal Language Model Fine - tuning||that can be used to achieve||CV - like transfer learning)
 (CV - like transfer learning||for||any task for NLP)
-(Universal Language Model Fine - tuning||has acronym||ULMFiT)
+(Universal Language Model Fine - tuning||name||ULMFiT)

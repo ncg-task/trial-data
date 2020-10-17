@@ -3,7 +3,7 @@
     "Model" : {
       "has" : {
         "baseline model" : {
-          "aims to detect" : ["type and boundaries of the entities", "relations between them"],
+          "aims to detect" : ["type and the boundaries of the entities", "relations between them"],
           "from sentence" : "The baseline model , described in detail in , is illustrated in .
 It aims to detect ( i ) the type and the boundaries of the entities and ( ii ) the relations between them ."
           
@@ -32,7 +32,7 @@ It aims to detect ( i ) the type and the boundaries of the entities and ( ii ) t
           },
           "from sentence" : "Word and character embeddings are concatenated to form the final token representation , which is then fed to a BiLSTM layer to extract sequential information ."
         },
-        "Adversarial training (AT)" : {
+        "Adversarial training ( AT )" : {
           "exploit" : {
             "idea of AT" : {
               "as a" : {
@@ -42,7 +42,9 @@ It aims to detect ( i ) the type and the boundaries of the entities and ( ii ) t
                 }
               }
             },
-            "from sentence" : "We exploit the idea of AT as a regularization method to make our model robust to input perturbations ."
+            "from sentence" : "Adversarial training ( AT )
+We exploit the idea of AT as a regularization method to make our model robust to input perturbations ."
+
         }
       },
       "use" : [

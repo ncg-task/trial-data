@@ -2,7 +2,7 @@
   "has" : {
     "Results" : {
       "has" : {
-        "LSTM-CRF model" : {
+        "LSTM - CRF model" : {
           "outperforms" : {
             "all other systems" : {
               "including" : "ones using external labeled data like gazetteers"  
@@ -10,7 +10,7 @@
           },
           "from sentence" : "Our LSTM - CRF model outperforms all other systems , including the ones using external labeled data like gazetteers ."          
         },
-        "Stack-LSTM model" : {
+        "Stack - LSTM model" : {
           "outperforms" : {
             "all previous models" : {
               "do not incorporate" : "external features"
@@ -33,7 +33,8 @@
         },
         "from sentence" : "and 4 present our results on NER for German , Dutch and Spanish respectively in comparison to other models .
 On these three languages , the LSTM - CRF model significantly outperforms all previous methods , including the ones using external labeled data .
-The only exception is Dutch , where the model of can perform better by leveraging the information from other NER datasets ."        
+The only exception is Dutch , where the model of can perform better by leveraging the information from other NER datasets ."
+
       },
       "compared to" : {
         "systems that do not use external data" : {

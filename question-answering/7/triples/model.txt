@@ -1,5 +1,5 @@
 (Contribution||has||Model)
-(Model||has acronym||NSE)
+(Model||name||NSE)
 (NSE||access||shared encoding memory)
 (shared encoding memory||supporting||knowledge and representation sharing)
 (NSE||supports||word compositionality)

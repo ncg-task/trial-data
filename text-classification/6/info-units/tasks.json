@@ -48,7 +48,7 @@
         },
         "STS Benchmark" : {
           "has" : {
-            "Semantic textual similarity (STS)" : {
+            "Semantic textual similarity ( STS )" : {
               "between" : {
                 "sentence pairs" : {
                   "scored by" : "Pearson correlation with human judgments"

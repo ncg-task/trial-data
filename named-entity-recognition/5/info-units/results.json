@@ -20,7 +20,7 @@ As shown in , the final results on the movie review dataset are consistent with 
 
           },
           "among" : {
-            "16 datatsets" : {
+            "16 datasets" : {
               "gives" : {
                 "best results" : {
                   "on" : "12"
@@ -50,7 +50,9 @@ As shown in , the final results on the movie review dataset are consistent with 
                 }
               }
             },
-            "from sentence" : "For NER , S - LSTM gives an F1 - score of 91.57 % on the CoNLL test set , which is significantly better compared with BiLSTMs ."            
+            "from sentence" : "Final Results for Sequence Labelling
+For NER , S - LSTM gives an F1 - score of 91.57 % on the CoNLL test set , which is significantly better compared with BiLSTMs ."
+
           }
         }
       }

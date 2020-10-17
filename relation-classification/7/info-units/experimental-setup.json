@@ -33,8 +33,7 @@
           "from sentence" : "BioBERT v1.0 ( PubMed PMC ) is the version of BioBERT ( PubMed PMC ) trained for 470 K steps ."
         },
         "maximum sequence length" : {
-          "fixed to" : "512",
-          "from sentence" : "The maximum sequence length was fixed to 512 and the mini-batch size was set to 192 , resulting in 98 304 words per iteration ."
+          "fixed to" : "512"
         },
         "mini-batch size" : {
           "set to" : "192",

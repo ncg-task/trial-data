@@ -40,7 +40,7 @@ In contrast , the chart - based parsing method can capture the dependencies betw
 However , their cubic time complexity makes them not scalable to large datasets .
 As neural network based approaches are proven effective in entity or mention recognition , recent efforts focus on incorporating neural components for recognizing nested mentions .
 dynamically stacked multiple LSTM - CRF layers , detecting mentions in an inside - out manner until no outer entities are extracted .
-used recurrent neural networks to extract features fora hypergraph which encodes all nested mentions based on the BILOU tagging scheme .
+used recurrent neural networks to extract features for a hypergraph which encodes all nested mentions based on the BILOU tagging scheme .
 Model
 Specifically , given a sequence of words {x 0 , x 1 , . . . , x n } , the goal of our system is to output a set of mentions where nested structures are allowed .
 We use the forest structure to model the nested mentions scattered in a sentence , as shown in .
@@ -54,8 +54,8 @@ In each step .
 an action is applied to change the system 's state .
 Our system consists of three types of transition actions , which are also summarized in :
 SHIFT pushes the next word from buffer to the stack .
-REDUCE - X pops the top two items t 0 and t 1 from the tack and combines them as anew tree element { X ? t 0 t 1 } which is then pushed onto the stack .
-UNARY - X pops the top item t 0 from the stack and constructs anew tree element { X ? t 0 } which is pushed back to the stack .
+REDUCE - X pops the top two items t 0 and t 1 from the tack and combines them as a new tree element { X ? t 0 t 1 } which is then pushed onto the stack .
+UNARY - X pops the top item t 0 from the stack and constructs a new tree element { X ? t 0 } which is pushed back to the stack .
 Since the shift - reduce system assumes unary and binary branching , we binarize the trees in each forest in a left - branching manner .
 For example , if three consecutive words A , B , C are annotated as Person , we convert it into a binary tree { P erson ?
 { P erson * ?
@@ -77,7 +77,7 @@ In this case , each word is shifted ( n ) and involved in a unary action ( n ) .
 Then all elements are reduced to a single node ( n ? 1 ) .
 The last action is to shift the symbol $. tion to take .
 For example , reduce - action can only be conducted when there are at least two elements in the stack .
-Please seethe Appendix for the full list of restrictions .
+Please see the Appendix for the full list of restrictions .
 Formally , we use V(S , i , A ) to denote the valid actions given the parser state .
 Let us denote the feature vector for the parser state at time step k asp k .
 The distribution of actions is computed as follows :

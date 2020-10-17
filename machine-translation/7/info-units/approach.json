@@ -9,15 +9,17 @@
             }
           }
         },
-        "from sentence" : "Our approach to conditional computation is to introduce anew type of general purpose neural network component : a Sparsely - Gated Mixture - of - Experts Layer ( MoE ) ."        
+        "from sentence" : "Our approach to conditional computation is to introduce a new type of general purpose neural network component : a Sparsely - Gated Mixture - of - Experts Layer ( MoE ) ."        
       },
       "consists of" : {
         "number of experts" : {
           "each" : "simple feed - forward neural network"
         },
         "trainable gating network" : {
-          "selects" : "sparse combination of the experts to process each input"},
-        "from sentence" : "The MoE consists of a number of experts , each a simple feed - forward neural network , and a trainable gating network which selects a sparse combination of the experts to process each input ( see ) ."},
+          "selects" : "sparse combination of the experts to process each input"
+		},
+        "from sentence" : "The MoE consists of a number of experts , each a simple feed - forward neural network , and a trainable gating network which selects a sparse combination of the experts to process each input ( see ) ."
+      },
       "trained" : {
         "jointly" : {
           "by" : {

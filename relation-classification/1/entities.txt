@@ -1,23 +1,18 @@
 67	3	10	propose
 67	13	33	novel tagging scheme
+67	41	57	end -toend model
 67	58	62	with
 67	63	88	biased objective function
 67	89	107	to jointly extract
 67	108	136	entities and their relations
+72	0	9	Tag " O "
 72	10	20	represents
-72	34	38	 tag
+72	25	38	" Other " tag
 72	47	52	means
 72	62	120	corresponding word is independent of the extracted results
-74	3	6	use
-74	13	17	BIES
-74	63	72	represent
-74	77	97	position information
-74	98	102	of a
-74	103	107	word
-74	25	27	in
-74	115	121	entity
 99	55	62	produce
 99	67	80	tags sequence
+97	4	24	End - to - end Model
 100	3	11	contains
 100	14	71	bi-directional Long Short Term Memory ( Bi - LSTM ) layer
 100	72	81	to encode
@@ -27,9 +22,19 @@
 100	140	151	biased loss
 101	20	27	enhance
 101	32	56	relevance of entity tags
+74	3	6	use
+74	13	17	BIES
+74	22	51	Begin , Inside , End , Single
+74	63	72	represent
+74	77	97	position information
+74	98	102	of a
+74	103	107	word
+74	108	110	in
+74	115	121	entity
 169	87	99	divided into
 169	131	148	pipelined methods
 169	155	181	jointly extracting methods
+169	190	212	end - to - end methods
 170	8	25	pipelined methods
 173	6	17	DS-logistic
 173	20	24	is a
@@ -37,16 +42,16 @@
 173	77	85	combines
 173	90	146	advantages of supervised IE and unsupervised IE features
 173	155	159	LINE
-173	20	24	is a
+173	160	164	is a
 173	165	189	network embedding method
 173	201	213	suitable for
 173	214	253	arbitrary types of information networks
-173	20	24	is a
-173	77	85	combines
-173	210	213	for
 174	6	9	FCM
+174	12	16	is a
 174	17	36	compositional model
+174	42	50	combines
 174	51	101	lexicalized linguistic context and word embeddings
+174	102	105	for
 174	106	125	relation extraction
 175	4	30	jointly extracting methods
 175	80	90	DS - Joint
@@ -56,17 +61,17 @@
 175	141	163	entities and relations
 175	164	169	using
 175	170	191	structured perceptron
-175	160	162	on
+175	192	194	on
 175	195	220	human - annotated dataset
 175	229	235	MultiR
-175	93	97	is a
+175	236	240	is a
 175	241	274	typical distant supervised method
 175	275	283	based on
 175	284	318	multi-instance learning algorithms
 175	319	328	to combat
 175	333	352	noisy training data
 175	361	367	CoType
-175	93	97	is a
+175	370	374	is a
 175	375	403	domain independent framework
 175	404	424	by jointly embedding
 175	425	524	entity mentions , relation mentions , text features and type labels into meaningful representations
@@ -111,7 +116,6 @@
 157	86	89	600
 158	4	20	bias parameter ?
 159	35	37	10
-2	60	74	Tagging Scheme
 2	0	42	Joint Extraction of Entities and Relations
 10	49	148	detect entity mentions and recognize their semantic relations simultaneously from unstructured text
 17	70	131	extract entities together with relations using a single model
@@ -122,8 +126,8 @@
 182	87	96	F 1 score
 182	101	109	achieves
 182	112	127	3 % improvement
-182	84	86	in
-182	87	90	F 1
+182	128	130	in
+182	131	134	F 1
 182	135	139	over
 182	144	162	best method CoType
 191	22	39	LSTM - LSTM model
@@ -136,4 +140,4 @@
 186	93	115	significantly improved
 186	49	59	precisions
 186	60	62	of
-186	66	88	 end - to - end models
+186	67	88	end - to - end models

@@ -2,7 +2,7 @@
 (Model||explore||treating text)
 (treating text||as a kind of||raw signal)
 (raw signal||at||character level)
-(character level||applying||temporal (one-dimensional) ConvNets)
+(character level||applying||temporal ( one-dimensional ) ConvNets)
 (Model||used||classification task)
 (classification task||to exemplify||ConvNets ' ability)
 (ConvNets ' ability||to understand||texts)

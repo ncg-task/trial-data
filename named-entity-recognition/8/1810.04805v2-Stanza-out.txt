@@ -1,9 +1,9 @@
 title
 BERT : Pre-training of Deep Bidirectional Transformers for Language Understanding
 abstract
-We introduce anew language representation model called BERT , which stands for Bidirectional Encoder Representations from Transformers .
+We introduce a new language representation model called BERT , which stands for Bidirectional Encoder Representations from Transformers .
 Unlike recent language representation models ( Peters et al. , 2018 a ; Radford et al. , 2018 ) , BERT is designed to pretrain deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers .
-As a result , the pre-trained BERT model can be finetuned with just one additional output layer to create state - of - the - art models fora wide range of tasks , such as question answering and language inference , without substantial taskspecific architecture modifications .
+As a result , the pre-trained BERT model can be finetuned with just one additional output layer to create state - of - the - art models for a wide range of tasks , such as question answering and language inference , without substantial taskspecific architecture modifications .
 BERT is conceptually simple and empirically powerful .
 It obtains new state - of - the - art results on eleven natural language processing tasks , including pushing the GLUE score to 80.5 % ( 7.7 % point absolute improvement ) , MultiNLI accuracy to 86.7 % ( 4.6 % absolute improvement ) , SQ u AD v 1.1 question answering Test F1 to 93.2 ( 1.5 point absolute improvement ) and SQ u AD v2.0 Test F1 to 83.1 ( 5.1 point absolute improvement ) .
 Jeremy Howard and Sebastian Ruder . 2018 .
@@ -38,7 +38,7 @@ google-research/bert .
 Related Work
 There is along history of pre-training general language representations , and we briefly review the most widely - used approaches in this section .
 Unsupervised Feature - based Approaches
-Learning widely applicable representations of words has been an active area of research for decades , including non-neural and neural methods .
+Learning widely applicable representations of words has been an active are a of research for decades , including non-neural and neural methods .
 Pre-trained word embeddings are an integral part of modern NLP systems , offering significant improvements over embeddings learned from scratch .
 To pretrain word embedding vectors , left - to - right language modeling objectives have been used , as well as objectives to discriminate correct from incorrect words in left and right context .
 These approaches have been generalized to coarser granularities , such as sentence embeddings or paragraph embeddings .
@@ -52,7 +52,7 @@ Similar to ELMo , their model is feature - based and not deeply bidirectional .
 shows that the cloze task can be used to improve the robustness of text generation models .
 Unsupervised Fine- tuning Approaches
 As with the feature - based approaches , the first works in this direction only pre-trained word embedding parameters from unlabeled text .
-More recently , sentence or document encoders which produce contextual token representations have been pre-trained from unlabeled text and fine - tuned fora supervised downstream task .
+More recently , sentence or document encoders which produce contextual token representations have been pre-trained from unlabeled text and fine - tuned for a supervised downstream task .
 The advantage of these approaches is that few parameters need to be learned from scratch .
 At least partly due to this advantage , OpenAI achieved previously state - of - the - art results on many sentencelevel tasks from the GLUE benchmark .
 Left - to - right language model - BERT BERT E E 1 E ...
@@ -120,7 +120,7 @@ Then ,
 Ti will be used to predict the original token with cross entropy loss .
 We compare variations of this procedure in Appendix C.2 .
 Task # 2 : Next Sentence Prediction ( NSP ) Many important downstream tasks such as Question Answering ( QA ) and Natural Language Inference ( NLI ) are based on understanding the relationship between two sentences , which is not directly captured by language modeling .
-In order to train a model that understands sentence relationships , we pre-train fora binarized next sentence prediction task that can be trivially generated from any monolingual corpus .
+In order to train a model that understands sentence relationships , we pre-train for a binarized next sentence prediction task that can be trivially generated from any monolingual corpus .
 Specifically , when choosing the sentences A and B for each pretraining example , 50 % of the time B is the actual next sentence that follows A ( labeled as IsNext ) , and 50 % of the time it is a random sentence from the corpus ( labeled as NotNext ) .
 As we show in , C is used for next sentence prediction ( NSP ) .
 5 Despite its simplicity , we demonstrate in Section 5.1 that pre-training towards this task is very beneficial to both QA and NLI .
@@ -187,7 +187,7 @@ As shown in , in the question answering task , we represent the input question a
 We only introduce a start vector S ?
 R H and an end vector E ?
 R H during fine - tuning .
-The probability of word i being the start of the answer span is computed as a dot product between Ti and S followed by a softmax overall of the words in the paragraph : P i = e ST i j e ST j .
+The probability of word i being the start of the answer span is computed as a dot product between Ti and S followed by a softmax over all of the words in the paragraph : P i = e ST i j e ST j .
 The analogous formula is used for the end of the answer span .
 The score of a candidate span from position i to position j is defined as ST i + ET j , and the maximum scoring span where j ?
 i is used as a prediction .
@@ -278,7 +278,7 @@ This demonstrates that BERT is effective for both finetuning and feature - based
 Conclusion
 Recent empirical improvements due to transfer learning with language models have demonstrated that rich , unsupervised pre-training is an integral part of many language understanding systems .
 In particular , these results enable even low - resource tasks to benefit from deep unidirectional architectures .
-Our major contribution is further generalizing these findings to deep bidirectional architectures , allowing the same pre-trained model to successfully tackle abroad set of NLP tasks .
+Our major contribution is further generalizing these findings to deep bidirectional architectures , allowing the same pre-trained model to successfully tackle a broad set of NLP tasks .
 We organize the appendix into three sections :
 Additional implementation details for BERT are presented in Appendix A ;
 Additional details for our experiments are presented in Appendix B ; and

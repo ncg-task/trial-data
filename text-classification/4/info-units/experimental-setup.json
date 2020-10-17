@@ -9,8 +9,7 @@
       },
       "has" : {
         "minibatch size" : {
-          "is set as" : "128",
-          "from sentence" : "The minibatch size is set as 128 , and a dropout rate of 0.2 is utilized on the embedding layer ."          
+          "is set as" : "128"
         },
         "dropout rate" : {
           "of" : {

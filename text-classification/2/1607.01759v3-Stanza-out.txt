@@ -33,12 +33,12 @@ When the number of classes is large , computing the linear classifier is computa
 More precisely , the computational complexity is O ( kh ) where k is the number of classes and h the dimension of the text representation .
 In order to improve our running time , we use a hierarchical softmax ) based on the Huffman coding tree .
 During training , the computational complexity drops to O ( h log 2 ( k ) ) .
-The hierarchical softmax is also advantageous attest time when searching for the most likely class .
+The hierarchical softmax is also advantageous at test time when searching for the most likely class .
 Each node is associated with a probability that is the probability of the path from the root to that node .
 If the node is at depth l + 1 with parents n 1 , . . . , n l , it s probability is
 This means that the probability of anode is always lower than the one of its parent .
 Exploring the tree with a depth first search and tracking the maximum probability among the leaves allows us to discard any branch associated with a small probability .
-In practice , we observe a reduction of the complexity to O ( h log 2 ( k ) ) attest time .
+In practice , we observe a reduction of the complexity to O ( h log 2 ( k ) ) at test time .
 This approach is further extended to compute the T - top targets at the cost of O ( log ( T ) ) , using a binary heap .
 N - gram features
 Bag of words is invariant to word order but taking explicitly this order into account is often computationally very expensive .
@@ -63,7 +63,7 @@ Overall our accuracy is slightly better than char - CNN and char - CRNN and , a 
 Note that we can increase the accuracy slightly by using more n-grams , for example with trigrams , the performance on Sogou goes up to 97.1 % .
 Finally , shows that our method is competitive with the methods presented in .
 We tune the hyperparameters on the validation set and observe that using n-grams up to 5 leads to the best performance .
-Unlike , fastText does not use pre-trained word embeddings , which can be explained the 1 % difference inaccuracy .
+Unlike , fastText does not use pre-trained word embeddings , which can be explained the 1 % difference in accuracy .
 We show a few correct and incorrect tag predictions .
 up compared to neural network based methods increases with the size of the dataset , going up to at least a 15,000 speed - up .
 Tag prediction
@@ -80,7 +80,7 @@ We consider a frequency - based baseline which predicts the most frequent tag .
 We also compare with Tagspace ( Weston et al. , 2014 ) , which is a tag prediction model similar to ours , but based on the Wsabie model of .
 While the Tagspace model is described using convolutions , we consider the linear version , which achieves comparable performance but is much faster .
 Results and training time . and 200 .
-Both models achieve a similar performance with a small hidden layer , but adding bigrams gives us a significant boost inaccuracy .
+Both models achieve a similar performance with a small hidden layer , but adding bigrams gives us a significant boost in accuracy .
 At test time , Tagspace needs to compute the scores for all the classes which makes it relatively slow , while our fast inference gives a significant speed - up when the number of classes is large ( more than 300 K here ) .
 Overall , we are more than an order of magnitude faster to obtain model with a better quality .
 The speedup of the test phase is even more significant ( a 600 speedup ) .

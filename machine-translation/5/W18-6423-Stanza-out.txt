@@ -78,7 +78,7 @@ The English data consist of the following factors : word part , position , lemma
 Synthetic Data
 Similarly to Tilde 's 2017 systems , we submitted systems that were trained using synthetic data :
 1 ) back - translated data , and 2 ) data infused with unknown token identifiers .
-The back - translated data allow performing domain adaptation and the second type of synthetic data allow training NMT models that are robust to unknown phenomena ( e.g. , code - mixed content , target language words in the source text , rare or unseen words , etc . ) .
+The back - translated data allow performing domain adaptation and the second type of synthetic data allow training NMT models thatare robust to unknown phenomena ( e.g. , code - mixed content , target language words in the source text , rare or unseen words , etc . ) .
 To create the synthetic corpora with unknown phenomena , we extracted fast align the parallel corpora and randomly replaced one to three unambiguously ( one - to - one ) aligned content words with unknown word identifiers .
 These synthetic corpora were added to the parallel corpora , thereby almost doubling the sizes of the available training data .
 The back - translated data were acquired from two sources :

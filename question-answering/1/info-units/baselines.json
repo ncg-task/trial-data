@@ -1,7 +1,7 @@
 {
   "has" : {
     "Baselines" : {
-      "is" : {
+      "has" : {
         "WORDEMBED" : {
           "represent" : {
             "each short - text" : {
@@ -20,11 +20,10 @@
                   }
                 }
               }
-            },
-            "from sentence" : "The matching score of two short - texts are calculated with an MLP with the embedding of the two documents as input ; DEEPMATCH : We take the matching model in and train it on our datasets with 3 hidden layers and 1,000 hidden nodes in the first hidden layer ; URAE+ MLP :"
+            }
           }
         },
-        "DeepMatch" : {
+        "DEEPMATCH" : {
           "take" : {
             "matching model" : {
               "train it on" : {
@@ -33,8 +32,7 @@
                 }
               } 
             }
-          },
-          "from sentence" : "The matching score of two short - texts are calculated with an MLP with the embedding of the two documents as input ; DEEPMATCH : We take the matching model in and train it on our datasets with 3 hidden layers and 1,000 hidden nodes in the first hidden layer ; URAE+ MLP :"          
+          }
         },
         "URAE+ MLP" : {
           "use" : {
@@ -49,10 +47,7 @@
                   "on the top as in" : "WORDEMBED"
                 }
               }
-            },
-            "from sentence" : "The matching score of two short - texts are calculated with an MLP with the embedding of the two documents as input ; DEEPMATCH : We take the matching model in and train it on our datasets with 3 hidden layers and 1,000 hidden nodes in the first hidden layer ; URAE+ MLP :
-We use the Unfolding Recursive Autoencoder to get a 100 dimensional vector representation of each sentence , and put an MLP on the top as in WORDEMBED ; SENNA + MLP / SIM :"
-
+            }
           }
         },
         "SENNA + MLP / SIM" : {
@@ -60,7 +55,8 @@ We use the Unfolding Recursive Autoencoder to get a 100 dimensional vector repre
             "SENNA - type sentence model" : {
               "for" : "sentence representation"
             },
-            "from sentence" : "We use the Unfolding Recursive Autoencoder to get a 100 dimensional vector representation of each sentence , and put an MLP on the top as in WORDEMBED ; SENNA + MLP / SIM :
+            "from sentence" : "The matching score of two short - texts are calculated with an MLP with the embedding of the two documents as input ; DEEPMATCH : We take the matching model in and train it on our datasets with 3 hidden layers and 1,000 hidden nodes in the first hidden layer ; URAE+ MLP :
+We use the Unfolding Recursive Autoencoder to get a 100 dimensional vector representation of each sentence , and put an MLP on the top as in WORDEMBED ; SENNA + MLP / SIM :
 We use the SENNA - type sentence model for sentence representation ;"
 
           }

@@ -11,7 +11,9 @@
                 }
               }
             },
-            "from sentence" : "The first observation is that our model architecture achieves much better results compared to the previous state - of - the - art methods ."
+            "from sentence" : "Results on ACE 2005
+The first observation is that our model architecture achieves much better results compared to the previous state - of - the - art methods ."
+
           },
           "has" : {
             "Our full model" : {
@@ -25,7 +27,7 @@
                   }
                 }
               },
-              "from sentence" : "Our full model , with the structured fine - tuning of attention layers , brings further improvement of about 5.5 % , in the MRE one - pass setting , and achieves anew state - of - the - art performance when compared to the methods with domain adaptation ."              
+              "from sentence" : "Our full model , with the structured fine - tuning of attention layers , brings further improvement of about 5.5 % , in the MRE one - pass setting , and achieves a new state - of - the - art performance when compared to the methods with domain adaptation ."              
             }
           }
         },

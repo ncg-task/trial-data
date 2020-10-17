@@ -9,10 +9,10 @@
         "RASOR" : {
           "outperforms" : {
             "endpoint prediction model" : {
-              "by" : "1.1 inexact match"
+              "by" : "1.1 in exact match"
             }
           },
-          "from sentence" : "RASOR outperforms the endpoint prediction model by 1.1 inexact match , The interaction between endpoints enables RASOR to enforce consistency across its two substructures ."          
+          "from sentence" : "RASOR outperforms the endpoint prediction model by 1.1 in exact match , The interaction between endpoints enables RASOR to enforce consistency across its two substructures ."          
         }        
       },
       "observe" : {

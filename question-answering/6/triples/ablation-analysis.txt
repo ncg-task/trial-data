@@ -5,6 +5,6 @@
 (Including vector gates||in||1 k datasets)
 (Ablation analysis||has||model)
 (model||lacks||reasoning capability)
-(reasoning capability||when||number of layers)
+(reasoning capability||When||number of layers)
 (number of layers||is||one)
 (Ablation analysis||helps||Adding the reset gate)

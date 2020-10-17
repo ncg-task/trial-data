@@ -12,7 +12,7 @@ Introduction
 Modeling articles or sentences computationally is a fundamental topic in natural language processing .
 It could be as simple as a keyword / phrase matching problem , but it could also be a nontrivial problem if compositions , hierarchies , and structures of texts are considered .
 For example , a news article which mentions a single phrase " US election " maybe categorized into the political news with high probability .
-But it could be very difficult fora computer to predict which presidential candidate is favored by its author , or whether the author 's view in the article is more liberal or more conservative .
+But it could be very difficult for a computer to predict which presidential candidate is favored by its author , or whether the author 's view in the article is more liberal or more conservative .
 Earlier efforts in modeling texts have achieved limited success on text categorization using a simple bag - of - words classifier , implying understanding the meaning of the individual word or n-gram is a necessary step towards more sophisticated models .
 It is therefore not a surprise that distributed representations of words , a.k.a. word embeddings , have received great attention from NLP community addressing the question " what " to be modeled at the basic level .
 In order to model higher level concepts and facts in texts , an NLP researcher has to think cautiously the so - called " what " question : what is actually modeled beyond word meanings .
@@ -54,11 +54,11 @@ R L?K 1 + 1 , each element ma i ?
 R of the feature map is produced by
 where is element - wise multiplication , b 0 is a bias term , and f is a nonlinear activate function ( i.e. , ReLU ) .
 We have described the process by which one feature is extracted from one filter .
-Hence , fora = 1 , . . . , B , totally B filters with the same N - gram size , one can generate B feature maps which can be rearranged as
+Hence , for a = 1 , . . . , B , totally B filters with the same N - gram size , one can generate B feature maps which can be rearranged as
 Primary Capsule Layer
 This is the first capsule layer in which the capsules replace the scalar - output feature detectors of CNNs with vector- output capsules to preserve the instantiated parameters such as the local order of words and semantic representations of words .
 Suppose pi ?
-Rd denotes the instantiated parameters of a capsule , where dis the dimension of the capsule .
+Rd denotes the instantiated parameters of a capsule , where d is the dimension of the capsule .
 Let W b ? R
 Bd be the filter shared in different sliding windows .
 For each matrix multiplication , we have a window sliding over each Ngram vector denoted as M i ?
@@ -97,7 +97,7 @@ Algorithm 1 : Dynamic Routing Algorithm 1 procedure ROUTING ( j|i , j|i , r , l 
 for all capsule i in layer land capsule j in
 Given each prediction vector j|i and its probability of existence j|i , where j|i = i , each iterative coupling coefficient of connection strength c j|i is updated by
 where b j|i is the logits of coupling coefficients .
-Each parent capsule v j in the layer above is a weighted sum overall prediction vectors j|i :
+Each parent capsule v j in the layer above is a weighted sum over all prediction vectors j|i :
 where a j is the probabilities of parent capsules , g is nonlinear squash function through the entire vector .
 Once all of the parent capsules are produced , each coupling coefficient b j|i is updated by :
 For simplicity of notation , the parent capsules and their probabilities in the layer above are denoted as v , a = Routing ( )
@@ -158,7 +158,7 @@ Capsule network demonstrates promising performance in single - label text classi
 Multi-label text classification is , however , a more challenging practical problem .
 From singlelabel to multi-label ( with n category labels ) text classification , the label space is expanded from n to 2 n , thus more training is required to cover the whole label space .
 For single - label texts , it is practically easy to collect and annotate the samples .
-However , the burden of collection and annotation fora large scale multi-label text dataset is generally extremely high .
+However , the burden of collection and annotation for a large scale multi-label text dataset is generally extremely high .
 How deep neural networks ( e.g. , CNN and LSTM ) best cope with multi-label text classification still remains a problem since obtaining large scale of multi-label dataset is a timeconsuming and expensive process .
 In this section , we investigate the capability of capsule network on multi-label text classification by using only the single - label samples as training data .
 With feature property as part of the information extracted by capsules , we may generalize the model better to multi-label text classification without an over extensive amount of labeled data .
@@ -169,7 +169,7 @@ For dev and training , we only use the single - label documents in the Reuters d
 For testing , Reuters - Multi - label only uses the multi-label documents in testing dataset , while Reuters - Full includes all documents in test set .
 The characteristics of these two datasets are described in .
 Following ( Sorower , 2010 ) , we adopt Micro Averaged Precision ( Precision ) , Micro Averaged Recall ( Recall ) and Micro Averaged F1 scores ( F1 ) as the evaluation metrics for multi-label text classification .
-Any of these scores are firstly computed on individual class labels and then averaged overall classes , called label - based measures .
+Any of these scores are firstly computed on individual class labels and then averaged over all classes , called label - based measures .
 In addition , we also measure the Exact Match Ratio ( ER ) which considers partially correct prediction as incorrect and only counts fully correct samples .
 The experimental results are summarized in .
 From the results , we can observe that the capsule networks have substantial and significant improvement in terms of all four evaluation metrics over the strong baseline methods on the test sets in both Reuters - Multi-label and Reuters - Full datasets .
@@ -221,7 +221,7 @@ The capsule network has shown its potential by achieving a state - of - the - ar
 Unlike max - pooling in CNN , however , Capsule network do not throwaway information about the precise position of the entity within the region .
 For lowlevel capsules , location information is placecoded by which capsule is active .
 further tested out the application of capsule networks on CIFAR data with higher dimensionality .
-proposed anew iterative routing procedure between capsule layers based on the EM algorithm , which achieves significantly better accuracy on the small NORB data set .
+proposed a new iterative routing procedure between capsule layers based on the EM algorithm , which achieves significantly better accuracy on the small NORB data set .
 generalized existing routing methods within the framework of weighted kernel density estimation .
 To date , no work investigates the performance of capsule networks in NLP tasks .
 This study herein takes the lead in this topic .

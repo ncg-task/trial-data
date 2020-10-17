@@ -6,13 +6,9 @@
           "for" : "optimization of models",
           "from sentence" : "In other words , We use stochastic gradient descent for the optimization of models ."          
         },
-        "50-dimensional word embedding" : {
+        "50 - dimensional word embedding" : {
           "trained with" : "Word2 Vec",
           "from sentence" : "We use 50 - dimensional word embedding trained with the Word2 Vec : the embedding for English words ( Section 5.2 & 5.4 ) is learnt on Wikipedia ( ?1B words ) , while that for Chinese words ( Section 5.3 ) is learnt on Weibo data (? 300 M words ) ."          
-        },
-        "3 - word window" : {
-          "throughout" : "all experiments",
-          "from sentence" : "We use 3 - word window throughout all experiments 2 , but test various numbers of feature maps ( typically from 200 to 500 ) , for optimal performance ."
         },
         "ReLu" : {
           "as" : {
@@ -30,7 +26,10 @@
             }
           },
           "from sentence" : "We use ReLu as the activation function for all of models ( convolution and MLP ) , which yields comparable or better results to sigmoid - like functions , but converges faster ."
-        }
+        },
+        "3 - word window" : {
+          "throughout" : "all experiments"
+        }		
       },
       "test" : {
         "various numbers of feature maps" : {

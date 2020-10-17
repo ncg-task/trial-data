@@ -9,7 +9,7 @@
         "sequence model" : {
           "by" : {
             "boundary model" : {
-              "achieving" : ["exact match score of 61.1%", "an F1 score of 71.2%"]
+              "achieving" : ["exact match score of 61.1 %", "an F1 score of 71.2 %"]
             }
           },
           "from sentence" : "Furthermore , our boundary model has outperformed the sequence model , achieving an exact match score of 61.1 % and an F1 score of 71.2 % ."          

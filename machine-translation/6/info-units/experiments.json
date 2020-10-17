@@ -7,7 +7,9 @@
             "skip - gram model" : {
               "as" : "baseline model"
             },
-            "from sentence" : "We use the skip - gram model as our baseline model , and train the embeddings using Enwik9 6 ."
+            "from sentence" : "Word Similarity evaluates the performance of the learned word embeddings by calculating the word similarity : it evaluates whether the most similar words of a given word in the embedding space are consistent with the ground - truth , in terms of Spearman 's rank correlation .
+We use the skip - gram model as our baseline model , and train the embeddings using Enwik9 6 ."
+			
           },
           "test" : {
             "baseline and our method" : {
@@ -20,10 +22,12 @@
           "goal" : {
             "predict the next word" : {
               "conditioned on" : "previous words"
-            },
-            "from sentence" : "The goal is to predict the next word conditioned on previous words and the task is evaluated by perplexity ."
+            }
           },
-          "evaluated by" : ["perplexity", {"from sentence" : "The goal is to predict the next word conditioned on previous words and the task is evaluated by perplexity ."}],
+          "evaluated by" : ["perplexity", {"from sentence" : "Language Modeling is a basic task in natural language processing .
+		  The goal is to predict the next word conditioned on previous words and the task is evaluated by perplexity ."
+		  
+		  }],
           "experiments on" : ["two widely used datasets , Penn Treebank ( PTB ) and WikiText - 2 ( WT2 )", {"from sentence" : "We do experiments on two widely used datasets , Penn Treebank ( PTB ) and WikiText - 2 ( WT2 ) ."}],
           "choose" : {
             "two recent works" : {
@@ -37,7 +41,9 @@
             "two datasets : WMT14 English - German and IWSLT14 German - English datasets" : {
               "evaluated in terms of" : "score"
             },
-            "from sentence" : "We choose two datasets : WMT14 English - German and IWSLT14 German - English datasets , which are evaluated in terms of BLEU score ."
+            "from sentence" : "Machine Translation is a popular task in both deep learning and natural language processing .
+We choose two datasets : WMT14 English - German and IWSLT14 German - English datasets , which are evaluated in terms of BLEU score ."
+
           },
           "use" : {
             "Transformer" : {
@@ -49,7 +55,9 @@
         "Text Classification" : {
           "implement" : "Recurrent CNN - based model",
           "test it on" : "AG 's news corpus ( AGs ) , IMDB movie review dataset ( IMDB ) and 20 Newsgroups ( 20 NG )",
-          "from sentence" : "Following the setting in , we implement a Recurrent CNN - based model and test it on AG 's news corpus ( AGs ) , IMDB movie review dataset ( IMDB ) and 20 Newsgroups ( 20 NG ) ."
+          "from sentence" : "Text Classification is a conventional machine learning task and is evaluated by accuracy .
+Following the setting in , we implement a Recurrent CNN - based model and test it on AG 's news corpus ( AGs ) , IMDB movie review dataset ( IMDB ) and 20 Newsgroups ( 20 NG ) ."
+		  
         }
       }
     }

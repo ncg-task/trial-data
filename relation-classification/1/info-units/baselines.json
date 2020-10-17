@@ -1,7 +1,8 @@
 {
   "has" : {
     "Baselines" : {
-      "divided into" : ["pipelined methods", "jointly extracting methods", "end-to-end methods", {"from sentence" : "We compare our method with several classical triplet extraction methods , which can be divided into the following categories : the pipelined methods , the jointly extracting methods and the end - to - end methods based our tagging scheme ."}],
+      "divided into" : ["pipelined methods", "jointly extracting methods", "end - to - end methods", 
+	  {"from sentence" : "We compare our method with several classical triplet extraction methods , which can be divided into the following categories : the pipelined methods , the jointly extracting methods and the end - to - end methods based our tagging scheme ."}],
       "has" : {
         "pipelined methods" : {
           "has" : {
@@ -23,10 +24,10 @@
             }
           },
           "from sentence" : "For the pipelined methods , we follow ) 's settings :
-  The NER results are obtained by CoType then several classical relation classification methods are applied to detect the relations .
-  These methods are :
-  ( 1 ) DS-logistic ) is a distant supervised and feature based method , which combines the advantages of supervised IE and unsupervised IE features ; ( 2 ) LINE is a network embedding method , which is suitable for arbitrary types of information networks ;
-  ( 3 ) FCM ) is a compositional model that combines lexicalized linguistic context and word embeddings for relation extraction ."
+The NER results are obtained by CoType then several classical relation classification methods are applied to detect the relations .
+These methods are :
+( 1 ) DS-logistic ) is a distant supervised and feature based method , which combines the advantages of supervised IE and unsupervised IE features ; ( 2 ) LINE is a network embedding method , which is suitable for arbitrary types of information networks ;
+( 3 ) FCM ) is a compositional model that combines lexicalized linguistic context and word embeddings for relation extraction ."
   
       },
         "jointly extracting methods" :  {

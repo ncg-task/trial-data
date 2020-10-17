@@ -1,10 +1,11 @@
 21	18	26	consider
 21	29	51	more general framework
 21	54	63	subsuming
+21	64	77	one - hot CNN
 21	86	100	jointly trains
 21	103	139	feature generator and a linear model
 21	142	147	where
-21	103	120	feature generator
+21	152	169	feature generator
 21	170	181	consists of
 21	184	210	region embedding + pooling
 31	18	26	build on
@@ -29,6 +30,7 @@
 38	134	147	input to LSTM
 2	0	51	Supervised and Semi- Supervised Text Categorization
 4	82	101	text categorization
+124	0	26	Experiments ( supervised )
 139	0	9	Comparing
 139	14	31	two types of LSTM
 139	40	48	see that
@@ -37,13 +39,14 @@
 139	112	123	outperforms
 139	124	142	word - vector LSTM
 139	145	154	wv - LSTM
-139	53	55	on
+139	157	159	on
 139	160	176	all the datasets
 143	5	7	on
 143	8	38	three out of the four datasets
 143	41	53	oh - 2 LSTMp
 143	54	65	outperforms
 143	66	81	SVM and the CNN
+195	0	27	Semi-supervised experiments
 212	15	21	tested
 212	22	34	wv - 2 LSTMp
 212	37	82	word - vector bidirectional LSTM with pooling
@@ -51,7 +54,7 @@
 212	114	126	oh - 2 LSTMp
 212	127	129	is
 212	139	163	input to the LSTM layers
-212	127	129	is
+212	164	166	is
 212	171	195	pre-trained word vectors
 220	7	13	review
 220	18	29	performance
@@ -61,7 +64,7 @@
 220	52	82	one 200 - dim CNN tv-embedding
 220	104	119	comparable with
 220	120	128	our LSTM
-220	47	51	with
+220	129	133	with
 220	134	166	two 100 - dim LSTM tv-embeddings
 220	179	190	in terms of
 220	195	226	dimensionality of tv-embeddings

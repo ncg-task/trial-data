@@ -95,7 +95,7 @@ From the empirical study above , we can see that the occupied spaces of popular 
 We simply take word2vec as an example which is trained by stochastic gradient descent .
 During training , the sample rate of a popular word is high and the embedding of a popular word updates frequently .
 For a rare word , the sample rate is low and its embedding rarely updates .
-According to our study , on average , the moving distance of the embedding fora popular word is twice longer than that of a rare word during training .
+According to our study , on average , the moving distance of the embedding for a popular word is twice longer than that of a rare word during training .
 As all word embeddings are usually initialized around the origin with a small variance , we observe in the final model , the embeddings of rare words are still around the origin and the popular words have moved faraway .
 Discussion
 We have strong evidence that the current phenomena are problematic .
@@ -115,7 +115,7 @@ By doing so , the frequency information is removed from the embedding and we cal
 We first define some notations and then introduce our algorithm .
 We develop three types of notations : embeddings , task - specific parameters / loss , and discriminator parameters / loss .
 Denote ? emb ?
-R d|V | as the word embedding matrix to be learned , where dis the dimension of the embedding vectors and | V | is the vocabulary size .
+R d|V | as the word embedding matrix to be learned , where d is the dimension of the embedding vectors and | V | is the vocabulary size .
 Let V pop denote the set of popular words and V rare = V \ V pop denote the set of rare words .
 Then the embedding matrix ?
 emb can be divided into two parts : ?

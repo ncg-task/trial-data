@@ -78,7 +78,7 @@ This allows us to roughly understand what latent types of entities are .
 We use a total of three types and find that similar characteristics appear in words grouped by together .
 In the type 1 , the words are related to human 's jobs and foods .
 The type2 has a lot of entities related to machines and engineering like engine , woofer , and motor .
-Finally , in type3 , there are many words with bad meanings related associated with disasters and :
+Finally , in type3 , there are many words with bad meanings related associated with dis asters and :
 Sets of Entities grouped by Latent Types drugs .
 As a result , each type has a set of words with similar characteristics , which can prove that LET works effectively .
 Bidirectional LSTM
@@ -123,7 +123,7 @@ After linear transformation of the entity features , they add up with the repres
 R 2 d h is computed by Equations from 3.8 to 3.10 .
 Classification and Training
 The sentence representation obtained from the entity - aware attention z is fed into a fully connected softmax layer for classification .
-It produces the conditional probability p ( y|S , ? ) overall relation types :
+It produces the conditional probability p ( y|S , ? ) over all relation types :
 where y is a target relation class and S is the input sentence .
 The ?
 is whole learnable parameters in the whole network including
@@ -135,7 +135,7 @@ To alleviate overfitting , we constrain the L2 regularization with the coefficie
 In addition , the dropout method is applied afterword embedding , LSTM network , and entity - aware attention to prevent co-adaptation of hidden units by randomly omitting feature detectors .
 Experiments
 Dataset and Evaluation Metrics
-We evaluate our model on the SemEval - 2010 Task 8 dataset , which is an commonly used benchmark for relation classification and compare the results with the state - of - the - art models in this area .
+We evaluate our model on the SemEval - 2010 Task 8 dataset , which is an commonly used benchmark for relation classification and compare the results with the state - of - the - art models in this are a .
 The dataset contains 10 distinguished relations , Cause - Effect , Instrument - Agency , Product - Producer , Content - Container , Entity - Origin , Entity - Destination , Component - Whole , Member - Collection , Message - Topic , and Other .
 The former 9 relations have two directions , whereas Other is not directional , so the total number of relations is 19 .
 There are 10,717 annotated sentences which consist of 8,000 samples for training and 2,717 samples for testing .
@@ -178,4 +178,4 @@ Task 8 using only raw sentence and word embeddings without any high - level feat
 In addition , our three visualizations of attention mechanisms applied to the model demonstrate that our model is more interpretable than previous models .
 We expect our model to be extended not only the relation classification task but also other tasks that entity plays an important role .
 Especially , latent entity typing can be effectively applied to sequence modeling task using entity information without NER .
-In the future , we will propose anew method in question answering or knowledge base population based on relations between entities extracted from our model .
+In the future , we will propose a new method in question answering or knowledge base population based on relations between entities extracted from our model .

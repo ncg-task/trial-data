@@ -1,7 +1,7 @@
 {
   "has" : {
     "Approach" : {
-      "differ" : ["traditional word type embeddings", {"from sentence" : "Our representations differ from traditional word type embeddings in that each token is assigned a representation that is a function of the entire input sentence ."}],
+      "differ" : "traditional word type embeddings",
       "assigned" : {
         "each token" : {
           "representation" : "function of the entire input sentence"
@@ -19,7 +19,7 @@
         },
         "from sentence" : "We use vectors derived from a bidirectional LSTM that is trained with a coupled lan - guage model ( LM ) objective on a large text corpus ."
       },
-      "call" : ["ElMo (Embeddings from Language Models) representations", {"from sentence" : "For this reason , we call them ELMo ( Embeddings from Language Models ) representations ."}],
+      "call" : ["ELMo ( Embeddings from Language Models ) representations", {"from sentence" : "For this reason , we call them ELMo ( Embeddings from Language Models ) representations ."}],
       "learn" : {
         "linear combination of the vectors" : {
           "stacked above" : {

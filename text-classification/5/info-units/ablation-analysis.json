@@ -13,7 +13,9 @@
                       "with" : "10 and 20 more data"
                     }
                   },
-                  "from sentence" : "On IMDb and AG , supervised ULMFiT with only 100 labeled examples matches the performance of training from scratch with 10 and 20 more data respectively , clearly demonstrating the benefit of general - domain LM pretraining ."                  
+                  "from sentence" : "Low - shot learning
+On IMDb and AG , supervised ULMFiT with only 100 labeled examples matches the performance of training from scratch with 10 and 20 more data respectively , clearly demonstrating the benefit of general - domain LM pretraining ."
+
                 }
               }
             },
@@ -27,8 +29,8 @@
             }
           }
         },
-        "Impact of pretraining" : {
-          "most useful for" : "small and medium-sized datasets",
+        "Pretraining" : {
+          "most useful for" : "small and medium - sized datasets",
           "from sentence" : "Pretraining is most useful for small and medium - sized datasets , which are most common in commercial applications ."
         },
         "Impact of LM quality" : {
@@ -39,7 +41,9 @@
                   "on" : "larger datasets"
                 }
               },
-              "from sentence" : "Using our fine - tuning techniques , even a regular LM reaches surprisingly good performance on the larger datasets ."              
+              "from sentence" : "Impact of LM quality
+Using our fine - tuning techniques , even a regular LM reaches surprisingly good performance on the larger datasets ."
+
             }
           },
           "On" : {
@@ -53,19 +57,27 @@
             }  
           }
         },
-        "Impact of LM fine - tuning" : {
-          "most beneficial for" : "larger datasets",
+        "Fine - tuning" : {
+		  "has" : {
+			"LM" : {
+				"most beneficial for" : "larger datasets"
+			}
+		  },
           "from sentence" : "Fine - tuning the LM is most beneficial for larger datasets ."
         },
-        "Impact of classifier fine - tuning" : {
-          "significantly improves over" : {
-            "training from scratch" : {
-              "particularly on" : "small TREC - 6"
-            }
-          },
+        "Fine - tuning" : {
+		  "has" : {
+		     "classifier" : {
+				"significantly improves over" : {
+					"training from scratch" : {
+					  "particularly on" : "small TREC - 6"
+					}
+				}			 
+			 }
+		  },
           "from sentence" : "Fine - tuning the classifier significantly improves over training from scratch , particularly on the small TREC - 6 . ' Last ' , the standard fine - tuning method in CV , severely underfits and is never able to lower the training error to 0 . ' Chainthaw ' achieves competitive performance on the smaller datasets , but is outperformed significantly on the large AG ."
         },
-        "Impact of bidirectionality" : {
+        "forward and backwards LM - classifier" : {
           "brings" : {
             "performance boost" : {
               "of" : "0.5 - 0.7"

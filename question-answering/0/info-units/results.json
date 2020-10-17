@@ -1,13 +1,15 @@
 {
   "has" : {
     "Results" : {
-      "on" : {
+      "has" : {
         "Reranking" : {
           "see that" : {
             "multitasking with paraphrase data" : {
               "improves F1" : "from 0.60 to 0.68"
             },
-            "from sentence" : "First , we can see that multitasking with paraphrase data is essential since it improves F1 from 0.60 to 0.68 ."            
+            "from sentence" : "Reranking
+First , we can see that multitasking with paraphrase data is essential since it improves F1 from 0.60 to 0.68 ."
+
           },
           "has" : {
             "Fine - tuning the embedding model" : {
@@ -21,7 +23,7 @@
             },
             "All versions of our system" : {
               "greatly outperform" : "paralex",
-              "improves the F1-score" : "by almost 20 points",      
+              "improves the F1 - score" : "by almost 20 points",      
               "from sentence" : "All versions of our system greatly outperform paralex : the fine - tuned model improves the F1 - score by almost 20 points and , according to , is better in precision for all levels of recall ."
             }            
           }

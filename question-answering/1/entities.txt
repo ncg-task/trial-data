@@ -9,27 +9,28 @@
 143	22	39	two short - texts
 143	55	59	with
 143	63	66	MLP
-143	55	59	with
+143	67	71	with
 143	76	115	embedding of the two documents as input
+143	118	127	DEEPMATCH
 143	133	137	take
 143	142	156	matching model
 143	164	175	train it on
 143	176	188	our datasets
-143	55	59	with
+143	189	193	with
 143	194	258	3 hidden layers and 1,000 hidden nodes in the first hidden layer
 143	261	270	URAE+ MLP
-143	19	21	of
-143	112	115	put
-143	60	66	an MLP
 144	3	6	use
 144	11	42	Unfolding Recursive Autoencoder
 144	46	49	get
 144	52	89	100 dimensional vector representation
+144	90	92	of
 144	93	106	each sentence
+144	113	116	put
+144	117	123	an MLP
 144	124	140	on the top as in
 144	141	150	WORDEMBED
 144	153	170	SENNA + MLP / SIM
-144	3	6	use
+145	3	6	use
 145	11	38	SENNA - type sentence model
 145	39	42	for
 145	43	66	sentence representation
@@ -41,19 +42,16 @@
 146	47	51	with
 146	52	87	word embedding aligned sequentially
 146	96	99	use
-146	3	6	MLP
+146	103	106	MLP
 146	107	116	to obtain
 146	121	139	score of coherence
 127	20	23	use
 127	24	51	stochastic gradient descent
 127	52	55	for
 127	60	82	optimization of models
-131	90	92	is
+131	7	38	50 - dimensional word embedding
 131	39	51	trained with
 131	56	65	Word2 Vec
-134	7	22	3 - word window
-134	23	33	throughout
-134	34	49	all experiments
 136	7	11	ReLu
 136	12	14	as
 136	19	38	activation function
@@ -65,6 +63,9 @@
 136	128	152	sigmoid - like functions
 136	159	168	converges
 136	169	175	faster
+134	7	22	3 - word window
+134	23	33	throughout
+134	34	49	all experiments
 134	58	62	test
 134	63	94	various numbers of feature maps
 134	97	111	typically from
@@ -77,7 +78,7 @@
 128	98	110	parallelized
 128	111	113	on
 128	114	128	single machine
-128	39	43	with
+128	129	133	with
 128	134	145	multi-cores
 129	0	18	For regularization
 129	59	73	early stopping
@@ -86,7 +87,7 @@
 129	95	99	with
 129	100	111	medium size
 129	116	135	large training sets
-129	95	99	with
+129	138	142	with
 129	143	162	over 500K instances
 16	22	29	propose
 16	30	56	deep neural network models
@@ -120,10 +121,10 @@
 177	99	115	random negatives
 177	116	166	automatically gain some ability in telling whether
 177	171	196	words in a given sentence
-177	6	8	in
+177	201	203	in
 177	204	226	right sequential order
 179	16	61	simple sum of embedding learned via Word2 Vec
 179	62	68	yields
 179	69	92	reasonably good results
-179	73	75	on
+179	93	95	on
 179	96	111	all three tasks

@@ -1,7 +1,7 @@
 (Contribution||has||Results)
 (Results||As||training set size increases)
 (training set size increases||has||models that do not make use of transfer learning)
-(models that do not make use of transfer learning||approach performance of||other models)
+(models that do not make use of transfer learning||approach the performance of||other models)
 (Results||has||Models)
 (Models||make use of||sentence level transfer learning)
 (sentence level transfer learning||tend to perform better than||models that only use word level transfer)

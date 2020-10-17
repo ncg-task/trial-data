@@ -15,4 +15,4 @@
 (context - sensitive convolutional filters||for||natural language understanding)
 (Approach||propose||novel bidirectional filter generation mechanism)
 (novel bidirectional filter generation mechanism||to allow||interactions between sentence pairs)
-(interactions between sentence pairs||while constructing||context-sensitive representations)
+(interactions between sentence pairs||while constructing||context - sensitive representations)

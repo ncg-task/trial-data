@@ -1,21 +1,23 @@
-180	14	16	on
-180	99	113	TACRED dev set
-181	3	7	find
-181	19	64	entity representations and feedforward layers
-181	65	75	contribute
-181	76	83	1.0 F 1
-182	14	20	remove
-182	25	45	dependency structure
-182	76	90	score drops by
-182	91	98	3.2 F 1
-183	43	122	feedforward layers , the LSTM component and the dependency structure altogether
-183	6	18	F 1 drops by
-183	19	23	10.3
-184	6	14	Removing
-184	19	26	pruning
-184	36	41	using
-184	42	61	full trees as input
-184	72	91	hurts the result by
+179	92	94	on
+179	99	113	TACRED dev set
+180	3	7	find
+180	19	64	entity representations and feedforward layers
+180	65	75	contribute
+180	76	83	1.0 F 1
+181	14	20	remove
+181	25	45	dependency structure
+181	76	90	score drops by
+181	91	98	3.2 F 1
+182	43	122	feedforward layers , the LSTM component and the dependency structure altogether
+182	6	18	F 1 drops by
+182	19	23	10.3
+183	6	14	Removing
+183	19	26	pruning
+183	36	41	using
+183	42	61	full trees as input
+183	72	91	hurts the result by
+183	92	107	another 9.7 F 1
+124	0	25	Dependency - based models
 126	8	45	logistic regression ( LR ) classifier
 126	52	60	combines
 126	61	85	dependencybased features
@@ -35,6 +37,7 @@
 128	25	40	recursive model
 128	41	57	that generalizes
 128	62	95	LSTM to arbitrary tree structures
+132	0	21	Neural sequence model
 133	10	19	presented
 133	22	48	competitive sequence model
 133	49	61	that employs
@@ -86,16 +89,18 @@
 154	0	9	Comparing
 154	14	27	C - GCN model
 154	28	32	with
-154	18	27	GCN model
+154	37	46	GCN model
 154	52	61	find that
 154	66	70	gain
 154	71	88	mainly comes from
+154	89	104	improved recall
 156	36	45	find that
 156	46	60	our GCN models
 156	61	65	have
 156	66	89	complementary strengths
 156	90	106	when compared to
 156	111	120	PA - LSTM
+163	15	30	SemEval Dataset
 165	13	18	under
 165	23	59	conventional with- entity evaluation
 165	66	79	C - GCN model
@@ -112,30 +117,31 @@
 167	72	81	PA - LSTM
 167	82	84	by
 167	87	105	substantial margin
-170	57	64	compare
-170	69	83	two GCN models
-170	92	103	Tree - LSTM
-170	104	108	when
-170	113	131	pruning distance K
-170	122	124	is
-170	135	141	varied
-172	18	32	performance of
-172	33	49	all three models
-172	50	60	peaks when
-172	61	66	K = 1
-172	69	82	outperforming
-172	89	145	respective dependency path - based counterpart ( K = 0 )
-176	3	7	find
-176	13	29	all three models
-176	30	33	are
-176	34	48	less effective
-176	49	53	when
-176	58	80	entire dependency tree
-176	81	83	is
-176	84	91	present
-177	23	38	contextualizing
-177	43	46	GCN
-177	47	55	makes it
-177	56	70	less sensitive
-177	71	84	to changes in
-177	89	113	tree structures provided
+168	0	32	Effect of Path - centric Pruning
+169	57	64	compare
+169	69	83	two GCN models
+169	92	103	Tree - LSTM
+169	104	108	when
+169	113	131	pruning distance K
+169	132	134	is
+169	135	141	varied
+171	18	32	performance of
+171	33	49	all three models
+171	50	60	peaks when
+171	61	66	K = 1
+171	69	82	outperforming
+171	89	145	respective dependency path - based counterpart ( K = 0 )
+175	3	7	find
+175	13	29	all three models
+175	30	33	are
+175	34	48	less effective
+175	49	53	when
+175	58	80	entire dependency tree
+175	81	83	is
+175	84	91	present
+176	23	38	contextualizing
+176	43	46	GCN
+176	47	55	makes it
+176	56	70	less sensitive
+176	71	84	to changes in
+176	89	113	tree structures provided

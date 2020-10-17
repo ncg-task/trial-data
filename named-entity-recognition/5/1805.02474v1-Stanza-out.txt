@@ -2,7 +2,7 @@ title
 Sentence - State LSTM for Text Representation
 abstract
 Bi-directional
-LSTMs area powerful tool for text representation .
+LSTMs are a powerful tool for text representation .
 On the other hand , they have been shown to suffer various limitations due to their sequential nature .
 We investigate an alternative LSTM structure for encoding text , which consists of a parallel state for each word .
 Recurrent steps are used to perform local and global information exchange between words simultaneously , rather than incremental reading of a sequence of words .
@@ -17,7 +17,7 @@ In addition , local ngrams , which have been shown a highly useful source of con
 Finally , sequential information flow leads to relatively weaker power in capturing longrange dependencies , which results in lower performance in encoding longer sentences .
 We investigate an alternative recurrent neural network structure for addressing these issues .
 As shown in , the main idea is to model the hidden states of all words simultaneously at each recurrent step , rather than one word at a time .
-In particular , we view the whole sentence as a single state , which consists of sub-states for individual words and an overall sentence - level state .
+In particular , we view the whole sentence as a single state , which consists of sub-states for individual words and an over all sentence - level state .
 To capture local and non-local contexts , states are updated recurrently by exchanging information between each other .
 Consequently , we refer to our model as sentence - state LSTM , or S - LSTM in short .
 Empirically , S - LSTM can give effective sentence encoding after 3 - 6 recurrent steps .
@@ -34,11 +34,11 @@ LSTM showed its early potentials in NLP when a neural machine translation system
 LSTM encoders have since been explored for other tasks , including syntactic parsing , text classification and machine reading .
 Bidirectional extensions have become a standard configuration for achieving state - of - the - art accuracies among various tasks .
 S- LSTMs are similar to BiLSTMs in their recurrent bi-directional message flow between words , but different in the design of state transition .
-CNNs ) also allow better parallelisation compared to LSTMs for sentence encoding , thanks to parallelism among convolution filters .
+CNNs ) also allow better parallelis ation compared to LSTMs for sentence encoding , thanks to parallelism among convolution filters .
 On the other hand , convolution features embody only fix - sized local ngram information , whereas sentence - level feature aggregation via pooling can lead to loss of information .
 In contrast , S - LSTM uses a global sentence - level node to assemble and back - distribute local information in the recurrent state transition process , suffering less information loss compared to pooling .
 Attention has recently been explored as a standalone method for sentence encoding , giving competitive results compared to Bi - LSTM encoders for neural machine translation .
-The attention mechanism allows parallelisation , and can play a similar role to the sentence - level state in S - LSTMs , which uses neural gates to integrate word - level information compared to hierarchical attention .
+The attention mechanism allows parallelis ation , and can play a similar role to the sentence - level state in S - LSTMs , which uses neural gates to integrate word - level information compared to hierarchical attention .
 S - LSTM further allows local communication between neighbouring words .
 Hierarchical stacking of CNN layers allows better interaction between non-local components in a sentence via incremental levels of abstraction .
 S - LSTM is similar to hierarchical attention and stacked CNN in this respect , incrementally refining sentence representations .
@@ -75,7 +75,7 @@ In each direction , the reading of input words is modelled as a recurrent proces
 Given an initial value , the state changes its value recurrently , each time consuming an incoming word .
 Take the forward LSTM component for example .
 Denoting the initial state as ? ? h 0 , which is a model parameter , the recurrent state transition step for calculating ? ? h 1 , . . . , ? ? h n+1 is defined as follows :
-where x t denotes the word representation of wt ; it , o t , ft and u t represent the values of an input gate , an output gate , a forget gate and an actual input at time step t , respectively , which controls the information flow fora recurrent cell ? ?
+where x t denotes the word representation of wt ; it , o t , ft and u t represent the values of an input gate , an output gate , a forget gate and an actual input at time step t , respectively , which controls the information flow for a recurrent cell ? ?
 ct and the state vector
 The backward LSTM component follows the same recurrent state transition process as described in Eq 1 .
 Starting from an initial state h n + 1 , which is a model parameter , it reads the input x n ,
@@ -132,7 +132,7 @@ Task settings
 We consider two task settings , namely classification and sequence labelling .
 For classification , g is fed to a softmax classification layer :
 where y is the probability distribution of output class labels and W c and b care model parameters .
-For sequence labelling , each hi can be used as feature representation fora corresponding word w i .
+For sequence labelling , each hi can be used as feature representation for a corresponding word w i .
 External attention
 It has been shown that summation of hidden states using attention give better accuracies compared to using the end states of BiLSTMs .
 We study the influence of attention on both S - LSTM and BiLSTM for classification .
@@ -198,12 +198,12 @@ On the other hand , S - LSTM demonstrates relatively better robustness compared 
 This confirms our intuition that a sentence - level node can facilitate better non-local communication .
 these comparisons , we mix all training instances , order them by the size , and put them into 10 equal groups , the medium sentence lengths of which are shown .
 As can be seen from the figure , the speed advantage of S - LSTM is larger when the size of the input text increases , thanks to a fixed number of recurrent steps .
-Similar to hierarchical attention , there is a relative disadvantage of S - LSTM in comparison with BiLSTM , which is that the memory consumption is relatively larger .
+Similar to hierarchical attention , there is a relative dis advantage of S - LSTM in comparison with BiLSTM , which is that the memory consumption is relatively larger .
 For example , over the movie review development set , the actual GPU memory consumption by S - LSTM , Bi LSTM , 2 - layer stacked BiLSTM and 4 - layer stacked BiLSTM are 252M , 89M , 146 M and 253M , respectively .
 This is due to the fact that computation is performed in parallel by S - LSTM and hierarchical attention .
 Conclusion
 We have investigated S - LSTM , a recurrent neural network for encoding sentences , which offers richer contextual information exchange with more parallelism compared to BiLSTMs .
 Results on a range of classification and sequence labelling tasks show that S - LSTM outperforms BiLSTMs using the same number of parameters , demonstrating that S - LSTM can be a useful addition to the neural toolbox for encoding sentences .
-The structural nature in S - LSTM states allows straightforward extension to tree structures , resulting in highly parallelisable tree LSTMs .
+The structural nature in S - LSTM states allows straightforward extension to tree structures , resulting in highly parallelis able tree LSTMs .
 We leave such investigation to future work .
 Next directions also include the investigation of S - LSTM to more NLP tasks , such as machine translation .

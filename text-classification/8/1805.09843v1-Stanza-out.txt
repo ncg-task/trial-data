@@ -23,11 +23,11 @@ To ac- count for the distinct nature of various NLP tasks that may require diffe
 Specifically , we consider 17 datasets , including three distinct NLP tasks : document classification ( Yahoo news , Yelp reviews , etc. ) , natural language sequence matching ( SNLI , WikiQA , etc. ) and ( short ) sentence classification / tagging ( Stanford sentiment treebank , .
 Surprisingly , SWEMs exhibit comparable or even superior performance in the majority of cases considered .
 In order to validate our experimental findings , we conduct additional investigations to understand to what extent the word - order information is utilized / required to make predictions on different tasks .
-We observe that in text representation tasks , many words ( e.g. , stop words , or words that are not related to sentiment or topic ) do not meaningfully contribute to the final predictions ( e.g. , sentiment label ) .
+We observe that in text representation tasks , many words ( e.g. , stop words , or words thatare not related to sentiment or topic ) do not meaningfully contribute to the final predictions ( e.g. , sentiment label ) .
 Based upon this understanding , we propose to leverage a max - pooling operation directly over the word embedding matrix of a given sequence , to select its most salient features .
 This strategy is demonstrated to extract complementary features relative to the standard averaging operation , while resulting in a more interpretable model .
 Inspired by a case study on sentiment analysis tasks , we further propose a hierarchical pooling strategy to abstract and preserve the spatial information in the final representations .
-This strategy is demonstrated to exhibit comparable empirical results to LSTM and CNN on tasks that are sensitive to word - order features , while maintaining the favorable properties of not having compositional parameters , thus fast training .
+This strategy is demonstrated to exhibit comparable empirical results to LSTM and CNN on tasks thatare sensitive to word - order features , while maintaining the favorable properties of not having compositional parameters , thus fast training .
 Our work presents a simple yet strong baseline for text representation learning that is widely ignored in benchmarks , and highlights the general computation - vs. - expressiveness tradeoff associated with appropriately selecting compositional functions for distinct NLP problems .
 Furthermore , we quantitatively show that the word - embeddingbased text classification tasks can have the similar level of difficulty regardless of the employed models , using the subspace training to constrain the trainable parameters .
 Thus , according to Occam 's razor , simple models are preferred .
@@ -66,7 +66,7 @@ However , Deep CNN text models have also been developed , and are considered in 
 Simple Word - Embedding Model
 ( SWEM )
 To investigate the raw modeling capacity of word embeddings , we consider a class of models with no additional compositional parameters to encode natural language sequences , termed SWEMs .
-Among them , the simplest strategy is to compute the element - wise average over word vectors fora given sequence :
+Among them , the simplest strategy is to compute the element - wise average over word vectors for a given sequence :
 The model in can be seen as an average pooling operation , which takes the mean over each of the K dimensions for all word embeddings , resulting in a representation z with the same dimension as the embedding itself , termed here SWEM - aver .
 Intuitively , z takes the information of every sequence element into account via the addition operation .
 Max Pooling
@@ -74,7 +74,7 @@ Motivated by the observation that , in general , only a small number of key word
 This strategy is similar to the max - over - time pooling operation in convolutional neural networks :
 We denote this model variant as SWEM - max .
 Here the j - th component of z is the maximum element in the set {v 1 j , . . . , v Lj } , where v 1j is , for example , the j - th component of v 1 .
-With this pooling operation , those words that are unimportant or unrelated to the corresponding tasks will be ignored in the encoding process ( as the components of the embedding vectors will have small amplitude ) , unlike SWEM - aver where every word contributes equally to the representation .
+With this pooling operation , those words thatare unimportant or unrelated to the corresponding tasks will be ignored in the encoding process ( as the components of the embedding vectors will have small amplitude ) , unlike SWEM - aver where every word contributes equally to the representation .
 Considering that SWEM - aver and SWEM - max are complementary , in the sense of accounting for different types of information from text sequences ,
 Model
 Parameter s Speed CNN 541K 171s LSTM 1.8M 598s SWEM 61K 63s
@@ -129,14 +129,14 @@ Since there are no compositional parameters in SWEM , our models have an order o
 As illustrated in Table 4 , SWEM - concat achieves better results on Yahoo !
 Answer than CNN / LSTM , with only 61 K parameters ( one - tenth the number of LSTM parameters , or one - third the number of CNN parameters ) , while taking a fraction of the training time relative to the CNN or LSTM .
 Interpreting model predictions
-Although the proposed SWEM - max variant generally performs a slightly worse than SWEM - aver , it extracts complementary features from SWEMaver , and hence inmost cases SWEM - concat exhibits the best performance among all SWEM variants .
+Although the proposed SWEM - max variant generally performs a slightly worse than SWEM - aver , it extracts complementary features from SWEMaver , and hence in most cases SWEM - concat exhibits the best performance among all SWEM variants .
 More importantly , we found that the word embeddings learned from SWEM - max tend to be sparse .
 We trained our SWEM - max model on the Yahoo datasets ( randomly initialized ) .
 With the learned embeddings , we plot the values for each of the word embedding dimensions , for the entire vocabulary .
 As shown in , most of the values are highly concentrated around zero , indicating that the word embeddings learned are very sparse .
 On the contrary , the Glo Ve word embeddings , for the same vocabulary , are considerably denser than the embeddings learned from SWEM - max .
 This suggests that the model may only depend on a few key words , among the entire vocabulary , for predictions ( since most words do not contribute to the max - pooling operation in SWEM - max ) .
-Through the embedding , the model learns the important words fora given task ( those words with non -zero embedding components ) .
+Through the embedding , the model learns the important words for a given task ( those words with non -zero embedding components ) .
 In this regard , the nature of max - pooling pro - cess gives rise to a more interpretable model .
 For a document , only the word with largest value in each embedding dimension is employed for the final representation .
 Thus , we suspect that semantically similar words may have large values in some shared dimensions .
@@ -153,11 +153,11 @@ Surprisingly , on most of the datasets considered ( except WikiQA ) , SWEM demon
 Notably , on SNLI dataset , we observe that SWEM - max performs the best among all SWEM variants , consistent with the findings in Nie and Bansal ( 2017 ) ; , that max - pooling over BiLSTM hidden units outperforms average pooling operation on SNLI dataset .
 As a result , with only 120K parameters , our SWEM - max achieves a test accuracy of 83.8 % , which is very competitive among state - of the - art sentence encoding - based models ( in terms of both performance and number of parameters )
 1 .
-The strong results of the SWEM approach on these tasks may stem from the fact that when matching natural language sentences , it is sufficient inmost cases to simply model the word - level alignments between two sequences .
+The strong results of the SWEM approach on these tasks may stem from the fact that when matching natural language sentences , it is sufficient in most cases to simply model the word - level alignments between two sequences .
 From this perspective , word - order information becomes much less useful for predicting relationship between sentences .
 Moreover , considering the simpler model architecture of SWEM , they could be much easier to be optimized than LSTM or CNN - based models , and thus give rise to better empirical results .
 Importance of word - order information
-One possible disadvantage of SWEM is that it ignores the word - order information within a text sequence , which could be potentially captured by CNN - or LSTM - based models .
+One possible dis advantage of SWEM is that it ignores the word - order information within a text sequence , which could be potentially captured by CNN - or LSTM - based models .
 However , we empirically found that except for sentiment analysis , SWEM exhibits similar or even superior performance as the CNN or LSTM on a variety of tasks .
 In this regard , one natural question would be : how important are word - order features for these tasks ?
 To this end , we randomly shuffle the words for every sentence in the training set , while keeping the original word order for samples in the test set .
@@ -169,7 +169,7 @@ However , on the Yelp polarity dataset , the results drop noticeably , further s
 Notably , the performance of LSTM on the Yelp dataset with a shuffled training set is very close to our results with SWEM , indicating that the main difference between LSTM and SWEM maybe due to the ability of the former to capture word - order features .
 Both observations are in consistent with our experimental results in the previous section .
 Case Study
-To understand what type of sentences are sensitive to word - order information , we further show those samples that are wrongly predicted because of the shuffling of training data in .
+To understand what type of sentences are sensitive to word - order information , we further show those samples thatare wrongly predicted because of the shuffling of training data in .
 Taking the first sentence as an example , several words in the review are generally positive , i.e. friendly , nice , okay , great and likes .
 However , the most vital features for predicting the sentiment of this sentence could be the phrase / sentence ' is just okay ' , ' not great ' or ' makes me wonder why everyone likes ' , which can not be captured without considering word - order features .
 It is worth noting the hints for predictions in this case are actually ngram phrases from the input document .
@@ -180,7 +180,7 @@ Friendly staff and nice selection of vegetarian options .
 Food is just okay , not great .
 Makes me wonder why everyone likes food fight so much .
 Positive :
-The store is small , but it carries specialties that are difficult to find in Pittsburgh .
+The store is small , but it carries specialties thatare difficult to find in Pittsburgh .
 I was particularly excited to find middle eastern chili sauce and chocolate covered turkish delights .
 the input document .
 We hypothesize that incorporating information about the local word - order , i.e. , n-gram features , is likely to largely mitigate the limitations of the above three SWEM variants .
@@ -197,7 +197,7 @@ However , SWEM exhibits comparable performance on the other two tasks , again wi
 Further , we investigate two sequence tagging tasks : the standard CoNLL2000 chunking and CoNLL2003 NER datasets .
 Results are shown in the Supplementary Material , where LSTM and CNN again perform better than SWEMs .
 Generally , SWEM is less effective at extracting representations from short sentences than from long documents .
-This maybe due to the fact that fora shorter text sequence , word - order features tend to be more important since the semantic information provided byword embeddings alone is relatively limited .
+This maybe due to the fact that for a shorter text sequence , word - order features tend to be more important since the semantic information provided byword embeddings alone is relatively limited .
 Moreover , we note that the results on these relatively small datasets are highly sensitive to model regularization techniques due to the overfitting issues .
 In this regard , one interesting future direction maybe to develop specific regularization strategies for the SWEM framework , and thus make them work better on small sentence classification datasets .
 Discussion
@@ -215,7 +215,7 @@ SWEM seems to have an easier loss landspace than CNN for word embeddings to find
 According to Occam 's razor , simple models are preferred , if all else are the same .
 ( 2 ) The pre-trained GloVe are frozen for the word embeddings , and only the model parameters are optimized .
 The results on testing datasets of AG News and Yelp P. are shown in ( c ) ( d ) , respectively .
-SWEM shows significantly higher accuracy than CNN fora large range of low subspace dimension , indicating that SWEM is more parameter - efficient to get a decent solution .
+SWEM shows significantly higher accuracy than CNN for a large range of low subspace dimension , indicating that SWEM is more parameter - efficient to get a decent solution .
 In ( c ) , if we set the performance threshold Model MR SST - 1 SST - 2 Subj TREC RAE 77.7 43.2 82.4 --MV-RNN 79.0 44.4 82.9 --LSTM - 46.4 84.9 --RNN 77.2 --93.7 90.2 Constituency Tree-LSTM - 51.0 88.0 -- Dynamic CNN - 48.5 86.8 - 93.0 CNN 81 as 80 % testing accuracy , SWEM exhibits a lower dint than CNN on AG News dataset .
 However , in , CNN can leverage more trainable parameters to achieve higher accuracy when dis large .
 Linear classifiers
@@ -243,7 +243,7 @@ The statistics and corresponding types of these datasets are summarized in Datas
 As shown above , CNN - CRF and BI - LSTM - CRF consistently outperform SWEM - CRF on both sequence tagging tasks , although the training takes around 4 to 5 times longer ( for BI - LSTM - CRF ) than SWEM - CRF .
 This suggests that for chunking and NER , compositional functions such as LSTM or CNN are very necessary , because of the sequential ( order-sensitive ) nature of sequence tagging tasks .
 What are the key words used for predictions ?
-Given the sparsity of word embeddings , one natural question would be : What are those key words that are leveraged by the model to make predictions ?
+Given the sparsity of word embeddings , one natural question would be : What are those key words thatare leveraged by the model to make predictions ?
 To this end , after training SWEM - max on Yahoo !
 Answer dataset , we selected the top - 10 words ( with the maximum values in that dimension ) for every word embedding dimension .
 The results are visualized in .
@@ -251,7 +251,7 @@ These words are indeed very predictive since they are likely to occur in documen
 Another interesting observation is that the frequencies of these words are actually quite low in the training set ( e.g. colston : 320 , repubs : 255 win32 : 276 ) , considering the large size of the training set ( 1,400 K ) .
 This suggests that the model is utilizing those relatively rare , yet representative words of each topic for the final predictions .
 information of a text sequence is the word embedding .
-Thus , it is of interest to see how many word embedding dimensions are needed fora SWEM architecture to perform well .
+Thus , it is of interest to see how many word embedding dimensions are needed for a SWEM architecture to perform well .
 To this end , we vary the dimension from 3 to 1000 and train a SWEMconcat model on the Yahoo dataset .
 For fair comparison , the word embeddings are randomly initialized in this experiment , since there are no pretrained word vectors , such as GloVe , for some dimensions we consider .
 As shown in , the model exhibits higher accuracy with larger word embedding dimensions .

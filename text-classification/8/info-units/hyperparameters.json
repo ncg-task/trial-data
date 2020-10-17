@@ -34,8 +34,8 @@
                 }
               },
               "training" : {
-                "300-dimensional Multilayer Perceptron (MLP) layer" : {
-                  "with" : ["ReLU activation", {"GloVe embeddings" : {
+                "300 dimensional Multilayer Perceptron ( MLP ) layer" : {
+                  "with" : ["ReLU activation", {"Glo Ve embeddings" : {
                     "as input to" : "MLP",
                     "output" : "refined word embeddings"
                   }}]

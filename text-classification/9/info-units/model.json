@@ -3,7 +3,7 @@
     "Model" : {
       "present" : {
         "neural attentionbased multiple context fixing attachment" : {
-          "has acronym" : "MCFA",
+          "name" : "MCFA",
           "is" : {
             "series of modules" : {
               "uses" : {

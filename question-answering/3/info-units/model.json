@@ -15,7 +15,7 @@
         "sentence pair" : {
           "represents" : {
             "each word" : {
-              "as" : "low-dimensional vector"
+              "as" : "low -dimensional vector"
             }
           },
           "calculates" : {
@@ -44,7 +44,7 @@
       "use" : {
         "similar components" : {
           "of" : {
-            "all words" : {
+            "all the words" : {
               "to represent" : "similar parts of the sentence pair"
             }
           }

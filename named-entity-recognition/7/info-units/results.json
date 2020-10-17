@@ -2,13 +2,17 @@
   "has" : {
     "Results" : {
       "in terms of" : {
-        "F 1 measure" : {  
-          "in" : {
-            "ACE datasets" : {
-              "achieves" : "best results"
-            },
-            "GENIA dataset" : {
-              "achieves" : "comparable results"
+        "F 1 measure" : {
+          "has" : {
+            "Our neural transition - based model" : {
+              "achieves" : {
+                "best results" : {
+                  "in" : "ACE datasets"
+                },
+                "comparable results" : {
+                  "in" : "GENIA dataset"
+                }
+              }
             }
           }
         },

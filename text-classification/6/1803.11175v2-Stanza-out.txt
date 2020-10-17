@@ -7,7 +7,7 @@ Two variants of the encoding models allow for trade - offs between accuracy and 
 For both variants , we investigate and report the relationship between model complexity , resource consumption , the availability of transfer task training data , and task performance .
 Comparisons are made with baselines that use word level transfer learning via pretrained word embeddings as well as baselines do not use any transfer learning .
 We find that transfer learning using sentence embeddings tends to outperform word level transfer .
-With transfer learning via sentence embeddings , we observe surprisingly good performance with minimal amounts of supervised training data fora transfer task .
+With transfer learning via sentence embeddings , we observe surprisingly good performance with minimal amounts of supervised training data for a transfer task .
 We obtain encouraging results on Word Embedding Association Tests ( WEAT ) targeted at detecting model bias .
 Our pre-trained sentence encoding models are made freely available for download and on TF Hub .
 Introduction
@@ -49,7 +49,7 @@ The encoding model is designed to be as general purpose as possible .
 This is accomplished by using multi-task learning whereby a single encoding model is used to feed multiple downstream tasks .
 The supported tasks include : a Skip - Thought like task for the unsupervised learning from arbitrary running text ; a conversational input - response task for the inclusion of parsed conversational data ; and classification tasks for training on supervised data .
 The Skip - Thought task replaces the LSTM used in the original formulation with a model based on the Transformer architecture .
-As will be shown in the experimental results below , the transformer based encoder achieves the best overall transfer task performance .
+As will be shown in the experimental results below , the transformer based encoder achieves the best over all transfer task performance .
 However , this comes at the cost of compute time and memory usage scaling dramatically with sentence length .
 Deep Averaging Network ( DAN )
 The second encoding model makes use of a deep averaging network ( DAN ) whereby input embeddings for words and bi-grams are first averaged together and then passed through a feedforward deep neural network ( DNN ) to produce sentence embeddings .
@@ -102,7 +102,7 @@ Transfer task model hyperparamaters are tuned using a combination of Vizier and 
 When available , model hyperparameters are tuned using task dev sets .
 Otherwise , hyperparameters are tuned by crossvalidation on the task training data when available or the evaluation test data when neither training nor dev data are provided .
 Training repeats ten times for each transfer task model with different randomly initialized weights and we report evaluation results by averaging across runs .
-Transfer learning is critically important when training data fora target task is limited .
+Transfer learning is critically important when training data for a target task is limited .
 We explore the impact on task performance of varying the amount of training data available for the task both with and without the use of transfer learning .
 Contrasting the transformer and DAN based encoders , we demonstrate trade - offs in model complexity and the amount of data required to reach a desired level of accuracy on a task .
 To assess bias in our encoding models , we evaluate the strength of various associations learned by our model on WEAT word lists .
@@ -123,7 +123,7 @@ The differences in word association patterns can be attributed to differences in
 Discussion
 Transfer learning leads to performance improvements on many tasks .
 Using transfer learning is more critical when less training data is available .
-When task performance is close , the correct modeling choice should take into account engineering trade - offs regarding the memory and compute 6 Researchers and developers are strongly encouraged to independently verify whether biases in their overall model or model components impacts their use case .
+When task performance is close , the correct modeling choice should take into account engineering trade - offs regarding the memory and compute 6 Researchers and developers are strongly encouraged to independently verify whether biases in their over all model or model components impacts their use case .
 For resources on ML fairness visit https://developers.google.com/machinelearning/fairness-overview/.
 resource requirements introduced by the different models that could be used .
 Resource Usage
@@ -142,7 +142,7 @@ Since the transformer model only needs to store unigram embeddings , for short s
 Conclusion
 Both the transformer and DAN based universal encoding models provide sentence level embeddings that demonstrate strong transfer performance on a number of NLP tasks .
 The sentence level embeddings surpass the performance of transfer learning using word level embeddings alone .
-Models that make use of sentence and word level transfer achieve the best overall performance .
+Models that make use of sentence and word level transfer achieve the best over all performance .
 We observe that transfer learning is most helpful when limited training data is available for the transfer task .
-The encoding models make different trade - offs regarding accuracy and model complexity that should be considered when choosing the best model fora particular application .
+The encoding models make different trade - offs regarding accuracy and model complexity that should be considered when choosing the best model for a particular application .
 The pre-trained encoding models will be made publicly available for research and use in applications that can benefit from a better understanding of natural language .

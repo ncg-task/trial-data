@@ -2,7 +2,7 @@
   "has" : {
     "Model" : {
       "introduce" : {
-        "new type of linear connections" : {
+        "a new type of linear connections" : {
           "for" : "multi - layer recurrent networks",
           "called" : {
             "fast - forward connections" : {
@@ -13,7 +13,7 @@
               }
             }
           },
-        "from sentence" : "In this work , we introduce anew type of linear connections for multi - layer recurrent networks .
+        "from sentence" : "In this work , we introduce a new type of linear connections for multi - layer recurrent networks .
 These connections , which are called fast - forward connections , play an essential role in building a deep topology with depth of 16 ."          
         },
         "interleaved bi-directional architecture" : {

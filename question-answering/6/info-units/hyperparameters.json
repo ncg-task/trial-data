@@ -11,7 +11,7 @@
         "hidden state size" : {
           "of" : {
             "50" : {
-              "by" : "default"
+              "by" : "deafult"
             }
           }
         },
@@ -36,7 +36,7 @@
       },
       "has" : {
         "loss function" : {
-          "is" : "cross entropy between ^v and the one-hot vector of the true answer",
+          "is" : "cross entropy betweenv and the one - hot vector of the true answer",
           "from sentence" : "The loss function is the cross entropy betweenv and the one - hot vector of the true answer ."
         },
         "loss" : {
@@ -46,7 +46,7 @@
                 "maximally 500 epochs" : {
                   "early stopped" : {
                     "training" : {
-                      "if loss on the development data" : {
+                      "if the loss on the development data" : {
                         "does not decrease" : {
                           "for" : "50 epochs"
                         }

@@ -10,7 +10,7 @@
 (summary of its inference process||to predict||answer)
 (Model||deploys||iterative inference process)
 (iterative inference process||to uncover||inferential links)
-(inferential links||between||the missing query word, the query, and the document)
+(inferential links||between||the missing query word , the query , and the document)
 (Model||has||result)
 (result||of||alternating search)
 (result||fed back into||iterative inference process)

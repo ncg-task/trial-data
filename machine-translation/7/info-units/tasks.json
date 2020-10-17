@@ -1,12 +1,14 @@
 {
   "has" : {
-    "TASKS" : {
+    "Tasks" : {
       "has" : {
         "100 BILLION WORD GOOGLE NEWS CORPUS" : {
           "has" : {
             "Hyperparameters" : {
               "MoE layers" : "32 , experts",
-              "from sentence" : "In addition to a baseline LSTM model , we trained models augmented with MoE layers containing 32 , experts ."
+              "from sentence" : "100 BILLION WORD GOOGLE NEWS CORPUS
+              In addition to a baseline LSTM model , we trained models augmented with MoE layers containing 32 , experts ."
+              
             },
             "Results" : {
               "When" : {
@@ -29,7 +31,9 @@
                 "GNMT model" : {
                   "was a" : "modified version"
                 },
-                "from sentence" : "Our model was a modified version of the GNMT model described in ."
+                "from sentence" : "MACHINE TRANSLATION ( SINGLE LANGUAGE PAIR )
+Our model was a modified version of the GNMT model described in ."
+
               },
               "decreased" : {
                 "LSTM layers" : {
@@ -55,7 +59,7 @@
                 },
                 "from sentence" : "We inserted MoE layers in both the encoder ( between layers 2 and 3 ) and the decoder ( between layers 1 and 2 ) ."
               },
-              "each" : {
+              "Each" : {
                 "MoE layer" : {
                   "contained up to" : {
                     "2048 experts each" : {
@@ -93,7 +97,9 @@
                     }
                   }
                 },
-                "from sentence" : "The MoE model achieves 19 % lower perplexity on the dev set than the multilingual GNMT model ."
+                "from sentence" : "MULTILINGUAL MACHINE TRANSLATION
+The MoE model achieves 19 % lower perplexity on the dev set than the multilingual GNMT model ."
+
               },
               "On" : {
                 "BLEU score" : {

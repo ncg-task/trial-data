@@ -9,7 +9,7 @@ As a result , the robustness against outlier elements is greatly enhanced .
 Actually , data size is generally much larger than feature length , i.e. N L. Based on this observation , we propose a speedup solver ( via ALM and equivalent derivations ) to highly reduce the computational cost , theoretically from ON 4 to ON 2 L .
 Extensive experiments on ten benchmark datasets verify that our method not only outperforms state of the art methods , but also runs 10,000 + times faster than the most related method .
 Introduction
-Due to the explosive growth of data , subset selection methods are increasingly popular fora wide range of machine learning and computer vision applications .
+Due to the explosive growth of data , subset selection methods are increasingly popular for a wide range of machine learning and computer vision applications .
 This kind of methods offer the potential to select a few highly representative samples or exemplars to describe the entire dataset .
 By analyzing a few , we can roughly know all .
 Such case is very important to summarize and visualize huge datasets of texts , images and videos etc . .
@@ -33,7 +33,7 @@ The center or its nearest neighbour are selected as exemplars .
 Perhaps , Kmeans and Kmedoids are the most typical methods ( Kmedoids is a variant of Kmeans ) .
 Both methods employ an EM - like algorithm .
 Thus , the results depend tightly on the initialization , and they are highly unstable for large K ( i.e. the number of centers or selected samples ) .
-Recently , there area few methods that assume exemplars are the samples that can best represent the whole dataset .
+Recently , there are a few methods that assume exemplars are the samples that can best represent the whole dataset .
 However , for , the optimization is a combinatorial problem ( NP - hard ) , which is computationally intractable to solve .
 Besides , the representation loss is measured by the least square measure , which is sensitive to outliers in data .
 Then improves by employing a robust loss via the 2 , 1 - norm ; the 1 - norm is applied to samples , and the 2 - norm is used for features .
@@ -41,7 +41,7 @@ In this way , the side effect of outlier samples is relieved .
 The solver of ) is theoretically perfect due to its ability of convergence to global optima .
 Unfortunately , in terms of computational costs , the solver is highly complex .
 It takes ON 4 for one iteration as shown in .
-This is infeasible for the case of large N ( e.g. it takes 2000 + hours fora case of N = 13000 ) .
+This is infeasible for the case of large N ( e.g. it takes 2000 + hours for a case of N = 13000 ) .
 Moreover , the representation loss is only robust against outlier samples .
 Such case is worth improvement , as there may exist outlier elements in real data .
 Contributions .
@@ -88,7 +88,7 @@ Xan 2 .
 It seems perfect to use ( 4 ) to solve the objective ( 3 ) , because ( 4 ) looks simple and the global optimum is theoretically guaranteed .
 Unfortunately , in terms of speed , ( 4 ) is usually infeasible due to the incredible computational demand in the case of large N ( the number of samples ) .
 At each iteration , the computational complexity of ( 4 ) is up to ON 4 , as analyzed in Remark 1 .
-According to our experiments , the time cost is up to 2088 hours ( i.e. 87 days ) fora subset selection problem of 13000 samples .
+According to our experiments , the time cost is up to 2088 hours ( i.e. 87 days ) for a subset selection problem of 13000 samples .
 Remark
 1 . Since U nn X T X +? V ?
 RN N , the major computational cost of ( 4 ) focuses on a N N linear system .
@@ -97,7 +97,7 @@ This amounts to ON 3 in total .
 By now , we only solve an .
 Once solving all the set of {a n } N n= 1 , the total complexity amounts to ON 4 for one iteration step .
 Accelerated Robust Subset Selection ( ARSS )
-Due to the huge computational costs , Nie 's method is infeasible for the case of large N - the computational time is up to 2088 hours fora case of 13000 samples .
+Due to the huge computational costs , Nie 's method is infeasible for the case of large N - the computational time is up to 2088 hours for a case of 13000 samples .
 Besides , Nie 's model imposes the 2 - norm among features , which is prone to outliers in features .
 To tackle the above two issues , we propose a more robust model in the p ( 0 < p ? 1 ) norm .
 Although the resulted objective is challenging to solve , a speedup algorithm is proposed to dramatically save the computational costs .
@@ -179,7 +179,7 @@ L then 2 :
 update A via the updating rule , that is 3 : update ? by the updating rule ( 9 ) , ? ?.
 8 : until convergence
 Output : A The solver to update A is given in Algorithm
-1 . The overall solver for our model ( 5 ) is summarized in Algorithm
+1 . The over all solver for our model ( 5 ) is summarized in Algorithm
 2 .
 According to Theorem 2 and Corollary 3 , the solver for our model ( 13 ) is highly simplified , as feature length is generally much smaller than data size , i.e L N .
 Similarly ,
@@ -206,7 +206,7 @@ Due to the high computational complexity , other methods can only handle small d
 Thus , we randomly choose the candidate set from the total set to reduce the sample size , i.e. N < N * ( cf. ' Total ( N * ) ' and ' candid . ( N ) ' in ) .
 The remainder ( except candidate set ) are used for test .
 Specifically , to simulate the varying quality of samples , ten percentage of candidate samples from each class are randomly selected and arbitrarily added one of the following three kinds of noise : " Gaussian " , " Laplace " and " Salt & pepper " respectively .
-Ina word , all experiment settings are same and fair for all the methods .
+In a word , all experiment settings are same and fair for all the methods .
 Speed Comparisons
 There are two parts of speed comparisons .
 First , how speed varies with increasing N is illustrated in .
@@ -245,7 +245,7 @@ For each dataset , the top 200 representative samples are selected for training 
 The prediction accuracies are reported in , including the results of two popular classifiers .
 Three observations can be drawn from this table .
 First , Linear SVM generally outperforms KNN .
-Second , in general , our method performs the best ; fora few cases , our method achieves comparable results with the best performances .
+Second , in general , our method performs the best ; for a few cases , our method achieves comparable results with the best performances .
 Third , compared with TED , both RRSS and ARSS achieve an appreciable advantage .
 The above analyses are better illustrated in the last row of .
 These results demonstrate that the p loss in our model is well suited to select exemplars from the sample sets of various quality .

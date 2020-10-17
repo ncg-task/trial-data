@@ -1,7 +1,7 @@
 (Contribution||has||Results)
 (Results||has||Single models)
 (Single models||has||English - to - French)
-(English - to - French||for||Deep - Att)
+(English - to - French||For||Deep - Att)
 (Deep - Att||performance is further improved||37.7)
 (English - to - French||From||Deep - ED)
 (Deep - ED||obtain||BLEU score)

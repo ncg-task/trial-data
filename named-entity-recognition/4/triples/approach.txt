@@ -1,5 +1,5 @@
 (Contribution||has||Approach)
-(Approach||call||ElMo (Embeddings from Language Models) representations)
+(Approach||call||ELMo ( Embeddings from Language Models ) representations)
 (Approach||learn||linear combination of the vectors)
 (linear combination of the vectors||stacked above||each input word)
 (each input word||for||each end task)

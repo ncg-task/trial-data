@@ -37,13 +37,15 @@
 119	106	125	each word embedding
 119	126	132	during
 119	133	141	training
-119	133	141	training
+119	155	163	training
+119	166	217	300 dimensional Multilayer Perceptron ( MLP ) layer
 119	218	222	with
 119	223	238	ReLU activation
+119	246	263	Glo Ve embeddings
 119	264	275	as input to
-119	206	209	MLP
+119	280	283	MLP
 119	293	299	output
-119	56	79	refined word embeddings
+119	313	336	refined word embeddings
 124	0	4	Adam
 124	18	37	optimize all models
 2	30	68	Simple Word - Embedding - Based Models
@@ -74,6 +76,7 @@
 81	56	92	CNN and LSTM compositional functions
 81	93	112	perform better than
 81	113	117	SWEM
+149	0	22	Text Sequence Matching
 152	15	17	on
 152	18	67	most of the datasets considered ( except WikiQA )
 152	70	74	SWEM
@@ -86,11 +89,11 @@
 153	44	54	SWEM - max
 153	55	72	performs the best
 153	73	96	among all SWEM variants
+176	0	34	SWEM - hier for sentiment analysis
 177	35	59	word - order information
 177	60	82	plays a vital role for
 177	83	107	sentiment analysis tasks
-178	50	73	most important features
-178	74	77	for
+178	50	77	most important features for
 178	78	98	sentiment prediction
 178	99	104	maybe
 178	105	135	some key n-gram phrase / words
@@ -99,10 +102,11 @@
 189	72	96	corresponding accuracies
 189	101	114	comparable to
 189	119	141	results of CNN or LSTM
+191	0	25	Short Sentence Processing
 195	51	55	SWEM
 195	56	62	yields
 195	63	82	inferior accuracies
-195	34	36	on
+195	83	85	on
 195	86	113	sentiment analysis datasets
 196	15	23	exhibits
 196	24	46	comparable performance

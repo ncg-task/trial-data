@@ -9,16 +9,16 @@ With this new approach , we achieve a translation performance comparable to the 
 Furthermore , qualitative analysis reveals that the ( soft - ) alignments found by the model agree well with our intuition .
 INTRODUCTION
 Neural machine translation is a newly emerging approach to machine translation , recently proposed by , and .
-Unlike the traditional phrase - based translation system ( see , e.g. , which consists of many small sub-components that are tuned separately , neural machine translation attempts to build and train a single , large neural network that reads a sentence and outputs a correct translation .
+Unlike the traditional phrase - based translation system ( see , e.g. , which consists of many small sub-components thatare tuned separately , neural machine translation attempts to build and train a single , large neural network that reads a sentence and outputs a correct translation .
 Most of the proposed neural machine translation models belong to a family of encoderdecoders , with an encoder and a decoder for each language , or involve a language - specific encoder applied to each sentence whose outputs are then compared ) .
 An encoder neural network reads and encodes a source sentence into a fixed - length vector .
 A decoder then outputs a translation from the encoded vector .
-The whole encoder - decoder system , which consists of the encoder and the decoder fora language pair , is jointly trained to maximize the probability of a correct translation given a source sentence .
+The whole encoder - decoder system , which consists of the encoder and the decoder for a language pair , is jointly trained to maximize the probability of a correct translation given a source sentence .
 A potential issue with this encoder - decoder approach is that a neural network needs to be able to compress all the necessary information of a source sentence into a fixed - length vector .
-This may make it difficult for the neural network to cope with long sentences , especially those that are longer than the sentences in the training corpus .
+This may make it difficult for the neural network to cope with long sentences , especially those thatare longer than the sentences in the training corpus .
 showed that indeed the performance of a basic encoder - decoder deteriorates rapidly as the length of an input sentence increases .
 In order to address this issue , we introduce an extension to the encoder - decoder model which learns to align and translate jointly .
-Each time the proposed model generates a word in a translation , it ( soft - ) searches fora set of positions in a source sentence where the most relevant information is concentrated .
+Each time the proposed model generates a word in a translation , it ( soft - ) searches for a set of positions in a source sentence where the most relevant information is concentrated .
 The model then predicts a target word based on the context vectors associated with these source positions and all the previous generated target words .
 The most important distinguishing feature of this approach from the basic encoder - decoder is that it does not attempt to encode a whole input sentence into a single fixed - length vector .
 Instead , it encodes the input sentence into a sequence of vectors and chooses a subset of these vectors adaptively while decoding the translation .
@@ -57,7 +57,7 @@ The new architecture consists of a bidirectional RNN as an encoder ( Sec. 3.2 ) 
 DECODER : GENERAL DESCRIPTION
 x 1 x 2 x 3 x T :
 The graphical illustration of the proposed model trying to generate the t-th target wordy t given a source sentence ( x 1 , x 2 , . . . , x T ) .
-Ina new model architecture , we define each conditional probability in Eq .
+In a new model architecture , we define each conditional probability in Eq .
 ( 2 ) as :
 where s i is an RNN hidden state for time i , computed by
 It should be noted that unlike the existing encoder - decoder approach ( see Eq.
@@ -77,7 +77,7 @@ This gradient can be used to train the alignment model as well as the whole tran
 We can understand the approach of taking a weighted sum of all the annotations as computing an expected annotation , where the expectation is over possible alignments .
 Let ?
 ij be a probability that the target wordy i is aligned to , or translated from , a source word x j .
-Then , the i - th context vector c i is the expected annotation overall the annotations with probabilities ? ij .
+Then , the i - th context vector c i is the expected annotation over all the annotations with probabilities ? ij .
 The probability ?
 ij , or it s associated energy e ij , reflects the importance of the annotation h j with respect to the previous hidden state s i ?1 in deciding the next state s i and generating y i .
 Intuitively , this implements a mechanism of attention in the decoder .
@@ -125,7 +125,7 @@ In both cases , we use a multilayer network with a single maxout hidden layer to
 We use a minibatch stochastic gradient descent ( SGD ) algorithm together with Adadelta to train each model .
 Each SGD update direction is computed using a minibatch of 80 sentences .
 We trained each model for approximately 5 days .
-Once a model is trained , we use abeam search to find a translation that approximately maximizes the conditional probability ( see , e.g. , .
+Once a model is trained , we use a beam search to find a translation that approximately maximizes the conditional probability ( see , e.g. , .
 used this approach to generate translations from their neural machine translation model .
 For more details on the architectures of the models and training procedure used in the experiments , see Appendices A and B.
 RESULTS
@@ -160,13 +160,13 @@ LONG SENTENCES
 As clearly visible from the proposed model ( RNNsearch ) is much better than the conventional model ( RNNencdec ) at translating long sentences .
 This is likely due to the fact that the RNNsearch does not require encoding along sentence into a fixed - length vector perfectly , but only accurately encoding the parts of the input sentence that surround a particular word .
 As an example , consider this source sentence from the test set :
-An admitting privilege is the right of a doctor to admit a patient to a hospital or a medical centre to carryout a diagnosis or a procedure , based on his status as a healthcare worker at a hospital .
+An admitting privilege is the right of a doctor to admit a patient to a hospital or a medical centre to carry out a diagnosis or a procedure , based on his status as a healthcare worker at a hospital .
 The RNNencdec - 50 translated this sentence into :
 Un privilge d'admission est le droit d'un mdecin de reconnatre un patient l'hpital ou un centre mdical d'un diagnostic ou de prendre un diagnostic en fonction de sontat de sant .
 On the other hand , the RNNsearch - 50 generated the following correct translation , preserving the whole meaning of the input sentence without omitting any details :
 Un privilge d'admission est le droit d'un mdecin d'admettre un patient un hpital ou un centre mdical pour effectuer un diagnostic ou une procdure , selon son statut de travailleur des soins de sant l'hpital .
 Let us consider another sentence from the test set :
-This kind of experience is part of Disney 's efforts to " extend the lifetime of its series and build new relationships with audiences via digital platforms that are becoming evermore important , " he added .
+This kind of experience is part of Disney 's efforts to " extend the lifetime of its series and build new relationships with audiences via digital platforms thatare becoming evermore important , " he added .
 The translation by the RNNencdec - 50 is
 Ce type d'exprience fait partie des initiatives du Disney pour " prolonger la dure de vie de ses nouvelles et de dvelopper des liens avec les lecteurs numriques qui deviennent plus complexes .
 As with the previous example , the RNNencdec began deviating from the actual meaning of the source sentence after generating approximately 30 words ( see the underlined phrase ) .
@@ -199,7 +199,7 @@ CONCLUSION
 The conventional approach to neural machine translation , called an encoder - decoder approach , encodes a whole input sentence into a fixed - length vector from which a translation will be decoded .
 We conjectured that the use of a fixed - length context vector is problematic for translating long sentences , based on a recent empirical study reported by and .
 In this paper , we proposed a novel architecture that addresses this issue .
-We extended the basic encoder - decoder by letting a model ( soft - ) search fora set of input words , or their annotations computed by an encoder , when generating each target word .
+We extended the basic encoder - decoder by letting a model ( soft - ) search for a set of input words , or their annotations computed by an encoder , when generating each target word .
 This frees the model from having to encode a whole source sentence into a fixed - length vector , and also lets the model focus only on information relevant to the generation of the next target word .
 This has a major positive impact on the ability of the neural machine translation system to yield good results on longer sentences .
 Unlike with the traditional machine translation systems , all of the pieces of the translation system , including the alignment mechanism , are jointly trained towards a better log-probability of producing correct translations .
@@ -305,7 +305,7 @@ The training data was shuffled once before training and was traversed sequential
 In Tables 2 we present the statistics related to training all the models used in the experiments .
 C TRANSLATIONS OF LONG SENTENCES
 Source
-An admitting privilege is the right of a doctor to admit a patient to a hospital or a medical centre to carryout a diagnosis or a procedure , based on his status as a healthcare worker at a hospital .
+An admitting privilege is the right of a doctor to admit a patient to a hospital or a medical centre to carry out a diagnosis or a procedure , based on his status as a healthcare worker at a hospital .
 Reference
 Le privilge d'admission est le droit d'un mdecin , en vertu de son statut de membre soignant d'un hpital , d'admettre un patient dans un hpital ou un centre mdical afin d 'y dlivrer un diagnostic ou un traitement .
 RNNenc - 50
@@ -315,7 +315,7 @@ Ce genre d'exprience fait partie des efforts de Disney pour " prolonger la dure 
 Google Translate
 Ce genre d'exprience fait partie des efforts de Disney " tendre la dure de vie de sa srie et construire de nouvelles relations avec le public par le biais des plates - formes numriques qui deviennent de plus en plus important " , at - il ajout .
 Source
-Ina press conference on Thursday , Mr Blair stated that there was nothing in this video that might constitute a " reasonable motive " that could lead to criminal charges being brought against the mayor .
+In a press conference on Thursday , Mr Blair stated that there was nothing in this video that might constitute a " reasonable motive " that could lead to criminal charges being brought against the mayor .
 Reference
 En confrence de presse , jeudi , M. Blair a affirm qu'il n'y avait rien dans cette vido qui puisse constituer des " motifs raisonnables " pouvant mener au dpt d'une accusation criminelle contre le maire .
 RNNenc - 50

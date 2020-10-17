@@ -3,7 +3,10 @@
     "Results" : {
       "Tasks" : {
         "Language Modeling" : {
-          "outperforms" : ["two baselines", {"from sentence" : "In all these settings , our method outperforms the two baselines ."}],
+          "outperforms" : ["two baselines", {"from sentence" : "Language Modeling
+		  In all these settings , our method outperforms the two baselines ."
+		  
+		  }],
           "on" : {
             "PTB dataset" : {
               "improves" : {
@@ -35,7 +38,9 @@
               "for" : "1.06/0.71",
               "in the term of" : "BLEU"
             },
-            "from sentence" : "We outperform the baselines for 1.06/0.71 in the term of BLEU in transformer_base and transformer_big settings in WMT14 English - German : BLEU scores on test set on WMT2014 English - German and IWSLT German - English tasks ."
+            "from sentence" : "Machine Translation
+We outperform the baselines for 1.06/0.71 in the term of BLEU in transformer_base and transformer_big settings in WMT14 English - German : BLEU scores on test set on WMT2014 English - German and IWSLT German - English tasks ."
+
           },
           "outperforms" : {
             "model" : {
@@ -47,13 +52,15 @@
             "from sentence" : "The model learned from adversarial training also outperforms original one in IWSLT14 German - English task by 0.85 ."
           }
         },
-        "Test Classification" : {
+        "Text Classification" : {
           "outperforms" : {
             "baseline" : {
               "for" : "1.26%/0.66%/0.44 %",
               "on" : "three different datasets"
             },
-            "from sentence" : "Our method outperforms the baseline method for 1.26%/0.66%/0.44 % on three different datasets ."
+            "from sentence" : "Text Classification
+Our method outperforms the baseline method for 1.26%/0.66%/0.44 % on three different datasets ."
+
           }
         }
       }

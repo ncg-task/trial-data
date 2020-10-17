@@ -60,7 +60,9 @@
                   }
                 }
               },
-              "from sentence" : "Surprisingly , on most of the datasets considered ( except WikiQA ) , SWEM demonstrates the best results compared with those with CNN or the LSTM encoder ."
+              "from sentence" : "Text Sequence Matching
+Surprisingly , on most of the datasets considered ( except WikiQA ) , SWEM demonstrates the best results compared with those with CNN or the LSTM encoder ."
+
             },
             "SNLI dataset" : {
               "observe that" : {
@@ -76,7 +78,9 @@
           "has" : {
             "word - order information" : {
               "plays a vital role for" : "sentiment analysis tasks",
-              "from sentence" : "As demonstrated in Section 4.2.1 , word - order information plays a vital role for sentiment analysis tasks ."
+              "from sentence" : "SWEM - hier for sentiment analysis
+As demonstrated in Section 4.2.1 , word - order information plays a vital role for sentiment analysis tasks ."
+
             }
           },
           "most important features for" : {
@@ -102,7 +106,9 @@
               "yields" : {
                 "inferior accuracies" : {
                   "on" : "sentiment analysis datasets",
-                  "from sentence" : "Compared with CNN / LSTM compositional functions , SWEM yields inferior accuracies on sentiment analysis datasets , consistent with our observation in the case of document categorization ."                  
+                  "from sentence" : "Short Sentence Processing
+Compared with CNN / LSTM compositional functions , SWEM yields inferior accuracies on sentiment analysis datasets , consistent with our observation in the case of document categorization ."
+
                 }
               },
               "exhibits" : {

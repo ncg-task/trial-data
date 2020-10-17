@@ -16,20 +16,16 @@
 139	74	78	with
 139	81	96	momentum of 0.9
 139	103	127	gradient clipping of 5.0
+140	4	14	mini-batch
+140	15	17	is
+140	18	20	10
 140	21	24	for
 140	25	38	both datasets
-140	4	14	mini-batch
-140	18	20	10
 140	45	59	learning rates
-140	64	69	0.009
-140	45	59	learning rates
-140	74	79	0.013
-147	3	9	varied
-147	10	26	dropout . 65 ] )
-147	29	43	hidden units )
-147	46	62	capitalization )
-147	67	94	char ) embedding dimensions
-147	97	146	learning rate ( [ 0.001 , 0.015 ] by step 0.002 )
+140	60	63	are
+140	64	79	0.009 and 0.013
+140	80	83	for
+140	84	103	CONLL and ONTONOTES
 148	3	14	implemented
 148	19	25	system
 148	26	31	using
@@ -44,17 +40,18 @@
 24	139	146	offline
 24	163	171	added to
 24	172	193	any neural NER system
-25	18	23	embed
-25	24	46	words and entity types
-25	47	51	into
-25	54	72	joint vector space
-25	73	86	by leveraging
-25	87	93	WiFiNE
+25	19	24	embed
+25	25	47	words and entity types
+25	48	52	into
+25	55	73	joint vector space
+25	74	87	by leveraging
+25	88	94	WiFiNE
 2	37	78	Neural Network Named - Entity Recognition
 4	0	55	Neural network approaches to Named - Entity Recognition
 14	0	26	Named - Entity Recognition
 14	29	32	NER
-155	158	160	on
+171	8	10	on
+171	11	16	CONLL
 155	34	59	significantly outperforms
 155	60	66	models
 155	72	75	use
@@ -66,23 +63,25 @@
 156	102	111	indicates
 156	117	188	our lexical feature vector is complementary to standard word embeddings
 157	19	26	matches
-157	35	37	of
+157	27	62	state - of - the - art performances
+157	63	65	of
 157	66	72	models
 157	73	81	that use
 157	89	115	more complex architectures
 157	119	142	more elaborate features
+172	11	20	ONTONOTES
 167	27	52	significantly outperforms
 167	57	116	Bi - LSTM - CNN - CRF models of ( Chiu and Nichols , 2016 )
 167	121	123	by
 167	124	140	an absolute gain
-167	86	88	of
+167	141	143	of
 167	144	177	1.68 and 0.96 points respectively
 168	23	32	surpasses
 168	33	69	systems with hand - crafted features
 168	72	81	including
 168	87	101	use gazetteers
 168	112	155	system of which uses coreference annotation
-168	12	14	in
+168	156	158	in
 168	159	168	ONTONOTES
 168	169	185	to jointly model
 168	186	241	NER , entity linking , and coreference resolution tasks

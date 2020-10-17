@@ -18,11 +18,13 @@
                   }
                 }
               },
-              "from sentence" : "However , we believe that this is the first work to demonstrate convincingly that scaling to extreme model sizes also leads to large improvements on very small scale tasks , provided that the model has been sufficiently pre-trained ."
+              "from sentence" : "Effect of Model Size
+However , we believe that this is the first work to demonstrate convincingly that scaling to extreme model sizes also leads to large improvements on very small scale tasks , provided that the model has been sufficiently pre-trained ."
+
             }
           }
         },
-        "Feature-based Approach with BERT" : {
+        "Feature - based Approach with BERT" : {
           "has" : {
             "BERT LARGE" : {
               "performs competitively" : "state - of - the - art methods"
@@ -33,8 +35,9 @@
               "for both" : ["finetuning", "feature - based approaches"]
             }
           },
-          "from sentence" : "BERT LARGE performs competitively with state - of - the - art methods .
-  This demonstrates that BERT is effective for both finetuning and feature - based approaches ."
+          "from sentence" : "Feature - based Approach with BERT
+BERT LARGE performs competitively with state - of - the - art methods .
+This demonstrates that BERT is effective for both finetuning and feature - based approaches ."
   
         }
       }

@@ -6,7 +6,7 @@
 30	39	66	structured prediction layer
 30	82	92	to predict
 30	93	111	multiple relations
-30	32	36	with
+30	112	116	with
 30	117	133	onepass encoding
 30	143	184	entity - aware self - attention mechanism
 30	185	194	to infuse
@@ -17,7 +17,7 @@
 76	44	56	that predict
 76	59	83	single relation per pass
 77	0	7	BERT SP
-77	0	4	BERT
+77	10	14	BERT
 77	15	19	with
 77	20	46	structured prediction only
 78	0	22	Entity - Aware BERT SP
@@ -39,13 +39,14 @@
 82	158	177	relation prediction
 2	0	45	Extracting Multiple - Relations in One - Pass
 4	41	103	extracting multiple entity - relations from an input paragraph
-5	56	117	multiple entityrelations extraction task with only one - pass
+5	57	118	multiple entityrelations extraction task with only one - pass
 10	0	19	Relation extraction
 10	22	24	RE
 12	38	66	multiplerelations extraction
 12	69	72	MRE
 12	88	168	recognize relations of multiple pairs of entity mentions from an input paragraph
-86	19	21	on
+84	8	10	on
+84	11	19	ACE 2005
 86	4	21	first observation
 86	30	52	our model architecture
 86	53	61	achieves
@@ -57,9 +58,9 @@
 94	26	70	structured fine - tuning of attention layers
 94	73	79	brings
 94	80	99	further improvement
-94	51	53	of
+94	100	102	of
 94	103	114	about 5.5 %
-94	38	40	in
+94	117	119	in
 94	124	146	MRE one - pass setting
 116	15	34	SemEval 2018 Task 7
 117	0	26	Our Entity - Aware BERT SP
@@ -69,7 +70,7 @@
 117	105	130	slightly lower Macro - F1
 118	0	48	When predicting multiple relations in one - pass
 118	59	69	0.9 % drop
-118	31	33	on
+118	70	72	on
 118	73	83	Macro - F1
 120	20	31	compared to
 120	36	58	top singlemodel result

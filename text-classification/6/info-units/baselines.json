@@ -10,7 +10,7 @@
                   "of" : "news data"
                 }
               },
-              "input to" : [{"convolutional neural network models" : {"has acronym" : "CNN"}}, "DAN"]
+              "input to" : [{"convolutional neural network models" : {"name" : "CNN"}}, "DAN"]
             }
           },
           "from sentence" : "For word level transfer , we use word embeddings from a word2 vec skip - gram model trained on a corpus of news data .

@@ -15,12 +15,12 @@
                 {"sub-states" : {
                   "for" : "individual words"
                 }},
-                "overall sentence - level state"
+                "over all sentence - level state"
               ]
             }
           }
         },
-        "from sentence" : "In particular , we view the whole sentence as a single state , which consists of sub-states for individual words and an overall sentence - level state ."        
+        "from sentence" : "In particular , we view the whole sentence as a single state , which consists of sub-states for individual words and an over all sentence - level state ."        
       },
       "To capture" : {
         "local and non-local contexts" : {
@@ -32,9 +32,9 @@
         },
         "from sentence" : "To capture local and non-local contexts , states are updated recurrently by exchanging information between each other ."
       },
-      "at each recurrent step" : {
+      "At each recurrent step" : {
         "information exchange" : {
-          "conducted between" : ["consecutive words in the sentence", "sentence-level state and each word"]
+          "conducted between" : ["consecutive words in the sentence", "sentence - level state and each word"]
         },
         "from sentence" : "At each recurrent step , information exchange is conducted between consecutive words in the sentence , and between the sentence - level state and each word ."
 

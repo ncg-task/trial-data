@@ -2,7 +2,7 @@
 (Model||mixture of||named entity recognition ( NER ) component)
 (Model||mixture of||relation classification ( RC ) component)
 (Model||for||relation classification)
-(relation classification||propose novel use of||deep biaffine attention mechanism)
+(relation classification||propose a novel use of||deep biaffine attention mechanism)
 (Model||has||RC component)
 (RC component||takes into account||second - order interactions)
 (second - order interactions||over||latent features)

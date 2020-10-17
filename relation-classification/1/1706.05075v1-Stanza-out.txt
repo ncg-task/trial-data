@@ -24,7 +24,7 @@ For instance , the sentence in contains three entities : " United States " , " T
 But only " United States " and " Trump " hold a fix relation " Country - President " .
 Entity " Apple Inc " has no obvious relationship with the other entities in this sentence .
 Hence , the extracted result from this sentence is { United States e 1 , Country - President r , Trump e 2 } , which called triplet here .
-In this paper , we focus on the extraction of triplets that are composed of two entities and one relation between these two entities .
+In this paper , we focus on the extraction of triplets thatare composed of two entities and one relation between these two entities .
 Therefore , we can model the triplets directly , rather than extracting the entities and relations separately .
 Based on the motivations , we propose a tagging scheme accompanied with the end - to - end model to settle this problem .
 We design a kind of novel tags which contain the information of entities and the relationships they hold .
@@ -161,7 +161,7 @@ corresponding to the results in is 10 .
 The dataset can be downloaded at : https://github.com/shanzhenren/CoType.
 There are three data sets in the public resource and we only use the NYT dataset .
 Because more than 50 % of the data in BioInfer has overlapping relations which is beyond the scope of this paper .
-As for dataset Wiki - KBP , the number of relation type in the test set is more than that of the train set , which is also not suitable fora supervised training method .
+As for dataset Wiki - KBP , the number of relation type in the test set is more than that of the train set , which is also not suitable for a supervised training method .
 Details of the data can be found in is the pipelined methods and the second part ( row 4 to 6 ) is the jointly extracting methods .
 Our tagging methods are shown in part three ( row 7 to 9 ) .
 In this part , we not only report the results of precision , recall and F1 , we also compute their standard deviation .
@@ -224,7 +224,7 @@ is too large , it will affect the accuracy of prediction and if ?
 is too small , the recall will decline .
 When ? = 10 , LSTM - LSTM - Bias can balance the precision and recall , and can achieve the best F 1 scores .
 Case Study
-In this section , we observe the prediction results of end - to - end methods , and then select several representative examples to illustrate the advantages and disadvantages of the methods as shows .
+In this section , we observe the prediction results of end - to - end methods , and then select several representative examples to illustrate the advantages and dis advantages of the methods as shows .
 Each example contains three row , the first row is the gold standard , the second and the third rows are the extracted results of model LSTM - LSTM and LSTM - LSTM - Bias respectively .
 S1 represents the situation that the distance between the two interrelated entities is faraway from each other , which is more difficult to detect their relationships .
 When compared with LSTM - LSTM , LSTM - LSTM - Bias uses a bias objective function which enhance the relevance between entities .

@@ -24,7 +24,7 @@
         },
         "from sentence" : "We crop or pad the input sequence to a fixed length ."
       },
-      "regularized by" : ["dropouts", "l2 weight decay", {"from sentence" : "The models were regularized by using dropouts and an l 2 weight decay ."}]
+      "regularized by" : ["dropouts", "l 2 weight decay", {"from sentence" : "The models were regularized by using dropouts and an l 2 weight decay ."}]
     }
   }
 }

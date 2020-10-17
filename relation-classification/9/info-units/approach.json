@@ -14,7 +14,7 @@
       "construct" : {
         "SCIVOCAB" : {
           "has" : {
-            "anew WordPiece vocabulary" : {
+            "a new WordPiece vocabulary" : {
               "on" : {
                 "our scientific corpus": {
                   "using" : "Sen - tencePiece 1 library"
@@ -23,7 +23,7 @@
             }
           }
         },
-        "from sentence" : "We construct SCIVOCAB , anew WordPiece vocabulary on our scientific corpus using the Sen - tencePiece 1 library ."        
+        "from sentence" : "We construct SCIVOCAB , a new WordPiece vocabulary on our scientific corpus using the Sen - tencePiece 1 library ."        
       },
       "has" : {
         "Corpus" : {
@@ -39,11 +39,13 @@
                 }
               }
             },
-            "from sentence" : "We train SCIBERT on a random sample of 1.14 M papers from Semantic Scholar ."
+            "from sentence" : "Corpus
+We train SCIBERT on a random sample of 1.14 M papers from Semantic Scholar ."
+
           },
           "consists" : {
             "18 % papers" : {
-              "from" : "Computer Science"
+              "from" : "computer science domain"
             },
             "82 %" : {
               "from" : "broad biomedical domain"

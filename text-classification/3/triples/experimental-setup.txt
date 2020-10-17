@@ -6,7 +6,7 @@
 (model||add||recurrent layer)
 (recurrent layer||specifically an||LSTM)
 (recurrent layer||before passing||pooled features)
-(pooled features||directly to||fully connected softmax layers)
+(pooled features||directly to||fully connected softmax layer)
 (Experimental setup||has||embedding layer)
 (embedding layer||initialized using||300 - dimensional CBOW Word2vec embeddings)
 (300 - dimensional CBOW Word2vec embeddings||trained on||3B - word UMBC WebBase corpus)

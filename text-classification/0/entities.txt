@@ -2,9 +2,10 @@
 18	27	40	treating text
 18	41	53	as a kind of
 18	54	64	raw signal
-18	30	32	at
+18	65	67	at
 18	68	83	character level
 18	90	98	applying
+18	99	136	temporal ( one-dimensional ) ConvNets
 19	25	29	used
 19	32	51	classification task
 19	60	72	to exemplify
@@ -30,11 +31,12 @@
 199	80	95	tend to perform
 199	96	102	better
 207	10	26	further analysis
-207	30	36	needed
-207	37	48	to validate
+207	30	48	needed to validate
 207	53	63	hypothesis
 207	64	68	that
-207	69	137	ConvNets are truly good at identifying exotic character combinations
+207	69	92	ConvNets are truly good
+207	93	107	at identifying
+207	108	137	exotic character combinations
 207	138	145	such as
 207	146	172	misspellings and emoticons
 217	0	14	Comparing with

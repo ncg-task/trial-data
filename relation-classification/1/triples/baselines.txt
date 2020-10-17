@@ -1,7 +1,7 @@
 (Contribution||has||Baselines)
 (Baselines||divided into||pipelined methods)
 (Baselines||divided into||jointly extracting methods)
-(Baselines||divided into||end-to-end methods)
+(Baselines||divided into||end - to - end methods)
 (Baselines||has||jointly extracting methods)
 (jointly extracting methods||has||MultiR)
 (MultiR||is a||typical distant supervised method)

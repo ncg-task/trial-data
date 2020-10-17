@@ -27,12 +27,12 @@ First , as recent word representation models such as Word2 Vec , ELMo and BERT a
 Also , the word distributions of general and biomedical corpora are quite different , which can often be a problem for biomedical text mining models .
 As a result , recent models in biomedical text mining rely largely on adapted versions of word representations .
 In this study , we hypothesize that current state - of - the - art word representation models such as BERT need to be trained on biomedical corpora to be effective in biomedical text mining tasks .
-Previously , Word2 Vec , which is one of the most widely known context independent word representation models , was trained on biomedical corpora which contain terms and expressions that are usually not included in a general domain corpus .
+Previously , Word2 Vec , which is one of the most widely known context independent word representation models , was trained on biomedical corpora which contain terms and expressions thatare usually not included in a general domain corpus .
 While ELMo and BERT have proven the effectiveness of contextualized word representations , they can not obtain high performance on biomedical corpora because they are pre-trained on only general domain corpora .
 As BERT achieves very strong results on various NLP tasks while using almost the same structure across the tasks , adapting BERT for the biomedical domain could potentially benefit numerous biomedical NLP researches .
 Approach
 In this article , we introduce BioBERT , which is a pre-trained language representation model for the biomedical domain .
-The overall process of pre-training and fine - tuning BioBERT is illustrated in .
+The over all process of pre-training and fine - tuning BioBERT is illustrated in .
 First , we initialize BioBERT with weights from BERT , which was pretrained on general domain corpora ( English Wikipedia and Books Corpus ) .
 Then , BioBERT is pre-trained on biomedical domain corpora ( PubMed abstracts and PMC full - text articles ) .
 To show the effectiveness of our approach in biomedical text mining , BioBERT is fine - tuned and evaluated on three popular biomedical text mining tasks .
@@ -42,7 +42,7 @@ The contributions of our paper are as follows :
 BioBERT is the first domain - specific BERT based model pretrained on biomedical corpora for 23 days on eight NVIDIA V100 GPUs .
 We show that pre-training BERT on biomedical corpora largely improves its performance .
 BioBERT obtains higher F 1 scores in biomedical NER ( 0.62 ) and biomedical RE ( 2.80 ) , and a higher MRR score ( 12.24 ) in biomedical QA than the current state - of the - art models .
-Compared with most previous biomedical text mining models that are mainly focused on a single task such as NER or QA , our model BioBERT achieves state - of - the - art performance on various biomedical text mining tasks , while requiring only minimal architectural modifications .
+Compared with most previous biomedical text mining models thatare mainly focused on a single task such as NER or QA , our model BioBERT achieves state - of - the - art performance on various biomedical text mining tasks , while requiring only minimal architectural modifications .
 We make our pre-processed datasets , the pre-trained weights of BioBERT and the source code for fine - tuning BioBERT publicly available .
 Materials and methods
 BioBERT basically has the same structure as BERT .
@@ -57,7 +57,7 @@ BERT uses a masked language model that predicts randomly masked words in a seque
 Also , it obtains state - of - the - art performance on most NLP tasks , while requiring minimal task - specific architectural modification .
 According to the authors of BERT , incorporating information from bidirectional representations , rather than unidirectional representations , is crucial for representing words in natural language .
 We hypothesize that such bidirectional representations are also critical in biomedical text mining as complex relationships between biomedical terms often exist in a biomedical corpus .
-Due to the space limitations , we refer readers to fora more detailed description of BERT .
+Due to the space limitations , we refer readers to for a more detailed description of BERT .
 Pre-training BioBERT
 As a general purpose language representation model , BERT was pretrained on English Wikipedia and Books Corpus .
 However , biomedical domain texts contain a considerable number of domain - specific .
@@ -102,14 +102,14 @@ The pre-processed NCBI Disease dataset has fewer annotations than the original d
 We used the CoNLL format ( https :// github.com/spyysalo/standoff2conll ) for pre-processing the 2010 i 2b2 / VA and JNLPBA datasets .
 The Species - 800 dataset was preprocessed and split based on the dataset of Pyysalo ( https://github. com/spyysalo/s800 ) .
 We did not use alternate annotations for the BC2 GM dataset , and all NER evaluations are based on entity - level exact matches .
-Note that although there are several other recently introduced high quality biomedical NER datasets , we use datasets that are frequently used by many biomedical NLP researchers , which makes it much easier to compare our work with theirs .
+Note that although there are several other recently introduced high quality biomedical NER datasets , we use datasets thatare frequently used by many biomedical NLP researchers , which makes it much easier to compare our work with theirs .
 The RE datasets contain gene - disease relations and protein - chemical relations ) .
 Pre-processed GAD and EU - ADR datasets are available with our provided codes .
 For the CHEMPROT dataset , we used the same pre-processing procedure described in .
 We used the BioASQ factoid datasets , which can be converted into the same format as the SQuAD dataset ) .
 We used full abstracts ( PMIDs ) and related questions and answers provided by the BioASQ organizers .
 We have made the pre-processed BioASQ datasets publicly available .
-For all the datasets , we used the same dataset splits used in previous works ) fora fair evaluation ; however , the splits of LINAAEUS and Species - 800 could not be found from and maybe different .
+For all the datasets , we used the same dataset splits used in previous works ) for a fair evaluation ; however , the splits of LINAAEUS and Species - 800 could not be found from and maybe different .
 Like previous work , we reported the performance of 10 - fold cross-validation on datasets that do not have separate test sets ( e.g. GAD , EU - ADR ) .
 We compare BERT and BioBERT with the current state - of - theart models and report their scores .
 Note that the state - of - the - art models each have a different architecture and training procedure .
@@ -158,7 +158,7 @@ The results clearly show that the performance on each dataset improves as the nu
 Finally , shows the absolute performance improvements of BioBERT v 1.0 ( PubMed PMC ) over BERT on all 15 datasets .
 F1 scores were used for NER / RE , and MRR scores were used for QA .
 BioBERT significantly improves performance on most of the datasets .
-As shown in , we sampled predictions from BERT and BioBERT v 1.1 ( PubMed ) to seethe effect of pre-training on downstream tasks .
+As shown in , we sampled predictions from BERT and BioBERT v 1.1 ( PubMed ) to see the effect of pre-training on downstream tasks .
 BioBERT can recognize biomedical named entities that BERT can not and can find the exact boundaries of named Disease 19 665 BC5 CDR Disease 12 694 BC5CDR Drug / Chem. 15 411 BC4CHEMD Drug / Chem. 79 842 BC2 GM Gene / Protein 20 703 JNLPBA Gene / Protein 35 460 LINNAEUS Species 4077 Species - 800 Species 3708
 Note Note : For the CHEMPROT dataset , the number of relations in the training , validation and test sets was summed . 486 150 BioASQ 6 b-factoid 618 161
 entities .
@@ -177,7 +177,7 @@ The best scores are in bold , and the second best scores are underlined .
 The scores on GAD and EU - ADR were obtained from , and the scores on CHEMPROT were obtained from .
 Notes : Strict Accuracy ( S ) , Lenient Accuracy ( L ) and Mean Reciprocal Rank ( M ) scores on each dataset are reported .
 The best scores are in bold , and the second best scores are underlined .
-The best BioASQ 4 b / 5 b / 6 b scores were obtained from the BioASQ leaderboard ( http://participants-area.bioasq.org ) .
+The best BioASQ 4 b / 5 b / 6 b scores were obtained from the BioASQ leaderboard ( http://participants-are a.bioasq.org ) .
 BERT . . . a case of oral penicillin anaphylaxis is described , and the terminology . . .
 BioBERT
 Corynebacterium minutissimum is the bacteria that leads to cutaneous eruptions of erythrasma . . .

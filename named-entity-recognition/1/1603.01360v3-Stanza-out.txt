@@ -1,14 +1,14 @@
 title
 Neural Architectures for Named Entity Recognition
 abstract
-State - of - the - art named entity recognition systems rely heavily on hand - crafted features and domain - specific knowledge in order to learn effectively from the small , supervised training corpora that are available .
+State - of - the - art named entity recognition systems rely heavily on hand - crafted features and domain - specific knowledge in order to learn effectively from the small , supervised training corpora thatare available .
 In this paper , we introduce two new neural architectures - one based on bidirectional LSTMs and conditional random fields , and the other that constructs and labels segments using a transition - based approach inspired by shift - reduce parsers .
 Our models rely on two sources of information about words : character - based word representations learned from the supervised corpus and unsupervised word representations learned from unannotated corpora .
 Our models obtain state - of - the - art performance in NER in four languages without resorting to any language - specific knowledge or resources such as gazetteers .
 1
 Introduction
 Named entity recognition ( NER ) is a challenging learning problem .
-One the one hand , inmost languages and domains , there is only a very small amount of supervised training data available .
+One the one hand , in most languages and domains , there is only a very small amount of supervised training data available .
 On the other , there are few constraints on the kinds of words that can be names , so generalizing from this small sample of data is difficult .
 As a result , carefully constructed orthographic features and language - specific knowledge resources , such as gazetteers , are widely used for solving this task .
 Unfortunately , languagespecific resources and features are costly to develop in new languages and new domains , making NER a challenge to adapt .
@@ -17,7 +17,7 @@ However , even systems that have relied extensively on unsupervised features hav
 In this paper , we present neural architectures for NER that use no language - specific resources or features beyond a small amount of supervised training data and unlabeled corpora .
 Our models are designed to capture two intuitions .
 First , since names often consist of multiple tokens , reasoning jointly over tagging decisions for each token is important .
-We compare two models here , ( i ) a bidirectional LSTM with a sequential conditional random layer above it ( LSTM - CRF ; 2 ) , and ( ii ) anew model that constructs and labels chunks of input sentences using an algorithm inspired by transition - based parsing with states represented by stack LSTMs ( S - LSTM ; 3 ) .
+We compare two models here , ( i ) a bidirectional LSTM with a sequential conditional random layer above it ( LSTM - CRF ; 2 ) , and ( ii ) a new model that constructs and labels chunks of input sentences using an algorithm inspired by transition - based parsing with states represented by stack LSTMs ( S - LSTM ; 3 ) .
 Second , token - level evidence for " being a name " includes both orthographic evidence ( what does the word being tagged as a name look like ? ) and distributional evidence ( where does the word being tagged tend to occur in a corpus ? ) .
 To capture orthographic sensitivity , we use character - based word representation model to capture distributional sensitivity , we combine these representations with distributional representations .
 Our word representations combine both of these , and dropout training is used to encourage the model to learn to trust both sources of evidence ( 4 ) .
@@ -28,7 +28,7 @@ Model
 We provide a brief description of LSTMs and CRFs , and present a hybrid tagging architecture .
 This architecture is similar to the ones presented by .
 LSTM
-Recurrent neural networks ( RNNs ) area family of neural networks that operate on sequential data .
+Recurrent neural networks ( RNNs ) are a family of neural networks that operate on sequential data .
 They take as input a sequence of vectors ( x 1 , x 2 , . . . , x n ) and return another sequence ( h 1 , h 2 , . . . , h n ) that represents some information about the sequence at every step in the input .
 Although RNNs can , in theory , learn long dependencies , in practice they fail to do so and tend to be biased towards their most recent inputs in the sequence .
 Long Short - term Memory Networks ( LSTMs ) have been designed to combat this issue by incorporating a memory - cell and have been shown to capture long - range dependencies .
@@ -58,10 +58,10 @@ P is of size n k , where k is the number of distinct tags , and P i , j correspo
 For a sequence of predictions y = ( y 1 , y 2 , . . . , y n ) , we define it s score to be
 where A is a matrix of transition scores such that A i , j represents the score of a transition from the tag i to tag j. y 0 and y n are the start and end tags of a sentence , that we add to the set of possible tags .
 A is therefore a square matrix of size k + 2 .
-A softmax overall possible tag sequences yields a probability for the sequence y:
+A softmax over all possible tag sequences yields a probability for the sequence y:
 y ?Y Xe s ( X , y) .
 During training , we maximize the log-probability of the correct tag sequence :
-where Y X represents all possible tag sequences ( even those that do not verify the IOB format ) fora sentence X .
+where Y X represents all possible tag sequences ( even those that do not verify the IOB format ) for a sentence X .
 From the formulation above , it is evident that we encourage our network to produce a valid sequence of output labels .
 While decoding , we predict the output sequence that obtains the maximum score given by :
 Since we are only modeling bigram interactions between outputs , both the summation in Eq. 1 and the maximum a posteriori sequence y * in Eq.
@@ -88,14 +88,14 @@ Using this scheme , tagging a word as I-label with high - confidence narrows dow
 Ratinov and Roth and showed that using a more expressive tagging scheme like IOBES improves model performance marginally .
 However , we did not observe a significant improvement over the IOB tagging scheme .
 Transition - Based Chunking Model
-As an alternative to the LSTM - CRF discussed in the previous section , we explore anew architecture that chunks and labels a sequence of inputs using an algorithm similar to transition - based dependency parsing .
+As an alternative to the LSTM - CRF discussed in the previous section , we explore a new architecture that chunks and labels a sequence of inputs using an algorithm similar to transition - based dependency parsing .
 This model directly constructs representations of the multi-token names ( e.g. , the name Mark Watney is composed into a single representation ) .
 This model relies on a stack data structure to incrementally construct chunks of the input .
 To obtain representations of this stack used for predicting subsequent actions , we use the Stack - LSTM presented by , in which the LSTM is augmented with a " stack pointer . "
-While sequential LSTMs model sequences from left to right , stack LSTMs permit embedding of a stack of objects that are both added to ( using a push operation ) and removed from ( using a pop operation ) .
+While sequential LSTMs model sequences from left to right , stack LSTMs permit embedding of a stack of objects thatare both added to ( using a push operation ) and removed from ( using a pop operation ) .
 This allows the Stack - LSTM to work like a stack that maintains a " summary embedding " of its contents .
 We refer to this model as Stack - LSTM or S - LSTM model for simplicity .
-Finally , we refer interested readers to the original paper for details about the Stack - LSTM model since in this paper we merely use the same architecture through anew transition - based algorithm presented in the following Section .
+Finally , we refer interested readers to the original paper for details about the Stack - LSTM model since in this paper we merely use the same architecture through a new transition - based algorithm presented in the following Section .
 Chunking Algorithm
 We designed a transition inventory which is given in that is inspired by transition - based parsers , in particular the arc-standard parser of .
 In this algorithm , we make use of two stacks ( designated output and stack representing , respectively , completed chunks and scratch space ) and a buffer that contains the words that have yet to be processed .
@@ -107,9 +107,9 @@ The model is parameterized by defining a probability distribution over actions a
 Following , we use stack LSTMs to compute a fixed dimensional embedding of each of these , and take a concatenation of these to obtain the full algorithm state .
 This representation is used to define a distribution over the possible actions that can betaken at each time step .
 The model is trained to maximize the conditional probability of sequences of reference actions ( extracted from a labeled training corpus ) given the input sentences .
-To label anew input sequence attest time , the maximum probability action is chosen greedily until the algorithm reaches a termination state .
+To label a new input sequence at test time , the maximum probability action is chosen greedily until the algorithm reaches a termination state .
 Although this is not guaranteed to find a global optimum , it is effective in practice .
-Since each token is either moved directly to the output ( 1 action ) or first to the stack and then the output ( 2 actions ) , the total number of actions fora sequence of length n is maximally 2n .
+Since each token is either moved directly to the output ( 1 action ) or first to the stack and then the output ( 2 actions ) , the total number of actions for a sequence of length n is maximally 2n .
 It is worth noting that the nature of this algorithm
 Representing Labeled Chunks
 When the REDUCE ( y ) operation is executed , the algorithm shifts a sequence of tokens ( together with their vector embeddings ) from the stack to the output buffer as a single completed chunk .
@@ -119,18 +119,18 @@ Thus , the output buffer contains a single vector representation for each labele
 Input Word Embeddings
 The input layers to both of our models are vector representations of individual words .
 Learning independent representations for word types from the limited NER training data is a difficult problem : there are simply too many parameters to reliably estimate .
-Since many languages have orthographic or morphological evidence that something is a name ( or not a name ) , we want representations that are sensitive to the spelling of words .
+Since many languages have orthographic or morphological evidence that something is a name ( or not a name ) , we want representations thatare sensitive to the spelling of words .
 We therefore use a model that constructs representations of words from representations of the characters they are composed of ( 4.1 ) .
 Our second intuition is that names , which may individually be quite varied , appear in regular contexts in large corpora .
-Therefore we use embed - dings learned from a large corpus that are sensitive to word order ( 4.2 ) .
+Therefore we use embed - dings learned from a large corpus thatare sensitive to word order ( 4.2 ) .
 Finally , to prevent the models from depending on one representation or the other too strongly , we use dropout training and find this is crucial for good generalization performance ( 4.3 ) .
 Character - based models of words
 An important distinction of our work from most previous approaches is that we learn character - level features while training instead of hand - engineering prefix and suffix information about words .
 Learning character - level embeddings has the advantage of learning representations specific to the task and domain at hand .
-They have been found useful for morphologically rich languages and to handle the outof - vocabulary problem for tasks like part - of - speech tagging and language modeling or dependency parsing . describes our architecture to generate a word embedding fora word from its characters .
+They have been found useful for morphologically rich languages and to handle the outof - vocabulary problem for tasks like part - of - speech tagging and language modeling or dependency parsing . describes our architecture to generate a word embedding for a word from its characters .
 A character lookup table initialized at random contains an embedding for every character .
 The character embeddings corresponding to every character in a word are given indirect and reverse order to a forward and a backward LSTM .
-The embedding fora word derived from its characters is the concatenation of its forward and backward representations from the bidirectional LSTM .
+The embedding for a word derived from its characters is the concatenation of its forward and backward representations from the bidirectional LSTM .
 This character - level representation is then concatenated with a word - level representation from a word lookup - table .
 During testing , words that do not have an embedding in the lookup table are mapped to a UNK embedding .
 To train the UNK embedding , we replace singletons with the UNK embedding with a probability 0.5 .
@@ -148,7 +148,7 @@ These embeddings are fine - tuned during training .
 Word embeddings for Spanish , Dutch , German and English are trained using the Spanish Gigaword version 3 , the Leipzig corpora collection , the German monolingual training data from the 2010 Machine Translation Workshop and the English Gigaword version 4 ( with the LA Times and NY Times portions removed ) respectively .
 We use an embedding dimension of 100 for English , 64 for other languages , a minimum word frequency cutoff of 4 , and a window size of 8 .
 Dropout training
-Initial experiments showed that character - level embeddings did not improve our overall performance when used in conjunction with pretrained word representations .
+Initial experiments showed that character - level embeddings did not improve our over all performance when used in conjunction with pretrained word representations .
 To encourage the model to depend on both representations , we use dropout training , applying a dropout mask to the final embedding layer just before the input to the bidirectional LSTM in .
 We observe a significant improvement in our model 's performance after using dropout ( see ) .
 Experiments
@@ -187,7 +187,7 @@ The Stack - LSTM also consistently presents statethe - art ( or close to ) resul
 Results
 As we can see in the tables , the Stack - LSTM model is more dependent on character - based representations to achieve competitive performance ; we hypothesize that the LSTM - CRF model requires less orthographic information since it gets more contextual information out of the bidirectional LSTMs ; however , the Stack - LSTM model consumes the words one by one and it just relies on the word representations when it chunks words .
 Network architectures
-Our models had several components that we could tweak to understand their impact on the overall performance .
+Our models had several components that we could tweak to understand their impact on the over all performance .
 We explored the impact that the CRF , the character - level representations , pretraining of our presented a model similar to our LSTM - CRF , but using hand - crafted spelling features .
 also used a similar model and adapted it to the semantic role labeling task .
 used a linear chain CRF with L 2 regularization , they added phrase cluster features extracted from the web data and spelling features .
@@ -195,11 +195,11 @@ also used a linear chain CRF with spelling features and gazetteers .
 Language independent
 NER models like ours have also been proposed in the past .
 present semi-supervised bootstrapping algorithms for named entity recognition by co-training character - level ( word - internal ) and token - level ( context ) features .
-use Bayesian nonparametrics to construct a database of named entities in an almost unsupervised setting .
+use Bayesian nonparametrics to construct a data base of named entities in an almost unsupervised setting .
 Ratinov and Roth quantitatively compare several approaches for NER and build their own supervised model using a regularized average perceptron and aggregating context information .
 Finally , there is currently a lot of interest in models for NER that use letter - based representations .
 model the task of sequencelabeling as a sequence to sequence learning problem and incorporate character - based representations into their encoder model .
-employ an architecture similar to ours , but instead use CNNs to learn character - level features , in away similar to the work by .
+employ an architecture similar to ours , but instead use CNNs to learn character - level features , in a way similar to the work by .
 Conclusion
 This paper presents two neural architectures for sequence labeling that provide the best NER results ever reported in standard evaluation settings , even compared with models that use external resources , such as gazetteers .
 A key aspect of our models are that they model output label dependencies , either via a simple CRF architecture , or using a transition - based algorithm to explicitly construct and label chunks of the input .

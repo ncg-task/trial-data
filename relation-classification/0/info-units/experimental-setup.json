@@ -29,7 +29,7 @@
       },
       "initialized" : {
         "word vectors" : {
-          "via" : "word2vec (Mikolov et al., 2013)"
+          "via" : "word2 vec"
         },
         "from sentence" : "We initialized word vectors via word2 vec trained on Wikipedia 8 and randomly initialized all other parameters ."    
       }

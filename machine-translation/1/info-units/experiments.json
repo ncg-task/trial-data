@@ -7,7 +7,7 @@
             "Character Prediction" : {
               "has" : {
                 "Hyperparameters" : {
-                  "for" : {
+                  "has" : {
                     "ByteNet Decoder" : {
                       "has" : {
                         "30 residual blocks" : {
@@ -20,7 +20,9 @@
                         }
                       }
                     },
-                    "from sentence" : "The ByteNet Decoder that we use for the result has 30 residual blocks split into six sets of five blocks each ; for the five blocks in each set the dilation rates are , respectively , 1 , 2 , 4 , 8 and 16 ."
+                    "from sentence" : "Character Prediction
+                    The ByteNet Decoder that we use for the result has 30 residual blocks split into six sets of five blocks each ; for the five blocks in each set the dilation rates are , respectively , 1 , 2 , 4 , 8 and 16 ."
+                    
                   },
                   "masked kernel" : ["size 3", {"from sentence" : "The masked kernel has size 3 ."}],
                   "number of hidden units" : ["dis 512", {"from sentence" : "The number of hidden units dis 512 ."}],
@@ -67,17 +69,18 @@
                 }
               }
             },
-            "Character-Level Machine Translation" : {
+            "Character - Level Machine Translation" : {
               "has" : {
                 "Hyperparameters" : {
-                  "for" : {
+                  "has" : {
                     "ByteNet" : {
                       "has" : {
                         "30 residual blocks" : {
                           "in" : ["in the encoder", "in the decoder"]
                         }
                       },
-                      "from sentence" : "The ByteNet used in the experiments has 30 residual blocks in the encoder and 30 residual blocks in the decoder ."                      
+                      "from sentence" : "Character - Level Machine Translation
+                      The ByteNet used in the experiments has 30 residual blocks in the encoder and 30 residual blocks in the decoder ."                      
                     },
                     "optimization" : {
                       "use" : {
@@ -118,7 +121,7 @@
                     },
                     "beam" : {
                       "of" : "size 12",
-                      "from sentence" : "We use abeam of size 12 ."
+                      "from sentence" : "We use a beam of size 12 ."
                     }
                   },
                   "hidden units" : ["dis 800", {"from sentence" : "The number of hidden units dis 800 ."}],
@@ -147,7 +150,7 @@
                   }
                 },
                 "Results" : {
-                  "on" : {
+                  "On" : {
                     "NewsTest 2014" : {
                       "achieves" : {
                         "highest performance" : {

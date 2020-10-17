@@ -14,7 +14,7 @@
           },
           "from sentence" : "We use Adam optimization algorithm with 1e - 3 learning rate to train the model ."
         },
-        "3 iterations of routing" : {
+        "3 iteration of routing" : {
           "for" : "all datasets",
           "from sentence" : "We use 3 iteration of routing for all datasets since it optimizes the loss faster and converges to a lower loss at the end ."
         }

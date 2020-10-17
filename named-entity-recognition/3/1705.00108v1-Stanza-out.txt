@@ -2,12 +2,12 @@ title
 Semi-supervised sequence tagging with bidirectional language models
 abstract
 Pre-trained word embeddings learned from unlabeled text have become a standard component of neural network architectures for NLP tasks .
-However , inmost cases , the recurrent network that operates on word - level representations to produce context sensitive representations is trained on relatively little labeled data .
+However , in most cases , the recurrent network that operates on word - level representations to produce context sensitive representations is trained on relatively little labeled data .
 In this paper , we demonstrate a general semi-supervised approach for adding pretrained context embeddings from bidirectional language models to NLP systems and apply it to sequence labeling tasks .
 We evaluate our model on two standard datasets for named entity recognition ( NER ) and chunking , and in both cases achieve state of the art results , surpassing previous systems that use other forms of transfer or joint learning with additional labeled data and task specific gazetteers .
 Introduction
 Due to their simplicity and efficacy , pre-trained word embedding have become ubiquitous in NLP systems .
-Many prior studies have shown that they capture useful semantic and syntactic information and including them in NLP systems has been shown to be enormously helpful fora variety of downstream tasks .
+Many prior studies have shown that they capture useful semantic and syntactic information and including them in NLP systems has been shown to be enormously helpful for a variety of downstream tasks .
 However , in many NLP tasks it is essential to represent not just the meaning of a word , but also the word in context .
 For example , in the two phrases " A Central Bank spokesman " and " The Central African Republic " , the word ' Central ' is used as part of both an Organization and Location .
 Accordingly , current state of the art sequence tagging models typically include a bidirectional re-current neural network ( RNN ) that encodes token sequences into a context sensitive representation before making token specific predictions .
@@ -17,8 +17,8 @@ In this paper , we explore an alternate semisupervised approach which does not r
 We use a neural language model ( LM ) , pre-trained on a large , unlabeled corpus to compute an encoding of the context at each position in the sequence ( hereafter an LM embedding ) and use it in the supervised sequence tagging model .
 Since the LM embeddings are used to compute the probability of future words in a neural LM , they are likely to encode both the semantic and syntactic roles of words in context .
 Our main contribution is to show that the context sensitive representation captured in the LM embeddings is useful in the supervised sequence tagging setting .
-When we include the LM embeddings in our system overall performance increases from 90. 87 % to 91.93 % F 1 for the CoNLL 2003 NER task , a more then 1 % absolute F1 increase , and a substantial improvement over the previous state of the art .
-We also establish anew state of the art result ( 96.37 % F 1 ) for the CoNLL 2000 Chunking task .
+When we include the LM embeddings in our system over all performance increases from 90. 87 % to 91.93 % F 1 for the CoNLL 2003 NER task , a more then 1 % absolute F1 increase , and a substantial improvement over the previous state of the art .
+We also establish a new state of the art result ( 96.37 % F 1 ) for the CoNLL 2000 Chunking task .
 As a secondary contribution , we show that using both forward and backward LM embeddings boosts performance over a forward only LM .
 We also demonstrate that domain specific pre-training is not necessary by applying a LM trained in the news domain to scientific papers .
 The main components in our language - modelaugmented sequence tagger ( TagLM ) are illustrated in .
@@ -44,7 +44,7 @@ The second RNN layer is similar and uses h k , 1 to output h k ,2 .
 In this paper , we use L = 2 layers of RNNs in all experiments and parameterize R i as either Gated Recurrent Units ( GRU ) or Long Short - Term Memory units ( LSTM ) depending on the task .
 Finally , the output of the final RNN layer h k,L is used to predict a score for each possible tag using a single dense layer .
 Due to the dependencies between successive tags in our sequence labeling tasks ( e.g. using the BIOES labeling scheme , it is not possible for I - PER to follow B - LOC ) , it is beneficial to model and decode each sentence jointly instead of independently predicting the label for each token .
-Accordingly , we add another layer with parameters for each label bigram , computing the sentence conditional random field ( CRF ) loss using the forward - backward algorithm at training time , and using the Viterbi algorithm to find the most likely tag sequence attest time , similar to Collobert et al .
+Accordingly , we add another layer with parameters for each label bigram , computing the sentence conditional random field ( CRF ) loss using the forward - backward algorithm at training time , and using the Viterbi algorithm to find the most likely tag sequence at test time , similar to Collobert et al .
 Bidirectional LM
 A language model computes the probability of a token sequence ( t 1 , t 2 , . . . , t N )
 Recent state of the art neural language models ) use a similar architecture to our baseline sequence tagger where they pass a token representation ( either from a CNN over characters or as token embeddings ) through multiple layers of LSTMs to embed the history ( t 1 , t 2 , . . . , t k ) into a fixed dimensional vector ? ? h LM k .
@@ -114,21 +114,21 @@ Overall system results
 Tables 1 and 2 compare results from Tag LM with previously published state of the art results without additional labeled data or task specific gazetteers .
 compare results of
 Tag LM to other systems that include additional labeled data or gazetteers .
-In both tasks , Tag LM establishes anew state of the art using bidirectional LMs ( the forward CNN - BIG - LSTM and the backward LSTM - 2048 - 512 ) .
+In both tasks , Tag LM establishes a new state of the art using bidirectional LMs ( the forward CNN - BIG - LSTM and the backward LSTM - 2048 - 512 ) .
 In the CoNLL 2003 NER task , our model scores 91.93 mean F 1 , which is a statistically significant increase over the previous best result of 91.62 0.33 from that used gazetteers ( at 95 % , two - sided Welch t- test , p = 0.021 ) .
 In the CoNLL 2000 Chunking task , Tag LM achieves 96.37 mean F 1 , exceeding all previously published results without additional labeled data by more then 1 % absolute F 1 .
 The improvement over the previous best result of 95.77 in that jointly trains with Penn Treebank ( PTB ) POS tags is statistically significant at 95 % ( p < 0.001 assuming standard deviation of 0.1 ) .
 Importantly , the LM embeddings amounts to an average absolute improvement of 1.06 and 1.37 F 1 in the NER and Chunking tasks , respectively .
 Adding external resources .
 Although we do not use external labeled data or gazetteers , we found that TagLM outperforms previous state of the art results in both tasks when external resources ( labeled data or task specific gazetteers ) are available .
-Furthermore , show that , inmost cases , the improvements we obtain by adding LM embeddings are larger then the improvements previously obtained by adding other forms of transfer or joint learning .
+Furthermore , show that , in most cases , the improvements we obtain by adding LM embeddings are larger then the improvements previously obtained by adding other forms of transfer or joint learning .
 For example , noted an improvement of only 0.06 F 1 in the NER task when transfer learning from both CoNLL 2000 chunks and PTB POS tags and reported an increase of 0.71 F 1 when adding gazetteers to their baseline .
 In the Chunking task , previous work has reported from 0.28 to 0.75 improvement in F 1 when including supervised labels from the PTB POS tags or CoNLL 2003 entities .
 Analysis
 To elucidate the characteristics of our LM augmented sequence tagger , we ran a number of additional experiments on the CoNLL 2003 NER task .
 How to use LM embeddings ?
 In this experiment , we concatenate the LM embeddings at dif - shows that the second alternative performs best .
-We speculate that the second RNN layer in the sequence tagging model is able to capture interactions between task specific context as expressed in the first RNN layer and general context as expressed in the LM embeddings in away that improves overall system performance .
+We speculate that the second RNN layer in the sequence tagging model is able to capture interactions between task specific context as expressed in the first RNN layer and general context as expressed in the LM embeddings in a way that improves over all system performance .
 These results are consistent with who found that chunking performance was sensitive to the level at which additional POS supervision was added .
 Does it matter which language model to use ?
 In this experiment , we compare six different configurations of the forward and backward language models ( including the baseline model which does not use any language models ) .
@@ -157,7 +157,7 @@ Instead of using a LM , uses a probabilistic generative model to infer contextse
 Other semisupervised learning methods for structured prediction problems include co-training , expectation maximization , structural learning ( Ando and Zhang , 2005 ) and maximum discriminant functions .
 It is easy to combine Tag LM with any of the above methods by including LM embeddings as additional features in the discriminative components of the model ( except for expectation maximization ) .
 A detailed discussion of semisupervised learning methods in NLP can be found in .
-learned a context encoder from unlabeled data with an objective function similar to a bi-directional LM and applied it to several NLP tasks closely related to the unlabeled objective function : sentence completion , lexical substitution and word sense disambiguation .
+learned a context encoder from unlabeled data with an objective function similar to a bi-directional LM and applied it to several NLP tasks closely related to the unlabeled objective function : sentence completion , lexical substitution and word sense dis ambiguation .
 LM embeddings are related to a class of methods ( e.g. , for learning sentence and document encoders from unlabeled data , which can be used for text classification and textual entailment among other tasks .
 Dai and Le pre-trained LSTMs using language models and sequence autoencoders then fine tuned the weights for classification tasks .
 In contrast to our method that uses unlabeled data to learn token - in - context embeddings , all of these methods use unlabeled data to learn an encoder for an entire text sequence ( sentence or document ) .

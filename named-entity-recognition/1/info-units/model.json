@@ -3,12 +3,11 @@
     "Model" : {
       "has" : {
         "LSTM - CRF" : {
-          "is" : {
+          "has" : {
             "bidirectional LSTM" : {
               "above it" : "sequential conditional random layer"
               }
-            },
-          "from sentence" : "We compare two models here , ( i ) a bidirectional LSTM with a sequential conditional random layer above it ( LSTM - CRF ; 2 ) , and ( ii ) anew model that constructs and labels chunks of input sentences using an algorithm inspired by transition - based parsing with states represented by stack LSTMs ( S - LSTM ; 3 ) ."  
+            }
         },
         "S - LSTM" : {
           "constructs and labels" : {
@@ -20,7 +19,7 @@
               }
             }
           },
-          "from sentence" : "We compare two models here , ( i ) a bidirectional LSTM with a sequential conditional random layer above it ( LSTM - CRF ; 2 ) , and ( ii ) anew model that constructs and labels chunks of input sentences using an algorithm inspired by transition - based parsing with states represented by stack LSTMs ( S - LSTM ; 3 ) ."          
+          "from sentence" : "We compare two models here , ( i ) a bidirectional LSTM with a sequential conditional random layer above it ( LSTM - CRF ; 2 ) , and ( ii ) a new model that constructs and labels chunks of input sentences using an algorithm inspired by transition - based parsing with states represented by stack LSTMs ( S - LSTM ; 3 ) ."          
         }
       },
       "To capture" : {

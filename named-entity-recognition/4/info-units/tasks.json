@@ -8,7 +8,7 @@
               "improves" : {
                 "accuracy" : {
                   "by" : {
-                    "average of 0.7%" : {
+                    "average of 0.7 %" : {
                       "across" : "five random seeds"
                     }
                   },
@@ -21,7 +21,8 @@
               }
             }
           },
-          "from sentence" : "The Stanford Natural Language Inference ( SNLI ) corpus provides approximately 550K hypothesis / premise pairs .
+          "from sentence" : "Textual entailment is the task of determining whether a \" hypothesis \" is true , given a \" premise \" .
+The Stanford Natural Language Inference ( SNLI ) corpus provides approximately 550K hypothesis / premise pairs .
 Overall , adding ELMo to the ESIM model improves accuracy by an average of 0.7 % across five random seeds ."
 
         },
@@ -30,14 +31,16 @@ Overall , adding ELMo to the ESIM model improves accuracy by an average of 0.7 %
             "OntoNotes coreference annotations" : {
               "from" : "CoNLL 2012 shared task",
               "improved" : {
-                "average F1 by 3.2%" : {
+                "average F 1 by 3.2 %" : {
                   "from" : "67.2 to 70.4",
                   "adding" : "ELMo"
                 }
               }
             }
           },
-          "from sentence" : "In our experiments with the OntoNotes coreference annotations from the CoNLL 2012 shared task , adding ELMo improved the average F 1 by 3.2 % from 67.2 to 70.4 , establishing anew state of the art , again improving over the previous best ensemble result by 1.6 % F 1 ." 
+          "from sentence" : "As shown in Coreference resolution Coreference resolution is the task of clustering mentions in text that refer to the same underlying real world entities .
+In our experiments with the OntoNotes coreference annotations from the CoNLL 2012 shared task , adding ELMo improved the average F 1 by 3.2 % from 67.2 to 70.4 , establishing a new state of the art , again improving over the previous best ensemble result by 1.6 % F 1 ."
+
         }
       }
     }

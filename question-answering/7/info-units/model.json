@@ -11,7 +11,7 @@
         },
         "from sentence" : "In this paper we propose a novel class of memory augmented neural networks called Neural Semantic Encoders ( NSE ) for natural language understanding ."
       },
-      "has acronym" : {
+      "name" : {
         "NSE" : {
           "has" : {
             "variable sized encoding memory" : {
@@ -24,9 +24,9 @@
             },
             "from sentence" : "NSE has a variable sized encoding memory which allows the model to access entire input sequence during the reading process ; therefore efficiently delivering long - term dependencies overtime ."            
           },
-          "sequentially processes" : ["the input", {"from sentence" : "NSE sequentially processes the input and supports word compositionality inheriting both temporal and hierarchical nature of human language ."}],
+          "sequentially processes" : "the input",
           "supports" : ["word compositionality", {"from sentence" : "NSE sequentially processes the input and supports word compositionality inheriting both temporal and hierarchical nature of human language ."}],
-          "read from and write to" : ["set of relevant encoding memories simultaneously", {"from sentence" : "NSE can read from and write to a set of relevant encoding memories simultaneously or multiple NSEs can access a shared encoding memory effectively supporting knowledge and representation sharing ."}],
+          "read from and write to" : "set of relevant encoding memories simultaneously",
           "access" : {
             "shared encoding memory" : {
               "supporting" : "knowledge and representation sharing"

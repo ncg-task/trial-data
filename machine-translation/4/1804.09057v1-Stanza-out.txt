@@ -27,7 +27,7 @@ In order to address this issue , we extend the encoder - shared model , i.e. , t
 Similarly , two independent decoders are utilized .
 For each language , the encoder and its corresponding decoder perform an AE , where the encoder generates the latent representations from the perturbed input sentences and the decoder reconstructs the sentences from the latent representations .
 To map the latent representations from different languages to a shared - latent space , we propose the weightsharing constraint to the two AEs .
-Specifically , we share the weights of the last few layers of two encoders that are responsible for extracting highlevel representations of input sentences .
+Specifically , we share the weights of the last few layers of two encoders thatare responsible for extracting highlevel representations of input sentences .
 Similarly , we share the weights of the first few layers of two decoders .
 To enforce the shared - latent space , the word embeddings are used as a reinforced encoding component in our encoders .
 For cross - language translation , we utilize the backtranslation following .
@@ -72,7 +72,7 @@ The proposed system has several striking components , which are critical either 
 Networks
 Roles : Interpretation of the roles for the subnetworks in the proposed system .
 Directional self - attention
-Compared to recurrent neural network , a disadvantage of the simple self - attention mechanism is that the temporal order information is lost .
+Compared to recurrent neural network , a dis advantage of the simple self - attention mechanism is that the temporal order information is lost .
 Although the Transformer applies the positional encoding to the sequence before processed by the self - attention , how to model temporal order information within an attention is still an open question .
 Following , we build the encoders in our model on the directional self - attention which utilizes the positional masks to encode temporal order information into attention output .
 More concretely , two positional masks , namely the forward mask M f and backward mask Mb , are calculated as :
@@ -82,12 +82,12 @@ The output of this layer is taken by an upper self - attention network as input 
 Weight sharing
 Based on the shared - latent space assumption , we apply the weight sharing constraint to relate the two AEs .
 Specifically , we share the weights of the last few layers of the Enc sand Enc t , which are responsible for extracting high - level representations of the input sentences .
-Similarly , we also share the first few layers of the Dec sand Dec t , which are expected to decode high - level representations that are vital for reconstructing the input sentences .
+Similarly , we also share the first few layers of the Dec sand Dec t , which are expected to decode high - level representations thatare vital for reconstructing the input sentences .
 Compared to which use the fully shared encoder , we only share partial weights for the encoders and decoders .
 In the proposed model , the independent weights of the two encoders are expected to learn and encode the hidden features about the internal characteristics of each language , such as the terminology , style , and sentence structure .
 The shared weights are utilized to map the hidden features extracted by the independent weights to the shared - latent space .
 Embedding reinforced encoder
-We use pretrained cross - lingual embeddings in the encoders that are kept fixed during training .
+We use pretrained cross - lingual embeddings in the encoders thatare kept fixed during training .
 And the fixed embeddings are used as a reinforced encoding component in our encoder .
 Formally , given the input sequence embedding vectors E = {e 1 , . . . , e t } and the initial output sequence of the encoder stack H = {h 1 , . . . , ht } , we compute H r as :
 where H r is the final output sequence of the encoder which will be attended by the decoder ( In Transformer , H is the final output of the encoder ) , g is agate unit and computed as :
@@ -166,7 +166,7 @@ We then apply the public implementation 7 of the method proposed by to map these
 embeddings to a shared - latent space 8 .
 Model Hyper - parameters and Evaluation
 Following the base model in , we set the dimension of word embedding as 512 , dropout rate as 0.1 and the head number as 8 .
-We use beam search with abeam size of 4 and length penalty ? = 0.6 .
+We use beam search with a beam size of 4 and length penalty ? = 0.6 .
 The model is implemented in TensorFlow and trained on up to four K80 GPUs synchronously in a multi - GPU setup on a single machine .
 For model selection , we stop training when the model achieves no improvement for the tenth evaluation on the development set , which is comprised of 3000 source and target sentences extracted randomly from the monolingual training corpora .
 Following ( Lample et al. , 2017 ) , we translate the source sentences to the target language , and then translate the resulting sentences back to the source language .

@@ -21,15 +21,15 @@ The dependency information is extracted using an external dependency parser .
 Similarly , in the work of for entity and relation extraction from biomedical text , a model which also uses tree - LSTMs is applied to extract dependency information .
 propose a method that relies on RNNs but uses a lot of hand - crafted features and additional NLP tools to extract features such as POS - tags , etc. replicate the context around the entities with Convolutional Neural Networks ( CNNs ) .
 Note that the aforementioned works examine pairs of entities for relation extraction , rather than modeling the whole sentence directly .
-This means that relations of other pairs of entities in the same sentence - which could be helpful in deciding on the relation type fora particular pair - are not taken into account .
+This means that relations of other pairs of entities in the same sentence - which could be helpful in deciding on the relation type for a particular pair - are not taken into account .
 propose a neural joint model based on LSTMs where they model the whole sentence at once , but still they do not have a principled way to deal with multiple relations .
 introduce a quadratic scoring layer to model the two tasks simultaneously .
 The limitation of this approach is that only a single relation can be assigned to a token , while the time complexity for the entity recognition task is increased compared to the standard approaches with linear complexity .
-In this work , we focus on anew general purpose joint model that performs the two tasks of entity recognition and relation extraction simultaneously , and that can handle multiple relations together .
+In this work , we focus on a new general purpose joint model that performs the two tasks of entity recognition and relation extraction simultaneously , and that can handle multiple relations together .
 Our model achieves state - of - the - art performance in a number of different contexts ( i.e. , news , biomedical , real estate ) and languages ( i.e. , English , Dutch ) without relying on any manually engineered features nor additional NLP tools .
 In summary , our proposed model ( which will be detailed next in Section 3 ) solves several shortcomings that we identified in related works ( Section 2 ) for joint entity recognition and relation extraction : ( i ) our model does not rely on external NLP tools nor hand - crafted features , ( ii ) entities and relations within the same text fragment ( typically a sentence ) are extracted simultaneously , where ( iii ) an entity can be involved in multiple relations at once .
 Specifically , the model of depends on dependency parsers , which perform particularly well on specific languages ( i.e. , English ) and contexts ( i.e. , news ) .
-Yet , our ambition is to develop a model that generalizes well in various setups , therefore using only automatically extracted features that are learned during training .
+Yet , our ambition is to develop a model that generalizes well in various setups , therefore using only automatically extracted features thatare learned during training .
 For instance , and use exactly the same model in different contexts , i.e. , news ( ACE04 ) and biomedical data ( ADE ) , respectively .
 Comparing our results to the ADE dataset , we obtain a 1.8 % improvement on the NER task and ? 3 % on the RE task .
 On the other hand , our model performs within a reasonable margin ( ? 0.6 % in the NER task and ? 1 % on the RE task ) on the ACE04 dataset without the use of pre-calculated features .
@@ -57,10 +57,10 @@ We calculate the score of each token w i for each entity tag :
 where the superscript ( e ) is used for the notation of the NER task , f ( ) is an elementwise activation function ( i.e. , relu , tanh ) ,
 with d as the hidden size of the LSTM , p the number of NER tags ( e.g. , B - ORG ) and
 l the layer width .
-We calculate the probabilities of all the candidate tags fora give n
+We calculate the probabilities of all the candidate tags for a give n
 we employ the softmax approach only for the entity classification ( EC ) task ( which is similar to NER ) where we need to predict only the entity types ( e.g. , PER ) for each token assuming boundaries are given .
 The CRF approach is used for the NER task which includes both entity type and boundaries recognition .
-In the softmax approach , we assign entity types to tokens in a greedy way at prediction time ( i.e. , the selected tag is just the highest scoring tag overall possible set of tags ) .
+In the softmax approach , we assign entity types to tokens in a greedy way at prediction time ( i.e. , the selected tag is just the highest scoring tag over all possible set of tags ) .
 Although assuming an independent tag distribution is beneficial for entity classification tasks ( e.g. , POS tagging ) , this is not the case when there are strong de-pendencies between the tags .
 Specifically , in NER , the BIO tagging scheme forces several restrictions ( e.g. , B - LOC can not be followed by I - PER ) .
 The softmax method allows local decisions ( i.e. , for the tag of each token w i ) even though the BiLSTM captures information about the neighboring words .
@@ -68,7 +68,7 @@ Still , the neighboring tags are not taken into account for the tag decision of 
 For example , in the entity " John Smith " , tagging " Smith " as PER is useful for deciding that " John " is B - PER .
 To this end , for NER , we use a linear - chain CRF , similar to Lample et al .
 where an improvement of ? 1 % F 1 NER points is reported when using CRF .
-In our case , with the use of CRF we also report a ? 1 % overall performance improvement as observed in
+In our case , with the use of CRF we also report a ? 1 % over all performance improvement as observed in
 is the score of the predicted tag for token w i , T is a square transition matrix in which each entry represents transition scores from one tag to another .
 T ?
 R ( p+2 ) ( p + 2 ) because y
@@ -126,7 +126,7 @@ Another example might be the Dutch suffix " kamer " ( " room " in English ) in t
 Character - level embeddings are learned during training , similar to Ma & Hovy and .
 In the work of Lample et al. , character embeddings lead to a performance improvement of up to 3 % in terms of NER F 1 score .
 In our work , by incorporating character embeddings , we report in an increase of ? 2 %
-overall F 1 scoring points .
+over all F 1 scoring points .
 For more details , see Section 5.2 .
 Bidirectional LSTM encoding layer
 RNNs are commonly used in modeling sequential data and have been successfully applied in various NLP tasks .
@@ -201,7 +201,7 @@ The final results are displayed in F 1 metric as a macro -average across the fol
 The dataset consists of 10,652 entities and 6,682 relations .
 We report results similar to previous work on this dataset using the strict evaluation metric .
 Word embeddings
-We use pre-trained word2vec embeddings used in previous work , so as to retain the same inputs for our model and to obtain comparable results that are not affected by the input embeddings .
+We use pre-trained word2vec embeddings used in previous work , so as to retain the same inputs for our model and to obtain comparable results thatare not affected by the input embeddings .
 Specifically , we use the 200 - dimensional word embeddings used in the work of for the ACE04 dataset 6 trained on Wikipedia .
 We obtained the 50 - dimensional word embeddings used by
 Hyperparameters and implementation details
@@ -217,7 +217,7 @@ We experimented with tanh and relu activation functions ( recall that this is th
 We employ the technique of early stopping based on the validation set .
 In all the datasets examined in this study , we obtain the best hyperparameters after 60 to 200 epochs depending on the size of the dataset .
 We select the best epoch according to the results in the validation set .
-For more details about the effect of each hyperparameter to the model performance seethe Appendix .
+For more details about the effect of each hyperparameter to the model performance see the Appendix .
 Results and discussion
 Results
 In , we present the results of our analysis .
@@ -240,19 +240,19 @@ We observe that our model outperforms all previous models that do not rely on co
 Unlike these previous studies that consider pairs of entities to obtain the entity types and the corresponding relations , we model the whole sentence at once .
 That way , our method is able to directly infer all entities and relations of a sentence and benefit from their possible interactions that can not be modeled when training is performed for each entity pair individually , one at a time .
 In the same setting , we also report the results of Gupta et al. in which they use multiple complicated hand - crafted features coming from NLP tools .
-Our model performs slightly better for the EC task and within a margin of 1 % in terms of overall F 1 score .
-The difference in the overall performance is due to the fact that our model uses only automatically generated features .
+Our model performs slightly better for the EC task and within a margin of 1 % in terms of over all F 1 score .
+The difference in the over all performance is due to the fact that our model uses only automatically generated features .
 We also report re-sults on the same dataset conducting NER ( i.e. , predicting entity types and boundaries ) and evaluating using the strict evaluation measure , similar to .
 Our results are not directly comparable to the work of because we use the splits provided by .
 However , in this setting we present the results from as reference .
-We report an improvement of ? 2 % overall F 1 score , which suggests that our neural model is able to extract more informative representations compared to feature - based approaches .
+We report an improvement of ? 2 % over all F 1 score , which suggests that our neural model is able to extract more informative representations compared to feature - based approaches .
 We also report results for the DREC dataset , with two different evaluation settings .
 Specifically , we use the boundaries and the strict settings .
 We transform the previous results from to the boundaries setting to make them comparable to our model since in their work , they report token - based F 1 score , which is not a common evaluation metric in relation extraction problems .
 Also , in their work , they focus on identifying only the boundaries of the entities and not the types ( e.g. , Floor , Space ) .
 In the boundaries evaluation , we achieve ? 3 % improvement for both tasks .
 This is due to the fact that their quadratic scoring layer is beneficial for the RE task , yet complicates NER , which is usually modeled as a sequence labeling task .
-Moreover , we report results using the strict evaluation which is used inmost related works .
+Moreover , we report results using the strict evaluation which is used in most related works .
 Using the prior knowledge that each entity has only one head , we can simplify our model and predict only one head each time ( i.e. , using a softmax loss ) .
 The difference between the single and the multi-head models is marginal ( < 0.1 % for both tasks ) .
 This shows that our model ( multi-head ) can adapt to various environments , even if the setting is single head ( in terms of the application , and thus also in both training and test data ) .
@@ -265,7 +265,7 @@ Removing character embeddings also degrades the performance of both NER ( ? 1 % 
 This illustrates that composing words by the representation of characters is effective , and our method benefits from additional information such as capital letters , suffixes and prefixes within the token ( i.e. , its character sequences ) .
 Finally , we conduct experiments for the NER task by removing the CRF loss layer and substituting it with a softmax .
 Assuming independent distribution of labels ( i.e. , softmax ) leads to a slight decrease in the F 1 performance of the NER module and a ? 2 % decrease in the performance of the RE task .
-This happens because the CRF loss is able to capture the strong tag dependencies ( e.g. , I - LOC can not follow B - PER ) that are present in the dataset instead of just assuming that the tag decision for each token is independent from tag decisions of neighboring tokens .
+This happens because the CRF loss is able to capture the strong tag dependencies ( e.g. , I - LOC can not follow B - PER ) thatare present in the dataset instead of just assuming that the tag decision for each token is independent from tag decisions of neighboring tokens .
 Conclusion
 In this work , we present a joint neural model to simultaneously extract entities and relations from textual data .
 Our model comprises a CRF layer for the entity recognition task and a sigmoid layer for the relation extraction task .
@@ -282,14 +282,14 @@ In addition ,
 we are planning to explore away to reduce the calculations in the quadratic relation scoring layer .
 For instance , a straightforward way to do so is to use in the sigmoid layer only the tokens that have been identified as entities .
 Gupta , P. , . optimize only over the NER task ) , ( ii ) explore several hyperparameters of the network ( e.g. , dropout , LSTM size , character embeddings size ) , and ( iii ) report F 1 score using different word embeddings compared to the embeddings used in previous works .
-In of the main paper , we focused on comparing our model against other joint models that are able to solve the two tasks ( i.e. , NER and relation extraction ) simultaneously , mainly demonstrating superiority of phrasing the relation extraction as a multi-head selection problem ( enabling the extraction of multiple relations at once ) .
+In of the main paper , we focused on comparing our model against other joint models thatare able to solve the two tasks ( i.e. , NER and relation extraction ) simultaneously , mainly demonstrating superiority of phrasing the relation extraction as a multi-head selection problem ( enabling the extraction of multiple relations at once ) .
 Here , in and vice versa ) .
 Note that improving NER in isolation was not the objective of our multi-head model , but we rather aimed to compare our model against other joint models that solve the task of entity recognition and relation identification simultaneously .
 We thus did not envision to claim or achieve state - of - the - art performance in each of the individual building blocks of our joint model .
 and A4 show the performance of our model on the test set for different values of the embedding dropout , LSTM layer dropout and the LSTM output dropout hyperparameters , respectively .
 Note that the hyperparameter values used for the results in Section 5 were obtained by tuning over the development set , and these are indicated in boldface in the tables below .
 We vary one hyperparameter at a time in order to assess the effect of a particular hyperparameter .
-The main outcomes from these tables are twofold : ( i ) low dropout values ( e.g. , 0 , 0.1 ) lead to a performance decrease in the overall F 1 score ( see where a ? 3 % F 1 decrease is reported on the ACE04 dataset ) and ( ii ) average dropout values ( i.e. , 0.2 - 0.4 ) lead to consistently similar results .
-In In the main results ( see Section 5 ) , to guarantee a fair comparison to previous work and to obtain comparable results that are not affected by the input embeddings , we use embeddings used also in prior studies .
+The main outcomes from these tables are twofold : ( i ) low dropout values ( e.g. , 0 , 0.1 ) lead to a performance decrease in the over all F 1 score ( see where a ? 3 % F 1 decrease is reported on the ACE04 dataset ) and ( ii ) average dropout values ( i.e. , 0.2 - 0.4 ) lead to consistently similar results .
+In In the main results ( see Section 5 ) , to guarantee a fair comparison to previous work and to obtain comparable results thatare not affected by the input embeddings , we use embeddings used also in prior studies .
 To assess the performance of our system to input variations , we also report results using different word embeddings ( see ) ( i.e. , ; Li et al. ) on the ACE04 dataset .
 Our results showcase that our model , even when using different word embeddings , is still performing better compared to other works that , like ours , do not rely on additional NLP tools .

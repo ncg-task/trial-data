@@ -8,7 +8,7 @@
               "addresses" : {
                 "long - term dependency problem of most RNN - based models" : {
                   "by simplifying" : "recurrent update",
-                  "taking advantage of" : {
+                  "taking the advantage of" : {
                     "RNN 's capability" : {
                       "to model" : "sequential data"
                     }
@@ -18,7 +18,7 @@
             },
             "from sentence" : "Our proposed model , Query - Reduction Network 1 ( QRN ) , is a single recurrent unit that addresses the long - term dependency problem of most RNN - based models by simplifying the recurrent update , while taking the advantage of RNN 's capability to model sequential data ) ."
           },
-          "has acronym" : {
+          "name" : {
             "QRN" : {
               "considers" : {
                 "context sentences" : {

@@ -26,7 +26,7 @@
                   }
                 }
               },
-              "from sentence" : "By using contextualized word representations , the C - GCN model further outperforms the strong PA - LSTM model by 1.3 F 1 , and achieves anew state of the art ."
+              "from sentence" : "By using contextualized word representations , the C - GCN model further outperforms the strong PA - LSTM model by 1.3 F 1 , and achieves a new state of the art ."
             }
           },
           "improves" : {
@@ -41,7 +41,7 @@
                 "GCN model" : {
                   "find that" : {
                     "gain" : {
-                      "mainly comes from" : "improves recall"
+                      "mainly comes from" : "improved recall"
                     }
                   }
                 }
@@ -69,7 +69,9 @@
                 }
               }
             },
-            "from sentence" : "We find that under the conventional with- entity evaluation , our C - GCN model outperforms all existing dependency - based neural models on this sep - arate dataset ."            
+            "from sentence" : "Results on the SemEval Dataset
+We find that under the conventional with- entity evaluation , our C - GCN model outperforms all existing dependency - based neural models on this sep - arate dataset ."
+
           },
           "our model outperforms" : {
             "previous shortest dependency path - based model ( SDP - LSTM )" : {
@@ -94,11 +96,14 @@
         }
       },
       "has" : {
-        "Effect of Path - centric" : {
+        "Effect of Path - centric Pruning" : {
           "compare" : ["two GCN models", 
           {"Tree - LSTM" : 
           {"when" : {"pruning distance K" : {"is" : "varied"}}}}, 
-          {"from sentence" : "To show the effectiveness of path - centric pruning , we compare the two GCN models and the Tree - LSTM when the pruning distance K is varied ."}
+          {"from sentence" : "Effect of Path - centric Pruning
+To show the effectiveness of path - centric pruning , we compare the two GCN models and the Tree - LSTM when the pruning distance K is varied ."
+
+		}
           ],
           "performance of" : {
             "all three models" : {

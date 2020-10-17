@@ -88,7 +88,7 @@ We employ bidirectional tree - structured LSTM - RNNs ( i.e. , bottom - up and t
 This bidirectional structure propagates to each node not only the information from the leaves but also information from the root .
 This is especially important for relation classification , which makes use of argument nodes near the bottom of the tree , and our top - down LSTM - RNN sends information from the top of the tree to such near - leaf nodes ( unlike in standard bottom - up LSTM - RNNs ) .
 2 Note that the two variants of tree - structured LSTM - RNNs by are notable to represent our target structures which have a variable number of typed children : the Child - Sum Tree - LSTM does not deal with types and the N - ary Tree assumes a fixed number of children .
-We thus propose anew variant of tree - structured LSTM - RNN that shares weight matrices U s for same - type children and also allows variable number of children .
+We thus propose a new variant of tree - structured LSTM - RNN that shares weight matrices U s for same - type children and also allows variable number of children .
 For this variant , we calculate n lt - dimensional vectors in the LSTM unit at t-th node with C ( t ) children using following equations :
 where m ( ) is a type mapping function .
 To investigate appropriate structures to represent relations between two target word pairs , we experiment with three structure options .

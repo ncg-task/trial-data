@@ -11,7 +11,7 @@
         "top N function" : {
           "suggesting" : "most multi questions have their evidence distributed across contiguous sentences"
         },
-        "from sentence" : "The top N function contributes very little to the overall performance , suggesting that most multi questions have their evidence distributed across contiguous sentences ."
+        "from sentence" : "The top N function contributes very little to the over all performance , suggesting that most multi questions have their evidence distributed across contiguous sentences ."
       },
       "has" : {
         "sentential component" : {

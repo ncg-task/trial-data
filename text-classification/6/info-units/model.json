@@ -7,7 +7,7 @@
             "sentence encoding model" : {
               "constructs" : {
                 "sentence embeddings" : {
-                  "using" : "encoding sub-graph of the transformer architecture (Vaswani et al., 2017)"
+                  "using" : "encoding sub - graph of the transformer architecture"
                 }
               },
               "from sentence" : "The transformer based sentence encoding model constructs sentence embeddings using the encoding sub - graph of the transformer architecture ."              
@@ -72,7 +72,9 @@ This is accomplished by using multi-task learning whereby a single encoding mode
                 }
               }
             },
-            "from sentence" : "The second encoding model makes use of a deep averaging network ( DAN ) whereby input embeddings for words and bi-grams are first averaged together and then passed through a feedforward deep neural network ( DNN ) to produce sentence embeddings ."            
+            "from sentence" : "Deep Averaging Network ( DAN )
+The second encoding model makes use of a deep averaging network ( DAN ) whereby input embeddings for words and bi-grams are first averaged together and then passed through a feedforward deep neural network ( DNN ) to produce sentence embeddings ."
+
           },
           "takes as input" : {
             "lowercased PTB tokenized string" : {
@@ -97,7 +99,7 @@ This is accomplished by using multi-task learning whereby a single encoding mode
           "primary advantage" : {
             "compute time" : {
               "is" : {
-                "linear in length" : {
+                "linear in the length" : {
                   "of" : "input sequence"
                 }
               }

@@ -12,6 +12,11 @@
       },
       "employ" : ["early stopping",
         {"from sentence" : "We employ early stopping in all of the experiments ."}],
+      "fix" : {
+        "hyperparameters ( i.e. , ? , dropout values , best epoch , learning rate )" : {
+          "on" : "validation sets"
+        }
+      },		
       "use" : [
         ["Adam optimizer", 
         {"from sentence" : "We use the Adam optimizer and we fix the hyperparameters ( i.e. , ? , dropout values , best epoch , learning rate ) on the validation sets ."}],
@@ -51,13 +56,7 @@
             "from sentence" : "We use three types of evaluation , namely : ( i ) S( trict ) : we score an entity as correct if both the entity boundaries and the entity type are correct ( ACE04 , ADE , CoNLL04 , DREC ) , ( ii ) B ( oundaries ) : we score an entity as correct if only the entity boundaries are correct while the entity type is not taken into account ( DREC ) and ( iii ) R( elaxed ) : a multi-token entity is considered correct if at least one correct type is assigned to the tokens comprising the entity , assuming that the : Comparison of our method with the stateof - the - art in terms of F 1 score ."
           }
         }
-        ],
-      "fix" : {
-        "hyperparameters ( i.e. , ? , dropout values , best epoch , learning rate )" : {
-          "on" : "validation sets"
-        },
-        "from sentence" : "We use the Adam optimizer and we fix the hyperparameters ( i.e. , ? , dropout values , best epoch , learning rate ) on the validation sets ."        
-      }
+        ]
     }
   }
 }

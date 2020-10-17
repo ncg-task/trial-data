@@ -9,7 +9,7 @@ After this , a two - channel CNN model is employed to capture features by compos
 Finally , a similarity score is estimated over the composed feature vectors .
 Experimental results show that our model gets the state - of - the - art performance on the answer sentence selection task , and achieves a comparable result on the paraphrase identification task .
 Sentence similarity is a fundamental metric to measure the degree of likelihood between a pair of sentences .
-It plays an important role fora variety of tasks in both NLP and IR communities .
+It plays an important role for a variety of tasks in both NLP and IR communities .
 For example , in paraphrase identification task , sentence similarity is used to determine whether two sentences are paraphrases or not ( Yin and Schtze , 2015 ; He et al. , 2015 ) .
 For question answering and information retrieval tasks , sentence similarities between query - answer pairs are used for assessing the relevance and ranking all the candidate answers ( Severyn and Moschitti , 2015 ; Wang and Ittycheriah , 2015 ) .
 However , sentence similarity learning has following challenges :
@@ -23,7 +23,7 @@ The dissimilarity ( shown in angle brackets ) between two sentences is also a si
 For example , by judging the dissimilar parts , we can easily identify that E 3 and E 5 share the similar meaning " The study is about salmon " , because " sockeye " belongs to the salmon family , and " flounder " does not .
 Whereas the meaning of E 4 is quite different from E 3 , which emphasizes " The study is about red ( a special kind of ) salmon " , because both " sockeye " and " coho " are in the salmon family .
 How we can extract and utilize those information becomes another challenge .
-In order to handle the above challenges , researchers have been working on sentence similarity algorithms fora longtime .
+In order to handle the above challenges , researchers have been working on sentence similarity algorithms for a longtime .
 To bridge the lexical gap ( challenge 1 ) , some word similarity metrics were proposed to match different but semantically related words .
 Examples include knowledge - based metrics ( Resnik , 1995 ) and corpus - based metrics ( Jiang and Conrath , 1997 ; Yin and Schtze , 2015 ; He et al. , 2015 ) .
 To measure sentence similarity from various granularities ( challenge 2 ) , researchers have explored features extracted from n-grams , continuous phrases , discontinuous phrases , and parse trees ( Yin and Schtze , 2015 ; He et al. , 2015 ; Heilman and Smith , 2010 ) .
@@ -141,7 +141,7 @@ We also want to acquire similarities and dissimilarities of various granularity 
 Inspired from Kim , we utilize a two - channel convolutional neural networks ( CNN ) and design filters based on various order of n-grams , e.g. , unigram , bigram and trigram .
 The CNN model involves two sequential operations : convolution and max - pooling .
 For the convolution operation , we define a list of filters {w o }.
-The shape of each filter is d h , where dis the dimension of word vectors and h is the window size .
+The shape of each filter is d h , where d is the dimension of word vectors and h is the window size .
 Each filter is applied to two patches ( a window size h of vectors ) from both similar and dissimilar channels , and generates a feature .
 Eq. ( 10 ) expresses this process .
 To deal with variable feature size , we perform a max - pooling operation over co by selecting the maximum value co = max co .
@@ -153,7 +153,7 @@ The similarity assessment function f sim in Eq. ( 4 ) predicts a similarity scor
 We employ a linear function to sum up all the features and apply a sigmoid function to constrain the similarity within the range [ 0 , 1 ] .
 Training
 We train our sentence similariy model by maximizing the likelihood on a training set .
-Each training instance in the training set is represented as a triple ( S i , Ti , Li ) , where Si and Ti area pair of sentences , and Li ? { 0 , 1 } indicates the similarity between them .
+Each training instance in the training set is represented as a triple ( S i , Ti , Li ) , where Si and Ti are a pair of sentences , and Li ? { 0 , 1 } indicates the similarity between them .
 We assign Li = 1 if Ti is a paraphrase of Si for the paraphrase identification task , or Ti is a correct answer for Si for the answer sentence selection task .
 Otherwise , we assign Li = 0 .
 We implement the mathematical expressions with Theano and use Adam for optimization .
@@ -205,8 +205,8 @@ presents the performances of the state - of - the - art systems and our model , 
 Given a pair of sentences , Severyn and Moschitti ( 2015 ) employed a CNN model to compose each sentence into a vector separately , and joined the two sentence vectors to compute the sentence similarity .
 Because only the sentencelevel granularity was used , the performance is much lower ( the second row of ) .
 After adding some word overlap features between the two sentences , the performance was improved significantly ( the third row of ) .
-Therefore , the lower - level granularity is an indispensable factor fora good performance .
-conducted word alignment fora sentence pair based on word vectors , and measured the sentence similarity based on a couple of word alignment features .
+Therefore , the lower - level granularity is an indispensable factor for a good performance .
+conducted word alignment for a sentence pair based on word vectors , and measured the sentence similarity based on a couple of word alignment features .
 They got a slightly better performance ( the fourth row of ) , which indicates that the vector representation for words is helpful to bridging the lexical gap problem .
 dos introduced the attention mechanism into the CNN model , and learnt sentence representation by considering the influence of the other sentence .
 They got better performance than all the other previous work .
@@ -223,13 +223,13 @@ The semantic matching phase in our model is similar to the attention mechanism .
 But different from the previous models , our model utilizes both the similarity and dissimilarity simultaneously .
 The last row of shows that our model is more effective than the other models .
 MSRP dataset .
-granularity and modeled interaction features at each level fora pair of sentences .
+granularity and modeled interaction features at each level for a pair of sentences .
 They obtained their best performance by pretraining the model on a language modeling task ( the 3rd row of ) .
 However , their model heavily depends on the pretraining strategy .
 Without pretraining , they got a much worse performance ( the second row of ) .
 proposed a similar model to .
 Similarly , they also used a CNN model to extract features at multiple levels of granularity .
-Differently , they utilized some extra annotated resources , e.g. , embeddings from part - of - speech ( POS ) tags and PARAGRAM vectors trained from the Paraphrase Database .
+Differently , they utilized some extra annotated resources , e.g. , embeddings from part - of - speech ( POS ) tags and PARAGRAM vectors trained from the Paraphrase Data base .
 Their model outperformed without the need of pretraining ( the sixth row of ) .
 However , the performance was reduced after removing the extra resources ( the fourth and fifth rows of ) .
 applied their attention - based CNN model on this dataset .
@@ -243,7 +243,7 @@ The semantic matching functions in subsection 3.1 are inspired from the attentio
 However , most of the previous work using the attention mechanism in only LSTM models .
 Whereas our model introduces the attention mechanism into the CNN model .
 A similar work is the attention - based CNN model proposed by .
-They first build an attention matrix fora sentence pair , and then directly take the attention matrix as anew channel of the CNN model .
+They first build an attention matrix for a sentence pair , and then directly take the attention matrix as a new channel of the CNN model .
 Differently , our model uses the attention matrix ( or similarity matrix ) to decompose the original sentence matrix into a similar component matrix and a dissimilar component matrix , and then feeds these two matrixes into a two - channel CNN model .
 The model can then focus much on the interactions between similar and dissimilar parts of a sentence pair .
 Conclusion

@@ -1,7 +1,7 @@
 {
   "has" : {
     "Results" : {
-      "for" : {
+      "has" : {
         "Document Classification" : {
           "has" : {
             "S - ACNN" : {
@@ -15,7 +15,9 @@
                   }
                 }
               },
-              "from sentence" : "As illustrated in , S - ACNN significantly outperforms S - CNN on both datasets , demonstrating the advantage of the filtergeneration module in our ACNN framework ."              
+              "from sentence" : "Document Classification
+As illustrated in , S - ACNN significantly outperforms S - CNN on both datasets , demonstrating the advantage of the filtergeneration module in our ACNN framework ."
+
             },
             "M - ACNN" : {
               "achieves slightly better performance than" : {
@@ -57,7 +59,9 @@
               }
             }
           },
-          "from sentence" : "Notably , our model yields significantly better results than an attentive pooling network and ABCNN ( attention - based CNN ) baselines ."          
+          "from sentence" : "Answer Sentence Selection
+Notably , our model yields significantly better results than an attentive pooling network and ABCNN ( attention - based CNN ) baselines ."
+
         }        
       }
     }

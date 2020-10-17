@@ -10,7 +10,9 @@
                   "with" : ["80 hidden units", "25 dimensional character embeddings"]
                 }
               },
-              "from sentence" : "We use two bidirectional GRUs with 80 hidden units and 25 dimensional character embeddings for the token character encoder ."
+              "from sentence" : "CoNLL 2003 NER .
+We use two bidirectional GRUs with 80 hidden units and 25 dimensional character embeddings for the token character encoder ."
+
             },
             "sequence layer" : {
               "uses" : {
@@ -43,7 +45,9 @@
                   }
                 }}
               ],
-              "from sentence" : "The baseline sequence tagger uses 30 dimensional character embeddings and a CNN with 30 filters of width 3 characters followed by a tanh non-linearity for the token character encoder ."
+              "from sentence" : "CoNLL 2000 chunking .
+The baseline sequence tagger uses 30 dimensional character embeddings and a CNN with 30 filters of width 3 characters followed by a tanh non-linearity for the token character encoder ."
+
             },
             "sequence layer" : {
               "uses" : {

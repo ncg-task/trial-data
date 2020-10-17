@@ -18,7 +18,7 @@ The first one is a standard CNN model similar to that of , using ReLU as non-lin
                   "specifically an" : "LSTM",
                   "before passing" : {
                     "pooled features" : {
-                      "directly to" : "fully connected softmax layers"  
+                      "directly to" : "fully connected softmax layer"  
                     }
                   }
                 }

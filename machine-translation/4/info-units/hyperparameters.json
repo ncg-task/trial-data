@@ -24,9 +24,9 @@
             }
           }
         },
-        "from sentence" : "We use beam search with abeam size of 4 and length penalty ? = 0.6 ."
+        "from sentence" : "We use beam search with a beam size of 4 and length penalty ? = 0.6 ."
       },
-      "implemented in" : ["TensorFlow", {"from sentence" : "The model is implemented in TensorFlow and trained on up to four K80 GPUs synchronously in a multi - GPU setup on a single machine ."}],
+      "implemented in" : "TensorFlow",
       "trained on" : {
         "up to four K80 GPUs" : {
           "in" : {

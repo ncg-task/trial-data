@@ -6,4 +6,4 @@
 (Model||demonstrate||significant increase in performance)
 (significant increase in performance||directly classifying||each of the competing spans)
 (significant increase in performance||training with||global normalization)
-(global normalization||overall||possible spans)
+(global normalization||over all||possible spans)

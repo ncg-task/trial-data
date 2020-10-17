@@ -15,7 +15,7 @@
           "from sentence" : "In addition to explicit dropout regularization , we also use early stopping to prevent over-fitting and use the following process to determine when to stop training ."
         }
       },
-      "fine tune" : ["pre-trained Senna word embeddings", {"from sentence" : "In all experiments , we fine tune the pre-trained Senna word embeddings but fix all weights in the pre-trained language models ."}],
+      "fine tune" : "pre-trained Senna word embeddings",
       "fix" : {
         "all weights" : {
           "in" : "pre-trained language models"

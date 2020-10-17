@@ -13,7 +13,7 @@
       },
       "allows" : {
         "joint modeling of entities and relations" : {
-          "using" : ["bidirectional sequential (left-to-right and right-to-left) LSTM-RNNs", "bidirectional tree-structured (bottom-up and top-down) LSTM-RNNs"]
+          "using" : ["bidirectional sequential ( left - to - right and right - to - left )", "bidirectional tree - structured ( bottom - up and top - down ) LSTM - RNNs"]
         },
         "from sentence" : "Our model allows joint modeling of entities and relations in a single model by using both bidirectional sequential ( left - to - right and right - to - left ) and bidirectional tree - structured ( bottom - up and top - down ) LSTM - RNNs ."
       },
@@ -39,7 +39,7 @@
       "incorporates" : {
         "two enhancements" : {
           "name" : ["entity pretraining", "scheduled sampling"],
-          "alleviate" : "low-performance entity detection in early stages of training",
+          "alleviate" : "low - performance entity detection in early stages of training",
           "allow" : "entity information to further help downstream relation classification"
         },
         "from sentence" : "Unlike traditional incremental end - to - end relation extraction models , our model further incorporates two enhancements into training : entity pretraining , which pretrains the entity model , and scheduled sampling , which replaces ( unreliable ) predicted labels with gold labels in a certain probability .

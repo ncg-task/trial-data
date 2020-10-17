@@ -17,7 +17,7 @@
 229	32	45	learning rate
 229	87	115	{ 1 , 0.1 , ... , 1.0e ? 4 }
 229	139	145	margin
-229	93	96	0.1
+230	11	14	0.1
 24	45	72	embedding - based QA system
 24	73	88	developed under
 24	93	133	framework of Memory Networks ( Mem NNs )
@@ -41,7 +41,7 @@
 262	41	58	single QA dataset
 262	59	66	perform
 262	67	73	poorly
-262	36	38	on
+262	74	76	on
 262	81	95	other datasets
 263	20	31	training on
 263	32	45	both datasets
@@ -51,14 +51,10 @@
 263	119	140	all question patterns
 263	141	143	of
 263	148	160	two datasets
+256	0	27	Transfer learning on Reverb
 257	104	108	test
 257	109	120	our ability
 257	121	130	to rerank
 257	131	138	answers
 257	139	141	on
 257	146	162	companion QA set
-259	4	16	best results
-259	21	34	67 % accuracy
-259	41	45	68 %
-259	46	49	for
-259	54	74	ensemble of 5 models

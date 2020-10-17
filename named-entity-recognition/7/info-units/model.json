@@ -36,7 +36,7 @@
             "from sentence" : "Following , we employ Stack - LSTM to represent the system 's state , which consists of the states of input , stack and action history , in a continuous space incrementally ."
           },
           "has" : {
-            "(partially) processed nested mentions" : {
+            "( partially ) processed nested mentions" : {
               "encoded with" : {
                 "recursive neural networks" : {
                   "where" : {

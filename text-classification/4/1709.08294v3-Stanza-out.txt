@@ -13,7 +13,7 @@ In the last few years , convolutional neural networks ( CNNs ) have demonstrated
 CNNs are typically applied to tasks where feature extrac-tion and a corresponding supervised task are approached jointly .
 As an encoder network for text , CNNs typically convolve a set of filters , of window size n , with an inputsentence embedding matrix obtained via word2vec or Glove .
 Different filter sizes n maybe used within the same model , exploiting meaningful semantic features from different n-gram fragments .
-The learned weights of CNN filters , inmost cases , are assumed to be fixed regardless of the input text .
+The learned weights of CNN filters , in most cases , are assumed to be fixed regardless of the input text .
 As a result , the rich contextual information inherent in natural language sequences may not be fully captured .
 As demonstrated in , the context of a word tends to greatly influence its contribution to the final supervised tasks .
 This observation is consistent with the following intuition : when reading different types of documents , e.g. , academic papers or newspaper articles , people tend to adopt distinct strategies for better and more effective understanding , leveraging the fact that the same words or phrases may have different meaning or imply different things , depending on context .
@@ -31,7 +31,7 @@ Moreover , since the generated filters in our framework can adapt to different c
 In this regard , we propose a novel bidirectional filter generation mechanism to allow interactions between sentence pairs while constructing context - sensitive representations .
 We investigate the effectiveness of our Adaptive Context - sensitive CNN ( ACNN ) framework on several text processing tasks : ontology classification , sentiment analysis , answer sentence selection and paraphrase identification .
 We show that the proposed methods consistently outperforms the standard CNN and attention - based CNN baselines .
-Our work provides anew perspective on how to incorporate contextual information into text representations , which can be combined with more sophisticated structures to achieve even better performance in the future .
+Our work provides a new perspective on how to incorporate contextual information into text representations , which can be combined with more sophisticated structures to achieve even better performance in the future .
 Related Work
 Learning deep text representations has attracted much attention recently , since they can potentially benefit a wide range of NLP applications .
 CNNs have been extensively investigated as the encoder networks of natural language .
@@ -47,7 +47,7 @@ However , their model is only suitable for encoding individual sentences , while
 Moreover , our framework is based on CNN models , which is advantageous due to fewer parameters and highly parallelizable computations relative to sequential - based models .
 Model
 Basic CNN for text representations
-The CNN architectures in are typically utilized for extracting sentence representations , by a composition of a convolutional layer and a max - pooling operation overall resulting feature maps .
+The CNN architectures in are typically utilized for extracting sentence representations , by a composition of a convolutional layer and a max - pooling operation over all resulting feature maps .
 Let the words of a sentence of length T ( padded where necessary ) be x 1 , x 2 , ... , x T .
 The sentence can be represented as a matrix X ?
 R d T , where each column represents a d-dimensional embedding of the corresponding word .
@@ -63,7 +63,7 @@ Moreover , the max - over - time nature of the pooling operation guarantees that
 Note that in basic CNN sentence encoders , filter weights are the same for different inputs , which maybe suboptimal for feature extraction , especially in the case where conditional information is available .
 Learning context - sensitive filters
 The proposed architecture to learn contextsensitive filters is composed of two principal modules : ( i ) a filter generation module , which produces a set of filters conditioned on the input sentence ; and ( ii ) an adaptive convolution module , which applies the generated filters to an input sentence ( this sentence maybe either the same as or different from the first input , as discussed further in Section 3.3 ) .
-The two modules are jointly differentiable , and the overall architecture can be trained in an end - to - end manner .
+The two modules are jointly differentiable , and the over all architecture can be trained in an end - to - end manner .
 Since the generated filters are sample - specific , our ACNN feature extractor for text tends to have stronger predictive power than a basic CNN encoder .
 The general ACNN framework is shown schematically in .
 Convolution module
@@ -99,9 +99,9 @@ For i = 1 , 2 , . . . , m , if a i correctly answers q , then y i = 1 , and othe
 Conventionally , a question q and an answer a are independently encoded by two basic CNNs to fixed - length vector representations , denoted h q and ha , respectively .
 They are then directly employed to predict the judgement y .
 This strategy could be suboptimal , since no communication ( information sharing ) occurs between the questionanswer pair until the top prediction layer .
-Intuitively , while the model is inferring the representation fora question , if the meaning of the answer is The AdaQA model can be divided into three modules : filter generation , adaptive convolution , and matching modules , as depicted schematically in .
+Intuitively , while the model is inferring the representation for a question , if the meaning of the answer is The AdaQA model can be divided into three modules : filter generation , adaptive convolution , and matching modules , as depicted schematically in .
 Assume there is a question - answer pair to be matched , represented by word - embedding matrices , i.e. Q ? R Tqd and A ?
-R Tad , where dis the embedding dimension and T q and Ta are respective sentence lengths .
+R Tad , where d is the embedding dimension and T q and Ta are respective sentence lengths .
 First , they are passed to two filter - generation modules , to produce two sets of filters that encapsulate features of the corresponding input sentences .
 Similar to the setup in Section 3.2 , we also employ a two - step process to produce the filters .
 For a question Q , the generating process is :
@@ -171,7 +171,7 @@ ploy the percentage of correct predictions on the test set to evaluate and compa
 For the answer sentence selection task , mean average precision ( MAP ) and mean reciprocal rank ( MRR ) are utilized as the corresponding evaluation metrics .
 Experimental Results
 Document Classification
-To explicitly explore whether our ACNN model can leverage the input-aware filter weights for better sentence representation , we perform a comparison between the basic CNN and ACNN models with only a single filter , which are denoted as S - CNN , S - ACNN , respectively ( this setting may not yield best overall performance , since only a single filter is used , but it allows us to isolate the impact of adaptivity ) .
+To explicitly explore whether our ACNN model can leverage the input-aware filter weights for better sentence representation , we perform a comparison between the basic CNN and ACNN models with only a single filter , which are denoted as S - CNN , S - ACNN , respectively ( this setting may not yield best over all performance , since only a single filter is used , but it allows us to isolate the impact of adaptivity ) .
 As illustrated in , S - ACNN significantly outperforms S - CNN on both datasets , demonstrating the advantage of the filtergeneration module in our ACNN framework .
 As a result , with only one convolutional filter and thus very limited modeling capacity , our S - ACNN model tends to be much more expressive than the basic CNN model , due to the flexibility of applying different filters to different sentences .
 We further experiment on both ACNN and CNN models with multiple filters .

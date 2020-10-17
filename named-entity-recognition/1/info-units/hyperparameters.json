@@ -29,7 +29,7 @@
 We set the dropout rate to 0.5 ."
 
         },
-        "stack-LSTM model" : {
+        "stack - LSTM model" : {
           "uses" : {
             "two layers" : {
               "dimension" : {
@@ -41,7 +41,7 @@ We set the dropout rate to 0.5 ."
             "from sentence" : "The stack - LSTM model uses two layers each of dimension 100 for each stack ."
           },
           "has" : {
-            "embeddings of actions" : {
+            "embeddings of the actions" : {
               "used in" : "composition functions",
               "have" : "16 dimensions each"
             },

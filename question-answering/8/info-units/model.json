@@ -8,10 +8,10 @@
               "as defined in" : "SQuAD dataset"
             }
           },
-          "from sentence" : "In this paper , we propose anew end - to - end neural architecture to address the machine comprehension problem as defined in the SQuAD dataset ."          
+          "from sentence" : "In this paper , we propose a new end - to - end neural architecture to address the machine comprehension problem as defined in the SQuAD dataset ."          
       }},
       "two ways to apply" : {
-        "Ptr-Net model" : {
+        "Ptr - Net model" : {
           "has" : ["sequence model", {"boundary model" : {"with" : "search mechanism"}}]
         }
         "from sentence" : "We propose two ways to apply the Ptr - Net model for our task : a sequence model and a boundary model .

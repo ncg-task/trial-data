@@ -5,7 +5,7 @@
         "model" : {
           "lacks" : {
             "reasoning capability" : {
-              "when" : {
+              "When" : {
                 "number of layers" : {
                   "is" : "one"
                 }

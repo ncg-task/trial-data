@@ -9,12 +9,16 @@
       },
       "performance of" : {
         "RE task" : {
-          "decreases when" : [
-            "remove label embeddings layer",
-            {"only use the LSTM hidden state" : {
-              "as" : "inputs"
-            }}
-          ]
+		  "has" : {
+			  "decreases" : {
+				"when" : [
+					"remove the label embeddings layer",
+					{"only use the LSTM hidden state" : {
+					  "as" : "inputs"
+					}}
+				]
+			}
+		  }
         },
         "from sentence" : "The performance of the RE task decreases ( ? 1 % in terms of F 1 score ) when we remove the label embeddings layer and only use the LSTM hidden states as inputs for the RE task ."        
       },

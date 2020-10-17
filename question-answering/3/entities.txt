@@ -26,13 +26,14 @@
 192	3	14	constructed
 192	15	26	5 groups of
 192	27	34	filters
+192	37	44	win - 1
 192	45	53	contains
 192	54	78	only the unigram filters
 192	81	88	win - 2
-192	45	53	contains
+192	89	97	contains
 192	98	129	both unigram and bigram filters
 192	132	139	win - 3
-192	45	53	contains
+192	140	148	contains
 192	149	196	all the filters in win - 2 plus trigram filters
 192	199	206	win - 4
 192	207	225	extends filters in
@@ -51,10 +52,11 @@
 46	34	44	represents
 46	45	54	each word
 46	55	57	as
+46	60	83	low -dimensional vector
 46	106	116	calculates
 46	119	143	semantic matching vector
 46	144	147	for
-46	45	54	each word
+46	148	157	each word
 46	158	166	based on
 46	167	198	all words in the other sentence
 47	5	13	based on
@@ -68,10 +70,11 @@
 48	3	6	use
 48	7	25	similar components
 48	26	28	of
+48	29	42	all the words
 48	43	55	to represent
 48	60	94	similar parts of the sentence pair
 48	101	122	dissimilar components
-48	26	28	of
+48	123	125	of
 48	126	136	every word
 48	137	145	to model
 48	150	177	dissimilar parts explicitly
@@ -87,7 +90,7 @@
 50	65	84	sentence similarity
 2	0	28	Sentence Similarity Learning
 4	18	37	sentence similarity
-214	65	67	on
+202	0	14	QASent dataset
 214	46	49	got
 214	54	62	best MAP
 214	63	68	among
@@ -95,8 +98,10 @@
 214	95	109	comparable MRR
 214	110	114	than
 214	115	118	dos
+215	0	15	Wiki QA dataset
 224	40	59	more effective than
 224	64	76	other models
+225	0	12	MSRP dataset
 237	59	67	obtained
 237	70	92	comparable performance
 237	113	126	without using

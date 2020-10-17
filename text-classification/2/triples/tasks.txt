@@ -9,7 +9,7 @@
 (Hyperparameters||hidden units||10)
 (Sentiment analysis||has||Results)
 (Results||adding||bigram information)
-(bigram information||improves performance by||1 - 4 %)
+(bigram information||improves the performance by||1 - 4 %)
 (Results||has||our accuracy)
 (our accuracy||bit worse than||VDCNN)
 (our accuracy||slightly better than||char - CNN and char - CRNN)

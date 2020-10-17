@@ -11,7 +11,7 @@ Introduction
 Matching two potentially heterogenous language objects is central to many natural language applications .
 It generalizes the conventional notion of similarity ( e.g. , in paraphrase identification ) or relevance ( e.g. , in information retrieval ) , since it aims to model the correspondence between " linguistic objects " of different nature at different levels of abstractions .
 Examples include top -k re-ranking in machine translation ( e.g. , comparing the meanings of a French sentence and an English sentence ) and dialogue ( e.g. , evaluating the appropriateness of a response to a given utterance ) .
-Natural language sentences have complicated structures , both sequential and hierarchical , that are essential for understanding them .
+Natural language sentences have complicated structures , both sequential and hierarchical , thatare essential for understanding them .
 A successful sentence - matching algorithm therefore needs to capture not only the internal structures of sentences but also the rich patterns in their interactions .
 Towards this end , we propose deep neural network models , which adapt the convolutional strategy ( proven successful on image and speech ) to natural language .
 To further explore the relation between representing sentences and matching them , we devise a novel model that can naturally host both the hierarchical composition for sentences and the simple - to - comprehensive fusion of matching patterns with the same convolutional architecture .
@@ -25,9 +25,9 @@ Based on that , in Section 3 , we propose two architectures for sentence matchin
 In Section 4 , we briefly discuss the learning of the proposed architectures .
 Then in Section 5 , we report our empirical study , followed by a brief discussion of related work in Section 6 .
 Convolutional Sentence Model
-We start with proposing anew convolutional architecture for modeling sentences .
+We start with proposing a new convolutional architecture for modeling sentences .
 As illustrated in , it takes as input the embedding of words ( often trained beforehand with unsupervised methods ) in the sentence aligned sequentially , and summarize the meaning of a sentence through layers of convolution and pooling , until reaching a fixed length vectorial representation in the final layer .
-As inmost convolutional models , we use convolution units with a local " receptive field " and shared weights , but we design a large feature map to adequately model the rich structures in the composition of words .
+As in most convolutional models , we use convolution units with a local " receptive field " and shared weights , but we design a large feature map to adequately model the rich structures in the composition of words .
 Convolution
 As shown in , the convolution in Layer - 1 operates on sliding windows of words ( width k 1 ) , and the convolutions in deeper layers are defined in a similar way .
 Generally , with sentence input x , the convolution unit for feature map of type -f ( among F of them ) on Layer - is
@@ -62,12 +62,12 @@ Our convolutional model differs from Recurrent Neural Network ( RNN , ) and Recu
 First , unlike RAE , it does not take a single path of word / phrase composition determined either by a separate gating function , an external parser , or just natural sequential order .
 Instead , it takes multiple choices of composition via a large feature map ( encoded in w ( , f ) for different f ) , and leaves the choices to the pooling afterwards to pick the more appropriate segments ( in every adjacent two ) for each composition .
 With any window width k ? 3 , the type of composition would be much richer than that of RAE .
-Second , our convolutional model can take supervised training and tune the parameters fora specific task , a property vital to our supervised learning - to - match framework .
+Second , our convolutional model can take supervised training and tune the parameters for a specific task , a property vital to our supervised learning - to - match framework .
 However , unlike recursive models , the convolutional architecture has a fixed depth , which bounds the level of composition it could do .
 For tasks like matching , this limitation can be largely compensated with a network afterwards that can take a " global " synthesis on the learned sentence representation .
 Relation to " Shallow " Convolutional Models
 The proposed convolutional sentence model takes simple architectures such as ( essentially the same convolutional architecture as SENNA ) , which consists of a convolution layer and a max - pooling over the entire sentence for each feature map .
-This type of models , with local convolutions and a global pooling , essentially do a " soft " local template matching and is able to detect local features useful fora certain task .
+This type of models , with local convolutions and a global pooling , essentially do a " soft " local template matching and is able to detect local features useful for a certain task .
 Since the sentencelevel sequential order is inevitably lost in the global pooling , the model is incapable of modeling more complicated structures .
 It is not hard to see that our convolutional model degenerates to the SENNA - type architecture if we limit the number of layers to be two and set the pooling window infinitely large .
 Convolutional Matching Models

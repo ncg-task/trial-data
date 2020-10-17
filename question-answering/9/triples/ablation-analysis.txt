@@ -6,6 +6,6 @@
 (passage - aligned question representation||is||crucial)
 (Ablation analysis||has||RASOR)
 (RASOR||outperforms||endpoint prediction model)
-(endpoint prediction model||by||1.1 inexact match)
+(endpoint prediction model||by||1.1 in exact match)
 (Ablation analysis||observe||general improvements)
 (general improvements||when using||labels that closely align with the task)

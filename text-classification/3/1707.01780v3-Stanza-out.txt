@@ -97,13 +97,13 @@ Even though lemmatization has proved useful in conventional linear models as an 
 Experiment 2 : Cross-preprocessing
 This experiment aims at studying the impact of using different word embeddings ( with differently preprocessed training corpora ) on tokenized datasets ( vanilla setting ) .
 shows the results for this experiment .
-In this experiment we observe a different trend , with multiwordenhanced vectors exhibiting a better performance both on the single CNN model ( best overall performance in seven of the nine datasets ) and on the CNN + LSTM model ( best performance in four datasets and in the same ballpark as the best results in four of the remaining five datasets ) .
+In this experiment we observe a different trend , with multiwordenhanced vectors exhibiting a better performance both on the single CNN model ( best over all performance in seven of the nine datasets ) and on the CNN + LSTM model ( best performance in four datasets and in the same ballpark as the best results in four of the remaining five datasets ) .
 In this case the same set of words is learnt but single tokens inside multiword expressions are not trained .
 Instead , these single tokens are considered in isolation only , without the added noise when considered inside the multiword expression as well .
 For instance , the word Apple has a clearly different meaning in isolation from the one inside :
 Cross - preprocessing evaluation : accuracy on the topic categorization and polarity detection tasks using different sets of word embeddings to initialize the embedding layer of the two classifiers .
 All datasets were preprocessed similarly according to the vanilla setting .
-indicates results that are statistically significant with respect to the top result .
+indicates results thatare statistically significant with respect to the top result .
 the multiword expression Big Apple , hence it can be seen as beneficial not to train the word
 Apple when part of this multiword expression .
 Interestingly , using multiword - wise embeddings on the vanilla setting leads to consistently better results than using them on the same multiwordgrouped preprocessed dataset in eight of the nine datasets .

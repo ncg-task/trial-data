@@ -12,7 +12,7 @@
         "from sentence" : "In order to address this issue , we extend the encoder - shared model , i.e. , the model with one shared encoder , by leveraging two independent encoders with each for one language ."
       },
       "utilized" : ["two independent decoders", {"from sentence" : "Similarly , two independent decoders are utilized ."}],
-      "for" : {
+      "For" : {
         "each language" : {
           "perform" : {
             "AE" : {

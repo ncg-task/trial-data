@@ -1,6 +1,6 @@
 (Contribution||has||Model)
 (Model||has||LSTM - CRF)
-(LSTM - CRF||is||bidirectional LSTM)
+(LSTM - CRF||has||bidirectional LSTM)
 (bidirectional LSTM||above it||sequential conditional random layer)
 (Model||has||S - LSTM)
 (S - LSTM||constructs and labels||chunks of input sentences)

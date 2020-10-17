@@ -18,8 +18,7 @@
       "couple" : {
         "input and forget gates" : {
           "in" : "LSTMs"
-        },
-        "from sentence" : "We couple the input and forget gates in our LSTMs , as described in , and we use a single dropout mask to apply dropout across all LSTM time - steps as proposed by ."
+        }
       },
       "use" : {
         "single dropout mask" : {
@@ -52,13 +51,13 @@
       },
       "has" : {
         "best model" : {
-          "uses" : ["50d LSTM states", {"two-layer BiLSTMs" : {
-            "for" : "span encoder and the passage-independent question representation"}}, {"dropout" : {"of" : "0.1"}}, {"learning rate decay" : {"of" : {"5%"  : {"every" : "10k steps"}}}},
+          "uses" : ["50d LSTM states", {"two - layer BiLSTMs" : {
+            "for" : "span encoder and the passage - independent question representation"}}, {"dropout" : {"of" : "0.1"}}, {"learning rate decay" : {"of" : {"5 %"  : {"every" : "10 k steps"}}}},
             {"from sentence" : "The best model uses 50d LSTM states ; two - layer BiLSTMs for the span encoder and the passage - independent question representation ; dropout of 0.1 throughout ; and a learning rate decay of 5 % every 10 k steps ."}
           ]
         }
       },
-      "implemented using" : ["TensorFlow 3", {"from sentence" : "All models are implemented using TensorFlow 3 and trained on the SQUAD training set using the ADAM optimizer with a mini-batch size of 4 and trained using 10 asynchronous training threads on a single machine ."}],
+      "implemented using" : "TensorFlow 3",
       "trained on" : {
         "SQUAD training set" : {
           "using" : {
@@ -70,8 +69,7 @@
               }
             }
           }
-        },
-        "from sentence" : "All models are implemented using TensorFlow 3 and trained on the SQUAD training set using the ADAM optimizer with a mini-batch size of 4 and trained using 10 asynchronous training threads on a single machine ."
+        }
       },
       "trained using" : {
         "10 asynchronous training threads" : {

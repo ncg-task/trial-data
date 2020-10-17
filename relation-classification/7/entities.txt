@@ -1,6 +1,6 @@
 34	21	30	introduce
 34	31	38	BioBERT
-34	5	7	is
+34	47	49	is
 34	52	93	pre-trained language representation model
 34	94	97	for
 34	102	119	biomedical domain
@@ -9,7 +9,7 @@
 36	30	34	with
 36	35	42	weights
 36	43	47	from
-36	25	29	BERT
+36	48	52	BERT
 36	65	78	pretrained on
 36	79	140	general domain corpora ( English Wikipedia and Books Corpus )
 37	7	14	BioBERT
@@ -54,14 +54,14 @@
 138	28	36	achieves
 138	37	50	higher scores
 138	51	55	than
-138	23	27	BERT
+138	56	60	BERT
 139	8	20	outperformed
 139	25	54	state - of - the - art models
 139	55	57	on
 139	58	82	six out of nine datasets
 139	89	113	BioBERT v 1.1 ( PubMed )
-139	8	20	outperformed
-139	25	54	state - of - the - art models
+139	114	126	outperformed
+139	131	160	state - of - the - art models
 139	161	163	by
 139	164	168	0.62
 139	169	180	in terms of
@@ -77,14 +77,25 @@
 144	28	46	highest F 1 scores
 144	47	49	on
 144	50	80	2 out of 3 biomedical datasets
-149	22	24	QA
-149	36	43	BioBERT
-149	39	43	BERT
-149	65	67	of
-149	65	67	of
-149	65	67	of
+145	4	6	QA
+148	16	23	BioBERT
+148	24	50	significantly outperformed
+148	51	55	BERT
+148	64	93	state - of - the - art models
+148	116	139	BioBERT v1.1 ( PubMed )
+148	140	148	obtained
+148	151	166	strict accuracy
+148	13	15	of
+148	170	175	38.77
+148	180	196	lenient accuracy
+148	167	169	of
+148	200	205	53.81
+148	212	238	mean reciprocal rank score
+148	197	199	of
+148	242	247	44.77
 149	11	33	biomedical QA datasets
 149	36	43	BioBERT
+149	44	52	achieved
 149	53	91	new state - of - the - art performance
 149	92	103	in terms of
 149	104	107	MRR

@@ -25,7 +25,8 @@
                   }
                 }
               },
-              "from sentence" : "We observe that SCIBERT outperforms BERT - Base on biomedical tasks ( + 1.92 F1 with finetuning and + 3.59 F1 without ) ."
+              "from sentence" : "Biomedical Domain
+We observe that SCIBERT outperforms BERT - Base on biomedical tasks ( + 1.92 F1 with finetuning and + 3.59 F1 without ) ."
               
             }
           },
@@ -53,7 +54,9 @@
                   }
                 }
               },
-              "from sentence" : "We observe that SCIBERT outperforms BERT - Base on computer science tasks ( + 3.55 F1 with finetuning and + 1.13 F1 without ) ."              
+              "from sentence" : "Computer Science Domain
+We observe that SCIBERT outperforms BERT - Base on computer science tasks ( + 3.55 F1 with finetuning and + 1.13 F1 without ) ."
+
             }
           },
           "has" : {
@@ -81,7 +84,9 @@
                 }
               }
             },
-            "from sentence" : "We observe that SCIBERT outperforms BERT - Base on the multidomain tasks ( + 0.49 F1 with finetuning and + 0.93 F1 without ) ."            
+            "from sentence" : "Multiple Domains
+We observe that SCIBERT outperforms BERT - Base on the multidomain tasks ( + 0.49 F1 with finetuning and + 0.93 F1 without ) ."
+
           },
           "has" : {
             "SCIBERT" : {

@@ -3,7 +3,7 @@
     "Model" : {
       "propose" : {
         "Universal Language Model Fine - tuning" : {
-          "has acronym" : "ULMFiT",
+          "name" : "ULMFiT",
           "that can be used to achieve" : {
             "CV - like transfer learning" : {
               "for" : "any task for NLP"
@@ -16,8 +16,8 @@
         "previous knowledge" : {
           "avoid" : {
             "catastrophic forgetting" : {
-              "during" : "fine - tuning",
-              "propose" : ["discriminative fine - tuning", "slanted triangular learning rates", "gradual unfreezing"]
+              "propose" : ["discriminative fine - tuning", "slanted triangular learning rates", "gradual unfreezing"],			
+              "during" : "fine - tuning"
             }
           }
         },

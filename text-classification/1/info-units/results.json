@@ -7,17 +7,19 @@
             "two types of LSTM" : {
               "see that" : {
                 "one - hot bidirectional LSTM with pooling" : {
-                  "has acronym" : "oh - 2 LSTMp",
+                  "name" : "oh - 2 LSTMp",
                   "outperforms" : {
                     "word - vector LSTM" : {
-                      "has acronym" : "wv - LSTM",
+                      "name" : "wv - LSTM",
                       "on" : "all the datasets"
                     }
                   }
                 }
               }
             },
-            "from sentence" : "Comparing the two types of LSTM in , we see that our one - hot bidirectional LSTM with pooling ( oh - 2 LSTMp ) outperforms word - vector LSTM ( wv - LSTM ) on all the datasets , confirming the effectiveness of our approach ."            
+            "from sentence" : "Experiments ( supervised )
+Comparing the two types of LSTM in , we see that our one - hot bidirectional LSTM with pooling ( oh - 2 LSTMp ) outperforms word - vector LSTM ( wv - LSTM ) on all the datasets , confirming the effectiveness of our approach ."
+
           },
           "on" : {
             "three out of the four datasets" : {
@@ -44,7 +46,9 @@
                 }
               }
             },
-            "from sentence" : "Therefore , we tested wv - 2 LSTMp ( word - vector bidirectional LSTM with pooling ) , whose only difference from oh - 2 LSTMp is that the input to the LSTM layers is the pre-trained word vectors ."
+            "from sentence" : "Semi-supervised experiments
+Therefore , we tested wv - 2 LSTMp ( word - vector bidirectional LSTM with pooling ) , whose only difference from oh - 2 LSTMp is that the input to the LSTM layers is the pre-trained word vectors ."
+
           },
           "review" : {
             "performance" : {

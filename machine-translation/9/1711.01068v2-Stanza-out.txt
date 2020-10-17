@@ -16,7 +16,7 @@ Word embeddings play an important role in neural - based natural language proces
 Neural word embeddings encapsulate the linguistic information of words in continuous vectors .
 However , as each word is assigned an independent embedding vector , the number of parameters in the embedding matrix can be huge .
 For example , when each embedding has 500 dimensions , the network has to hold 100M embedding parameters to represent 200K words .
-In practice , fora simple sentiment analysis model , the word embedding parameters account for 98.8 % of the total parameters .
+In practice , for a simple sentiment analysis model , the word embedding parameters account for 98.8 % of the total parameters .
 As only a small portion of the word embeddings is selected in the forward pass , the giant embedding matrix usually does not cause a speed issue .
 However , the massive number of parameters in the neural network results in a large storage or memory footprint .
 When other components of the neural network are also large , the model may fail to fit into GPU memory during training .
@@ -52,7 +52,7 @@ is approximated by M codewords selected from M codebooks .
 The selection of codewords is controlled by the code C w .
 Such problem of learning compact codes with multiple codebooks is formalized and discussed in the research field of compressionbased source coding , known as product quantization and additive quantization .
 Previous works learn compositional codes so as to enable an efficient similarity search of vectors .
-In this work , we utilize such codes fora different purpose , that is , constructing word embeddings with drastically fewer parameters .
+In this work , we utilize such codes for a different purpose , that is , constructing word embeddings with drastically fewer parameters .
 Due to the discreteness in the hash codes , it is usually difficult to directly optimize the objective function in Eq.
 3 .
 In this paper , we propose a simple and straight - forward method to learn the codes in an end - to - end neural network .
@@ -220,7 +220,7 @@ The English texts are tokenized by moses toolkit whereas the Japanese texts are 
 The vocabulary size for each language is reduced to 40K using byte - pair encoding .
 The evaluation is performed using a standard kytea - based post -processing script for this dataset .
 Model architecture :
-In our preliminary experiments , we found a 32 16 coding works well fora vanilla NMT model .
+In our preliminary experiments , we found a 32 16 coding works well for a vanilla NMT model .
 As it is more meaningful to test on a high - performance model , we applied several techniques to improve the performance .
 The model has a standard bi-directional encoder composed of two LSTM layers similar to .
 The decoder contains two LSTM layers .
@@ -241,7 +241,7 @@ Finally , the NMT models using compositional coding are retrained by plugging in
 Note that the embedding layer is fixed in this phase , other parameters are retrained from random initial values .
 Results :
 The experimental results are summarized in .
-All translations are decoded by the beam search with abeam size of 5 .
+All translations are decoded by the beam search with a beam size of 5 .
 The performance of iterative pruning varies between tasks .
 The loss - free compression rate reaches 92 % on ASPEC dataset by pruning 90 % of the connections .
 However , with the same pruning ratio , a modest performance loss is observed in IWSLT14 dataset .

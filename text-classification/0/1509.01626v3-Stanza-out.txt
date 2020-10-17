@@ -23,7 +23,7 @@ Applying convolutional networks to text classification or natural language proce
 It has been shown that ConvNets can be directly applied to distributed or discrete embedding of words , without any knowledge on the syntactic or semantic structures of a language .
 These approaches have been proven to be competitive to traditional models .
 from previous research that ConvNets do not require the knowledge about the syntactic or semantic structure of a language .
-This simplification of engineering could be crucial fora single system that can work for different languages , since characters always constitute a necessary construct regardless of whether segmentation into words is possible .
+This simplification of engineering could be crucial for a single system that can work for different languages , since characters always constitute a necessary construct regardless of whether segmentation into words is possible .
 Working on only characters also has the advantage that abnormal character combinations such as misspellings and emoticons maybe naturally learnt .
 Character - level Convolutional Networks
 In this section , we introduce the design of character - level ConvNets for text classification .
@@ -56,7 +56,7 @@ Character quantization
 Our models accept a sequence of encoded characters as input .
 The encoding is done by prescribing an alphabet of size m for the input language , and then quantize each character using 1 - of - m encoding ( or " one - hot " encoding ) .
 Then , the sequence of characters is transformed to a sequence of such m sized vectors with fixed length l 0 .
-Any character exceeding length l 0 is ignored , and any characters that are not in the alphabet including blank characters are quantized as all - zero vectors .
+Any character exceeding length l 0 is ignored , and any characters thatare not in the alphabet including blank characters are quantized as all - zero vectors .
 The character quantization order is backward so that the latest reading on characters is always placed near the begin of the output , making it easy for fully connected layers to associate weights with the latest reading .
 Later we also compare with models that use a different alphabet in which we distinguish between upper-case and lower - case letters .
 Model Design
@@ -78,7 +78,7 @@ We initialize the weights using a Gaussian distribution .
 The mean and standard deviation used for initializing the large model is ( 0 , 0.02 ) and small model ( 0 , 0.05 ) . :
 Fully - connected layers used in our experiments .
 The number of output units for the last layer is determined by the problem .
-For example , fora 10 - class classification problem it will be 10 .
+For example , for a 10 - class classification problem it will be 10 .
 Depends on the problem
 For different problems the input lengths maybe different ( for example in our case l 0 = 1014 ) , and so are the frame lengths .
 From our model design , it is easy to know that given input length l 0 , the output frame length after the last convolutional layer ( but before any of the fully - connected layers ) isl 6 = ( l 0 ? 96 ) / 27 .
@@ -141,7 +141,7 @@ For the alphabet of English , one apparent choice is whether to distinguish betw
 We report experiments on this choice and observed that it usually ( but not always ) gives worse results when such distinction is made .
 One possible explanation might be that semantics do not change with different letter cases , therefore there is a benefit of regularization .
 Large - scale Datasets and Results
-Previous research on ConvNets in different areas has shown that they usually work well with largescale datasets , especially when the model takes in low - level raw features like characters in our case .
+Previous research on ConvNets in different are as has shown that they usually work well with largescale datasets , especially when the model takes in low - level raw features like characters in our case .
 However , most open datasets for text classification are quite small , and large - scale datasets are splitted with a significantly smaller training set than testing .
 Therefore , instead of confusing our community more by using them , we built several large - scale datasets for our experiments , ranging from hundreds of thousands to several millions of samples .
 is a summary .
@@ -149,7 +149,7 @@ Sogou news corpus .
 This dataset is a combination of the Sogo u CA and Sogo uCS news corpora , containing in total 2,909,551 news articles in various topic channels .
 We then labeled each piece of news using its URL , by manually classifying the their domain names .
 This gives us a large corpus of news articles labeled with their categories .
-There area large number categories but most of them contain only few articles .
+There are a large number categories but most of them contain only few articles .
 We choose 5 categories - " sports " , " finance " , " entertainment " , " automobile " and " technology " .
 The number of training samples selected for each class is 90,000 and testing 12,000 .
 Although this is a dataset in Chinese , we used pypinyin package combined with jieba Chinese segmentation system to produce Pinyin - a phonetic romanization of Chinese .
@@ -224,4 +224,4 @@ This article offers an empirical study on character - level convolutional networ
 We compared with a large number of traditional and deep learning models using several largescale datasets .
 On one hand , analysis shows that character - level ConvNet is an effective method .
 On the other hand , how well our model performs in comparisons depends on many factors , such as dataset size , whether the texts are curated and choice of alphabet .
-In the future , we hope to apply character - level ConvNets fora broader range of language processing tasks especially when structured outputs are needed .
+In the future , we hope to apply character - level ConvNets for a broader range of language processing tasks especially when structured outputs are needed .

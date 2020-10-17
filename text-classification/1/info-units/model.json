@@ -3,7 +3,7 @@
     "Model" : {
       "consider" : {
         "more general framework" : {
-          "subsuming" : "one-hot CNN",
+          "subsuming" : "one - hot CNN",
           "jointly trains" : {
             "feature generator and a linear model" : {
               "where" : {

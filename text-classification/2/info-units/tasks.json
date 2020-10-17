@@ -20,12 +20,14 @@
                   }
                 }
               },
-              "from sentence" : "We use 10 hidden units and run fastText for 5 epochs with a learning rate selected on a validation set from { 0.05 , 0.1 , 0.25 , 0.5 } ."
+              "from sentence" : "Sentiment analysis
+We use 10 hidden units and run fastText for 5 epochs with a learning rate selected on a validation set from { 0.05 , 0.1 , 0.25 , 0.5 } ."
+
             },
             "Results" : {
               "adding" : {
                 "bigram information" : {
-                  "improves performance by" : "1 - 4 %"
+                  "improves the performance by" : "1 - 4 %"
                 },
                 "from sentence" : "On this task , adding bigram information improves the performance by 1 - 4 % ."
               },
@@ -79,7 +81,9 @@
                     }
                   }
                 },
-                "from sentence" : "At test time , Tagspace needs to compute the scores for all the classes which makes it relatively slow , while our fast inference gives a significant speed - up when the number of classes is large ( more than 300 K here ) ."
+                "from sentence" : "Tag prediction
+At test time , Tagspace needs to compute the scores for all the classes which makes it relatively slow , while our fast inference gives a significant speed - up when the number of classes is large ( more than 300 K here ) ."
+
               },
               "more than an order of magnitude" : {
                 "faster" : {

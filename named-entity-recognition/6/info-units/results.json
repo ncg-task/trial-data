@@ -2,12 +2,14 @@
   "has" : {
     "Results" : {
       "on" : {
-        "CoNLL" : {
+        "CONLL" : {
           "significantly outperforms" : {
             "models" : {
               "use" : "extensive sets of handcrafted features"
             },
-            "from sentence" : "First , we observe that our model significantly outperforms models that use extensive sets of handcrafted features ) as well as the system of Standard deviation on the test set is reported in 2015 ) that uses NE and Entity Linking annotations to jointly optimize the performance on both tasks ."
+            "from sentence" : "Results on CONLL
+First , we observe that our model significantly outperforms models that use extensive sets of handcrafted features ) as well as the system of Standard deviation on the test set is reported in 2015 ) that uses NE and Entity Linking annotations to jointly optimize the performance on both tasks ."
+
           },
           "outperforms" : {
             "other NN models" : {
@@ -20,7 +22,7 @@
             "from sentence" : "Second , our model outperforms as well other NN models that only use standard word embeddings , which indicates that our lexical feature vector is complementary to standard word embeddings ."
           },
           "matches" : {
-            "state-of-the-art performances" : {
+            "state - of - the - art performances" : {
               "of" : {
                 "models" : {
                   "that use" : ["more complex architectures", "more elaborate features"]
@@ -30,7 +32,7 @@
             }            
           }
         },
-        "OntoNotes" : {
+        "ONTONOTES" : {
           "significantly outperforms" : {
             "Bi - LSTM - CNN - CRF models of ( Chiu and Nichols , 2016 )" : {
               "by" : {
@@ -39,7 +41,9 @@
                 }
               }
             },
-            "from sentence" : "In particular , our system significantly outperforms the Bi - LSTM - CNN - CRF models of ( Chiu and Nichols , 2016 ) and by an absolute gain of 1.68 and 0.96 points respectively ."
+            "from sentence" : "Results on ONTONOTES
+In particular , our system significantly outperforms the Bi - LSTM - CNN - CRF models of ( Chiu and Nichols , 2016 ) and by an absolute gain of 1.68 and 0.96 points respectively ."
+
           },
           "surpasses" : {
             "systems with hand - crafted features" : {

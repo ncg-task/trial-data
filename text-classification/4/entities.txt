@@ -8,6 +8,7 @@
 31	78	86	to allow
 31	87	122	interactions between sentence pairs
 31	123	141	while constructing
+31	142	177	context - sensitive representations
 27	38	59	convolution operation
 27	60	62	in
 27	63	76	our framework
@@ -40,18 +41,19 @@
 166	149	211	choosing the 500,000 most frequent n-grams ( up to 5 - grams )
 166	212	216	from
 166	221	233	training set
-166	238	268	use their corresponding counts
-166	15	17	as
+166	238	241	use
+166	248	268	corresponding counts
+166	269	271	as
 166	272	280	features
 166	290	312	small / large word CNN
 166	315	358	6 layer word - based convolutional networks
 166	361	365	with
 166	366	383	256/1024 features
-166	22	24	at
+166	384	386	at
 166	387	397	each layer
 166	450	458	deep CNN
 166	461	495	deep convolutional neural networks
-166	361	365	with
+166	496	500	with
 166	501	516	9/17 /29 layers
 155	33	41	utilized
 155	2	29	one - layer architec - ture
@@ -75,7 +77,7 @@
 164	32	42	TensorFlow
 164	51	64	trained using
 164	65	99	one NVIDIA GeForce GTX TITAN X GPU
-164	27	31	with
+164	100	104	with
 164	105	117	12 GB memory
 152	0	3	For
 152	8	43	document classification experiments
@@ -117,7 +119,7 @@
 161	58	65	3 10 ?4
 2	55	70	Text Processing
 6	73	137	learn contextsensitive convolutional filters for text processing
-175	49	52	for
+173	0	23	Document Classification
 175	20	28	S - ACNN
 175	29	54	significantly outperforms
 175	55	62	S - CNN
@@ -132,7 +134,7 @@
 182	71	107	self - attentive sentence embeddings
 182	128	136	requires
 182	137	164	significant more parameters
-182	66	70	than
+182	165	169	than
 182	170	180	our method
 179	17	20	use
 179	21	42	one convolution layer
@@ -142,6 +144,7 @@
 179	87	113	other CNN baseline methods
 179	114	118	with
 179	119	144	much deeper architectures
+188	0	25	Answer Sentence Selection
 200	10	19	our model
 200	20	26	yields
 200	27	55	significantly better results

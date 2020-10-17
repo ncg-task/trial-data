@@ -28,9 +28,9 @@ In response , this paper presents an application of dilated convolutions for seq
 For dilated convolutions , the effective input width can grow exponentially with the depth , with no loss in resolution at each layer and with a modest number of parameters to estimate .
 Like typical CNN layers , dilated convolutions operate on a sliding window of context over the sequence , but unlike conventional convolutions , the context need not be consecutive ; the dilated window skips over every dilation width d inputs .
 By stacking layers of dilated convolutions of exponentially increasing dilation width , we can expand the size of the effective input width to cover the entire length of most sequences using only a few layers :
-The size of the effective input width fora token at layer l is now given by 2 l +1 ?1 .
+The size of the effective input width for a token at layer l is now given by 2 l +1 ?1 .
 More concretely , just four stacked dilated convolutions of width 3 produces token representations with an effective input width of 31 tokens - longer than the average sentence length ( 23 ) in the Penn TreeBank .
-Our overall iterated dilated CNN architecture ( ID - CNN ) repeatedly applies the same block of dilated convolutions to token - wise representations .
+Our over all iterated dilated CNN architecture ( ID - CNN ) repeatedly applies the same block of dilated convolutions to token - wise representations .
 This parameter sharing prevents overfitting and also provides opportunities to inject supervision on intermediate activations of the network .
 Similar to models that use logits produced by an RNN , the ID - CNN provides two methods for performing prediction : we can predict each token 's label independently , or by running Viterbi inference in a chain structured graphical model .
 In experiments on CoNLL 2003 and OntoNotes 1 What we call effective input width here is known as the receptive field in the vision literature , drawing an analogy to the visual receptive field of a neuron in the retina . :
@@ -38,7 +38,7 @@ A dilated CNN block with maximum dilation width 4 and filter width 3 .
 Neurons contributing to a single highlighted neuron in the last layer are also highlighted .
 5.0 English NER , we demonstrate significant speed gains of our ID - CNNs over various recurrent models , while maintaining similar F1 performance .
 When performing prediction using independent classification , the ID - CNN consistently outperforms a bidirectional LSTM ( Bi - LSTM ) , and performs on par with inference in a CRF with logits from a Bi - LSTM ( Bi - LSTM - CRF ) .
-As an extractor of per-token logits fora CRF , our model out - performs the Bi - LSTM - CRF .
+As an extractor of per-token logits for a CRF , our model out - performs the Bi - LSTM - CRF .
 We also apply ID - CNNs to entire documents , where independent token classification is as accurate as the Bi - LSTM - CRF while decoding almost 8 faster .
 The clear accuracy gains resulting from incorporating broader context suggest that these models could similarly benefit many other contextsensitive NLP tasks which have until now been limited by the computational complexity of existing context - rich models .
 2 2 Background
@@ -118,13 +118,13 @@ By rewarding accurate predictions after each application of the block , we learn
 The loss also helps reduce the vanishing gradient problem for deep architectures .
 Such an approach has been applied in a variety of contexts for training very deep networks in computer vision , but not to our knowledge in NLP .
 We apply dropout to the raw inputs x t and to each block 's output b t ( b ) to help prevent overfitting .
-The version of dropout typically used in practice has the undesirable property that the randomized predictor used at train time differs from the fixed one used attest time .
+The version of dropout typically used in practice has the undesirable property that the randomized predictor used at train time differs from the fixed one used at test time .
 present dropout with expectationlinear regularization , which explicitly regularizes these two predictors to behave similarly .
 All of our best reported results include such regularization .
 This is the first investigation of the technique 's effectiveness for NLP , including for RNNs .
 We encourage its further application .
 Related work
-The state - of - the art models for sequence labeling include an inference step that searches the space of possible output sequences of a chain - structured graphical model , or approximates this search with abeam .
+The state - of - the art models for sequence labeling include an inference step that searches the space of possible output sequences of a chain - structured graphical model , or approximates this search with a beam .
 These outperform similar systems that use the same features , but independent local predictions .
 On the other hand , the greedy sequential prediction ) approach of , which employs lexicalized features , gazetteers , and word clusters , outperforms CRFs with similar features .
 LSTMs were used for NER as early as the CoNLL shared task in 2003 .
@@ -162,7 +162,7 @@ Baselines
 We compare our ID - CNN against strong LSTM and CNN baselines : a Bi - LSTM with local decoding , and one with CRF decoding ( Bi - LSTM - CRF ) .
 We also compare against a non-dilated CNN architecture with the same number of convolutional layers as our dilated network ( 4 - layer CNN ) and one with enough layers to incorporate an effective input width of the same size as that of the dilated network ( 5 - layer CNN ) to demonstrate that the dilated convolutions more effectively aggregate contextual information than simple convolutions ( i.e. using fewer parameters ) .
 We also compare our document - level ID - CNNs to a baseline which does not share parameters between blocks ( noshare ) and one that computes loss only at the last block , rather than after every iterated block of dilated convolutions ( 1 - loss ) .
-We do not compare with deeper or more elaborate CNN architectures fora number of reasons :
+We do not compare with deeper or more elaborate CNN architectures for a number of reasons :
 1 ) Fast train and test performance are highly desirable for NLP practitioners , and deeper models require more computation time 2 ) more complicated models tend to over - fit on this relatively small dataset and 3 ) most accurate deep CNN architectures repeatedly up - sample and down - sample the inputs .
 We do not compare to stacked LSTMs for similar reasons - a single LSTM is already slower than a 4 - layer CNN .
 Since our task is sequence labeling , we desire a model that maintains the token - level resolution of the input , making dilated convolutions an elegant solution .
@@ -177,7 +177,7 @@ lists relative decoding times on the CoNLL development set , compared to the Bi 
 We report decoding times using the fastest batch size for each method .
 The ID - CNN model decodes nearly 50 % faster than the Bi - LSTM .
 With Viterbi decoding , the gap closes somewhat but the ID - CNN - CRF still comes out ahead , about 30 % faster than the Bi - LSTM - CRF .
-The most vast speed improvements come when comparing the greedy ID - CNN to the Bi - LSTM - CRF - our ID - CNN is more than 14 times faster than the Bi - LSTM - CRF attest time , with comparable accuracy .
+The most vast speed improvements come when comparing the greedy ID - CNN to the Bi - LSTM - CRF - our ID - CNN is more than 14 times faster than the Bi - LSTM - CRF at test time , with comparable accuracy .
 The 5 - layer CNN , which observes the same effective input width as the ID - CNN but with more parameters , performs at about the same speed as the ID - CNN in our experiments .
 With a better implementation of dilated convolutions than currently included in TensorFlow , we would expect the ID - CNN to be notably faster than the 5 - layer CNN .
 We emphasize the importance of the dropout regularizer of in , where we observe increased F1 for every model trained with expectation - linear dropout regularization .
@@ -192,7 +192,7 @@ compares models trained to incorporate entire document context using the documen
 In we show that , in addition to being more accurate , our ID - CNN model is also much faster than the Bi - LSTM - CRF when incorporating context from entire documents , decoding at almost 8 times the speed .
 On these long sequences , it also tags at more than 4.5 times the speed of the greedy Bi - LSTM , demonstrative of the benefit of our ID - CNNs context - aggregating computation that does not depend on the length of the sequence .
 OntoNotes 5.0 English NER
-We observe similar patterns on OntoNotes as we do on CoNLL. lists overall F 1 scores of our models compared to those in the existing literature .
+We observe similar patterns on OntoNotes as we do on CoNLL. lists over all F 1 scores of our models compared to those in the existing literature .
 The greedy Bi - LSTM out - performs the lex -
 Model
 Speed Bi-LSTM-CRF 1 Bi-LSTM 4.60 ID- CNN 7.96 85.76 0.13 21.19 ID-CNN 85.27 0.24 13.21 ID - CNN ( 1 block ) 84.28 0.10 26.01 : F1 score of sentence and document models on OntoNotes .
@@ -204,8 +204,8 @@ These long entities benefit more from explicit structured constraints enforced i
 Still , our ID - CNN outperforms all other greedy methods , achieving our goal of learning a better token encoder for structured prediction .
 Incorporating greater context significantly boosts the score of our greedy model on OntoNotes , whereas the Bi - LSTM - CRF performs more poorly .
 In , we also list the F1 of our ID - CNN model and the Bi - LSTM - CRF model trained on entire document context .
-For the first time , we seethe score decrease when more context is added to the Bi - LSTM - CRF model , though the ID - CNN , whose sentence model a lower score than that of the Bi - LSTM - CRF , sees an increase .
-We believe the decrease in the Bi - LSTM - CRF model occurs because of the nature of the OntoNotes dataset compared to contains a particularly high proportion of ambiguous entities , 7 perhaps leading to more benefit from document context that helps with disambiguation .
+For the first time , we see the score decrease when more context is added to the Bi - LSTM - CRF model , though the ID - CNN , whose sentence model a lower score than that of the Bi - LSTM - CRF , sees an increase .
+We believe the decrease in the Bi - LSTM - CRF model occurs because of the nature of the OntoNotes dataset compared to contains a particularly high proportion of ambiguous entities , 7 perhaps leading to more benefit from document context that helps with dis ambiguation .
 In this scenario , adding the wider context may just add noise to the high - scoring Bi - LSTM - CRF model , whereas the less accurate dilated model can still benefit from the refined predictions of the iterated dilated convolutions .
 Conclusion
 We present iterated dilated convolutional neural networks , fast token encoders that efficiently aggregate broad context without losing resolution .

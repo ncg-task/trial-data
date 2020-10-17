@@ -20,7 +20,7 @@
             }
           },
           "objective" : {
-            "predict original vocabulary id" : {
+            "predict the original vocabulary id" : {
               "of" : {
                 "masked word" : {
                   "based only on" : "context"
@@ -40,8 +40,8 @@
         }
       },
       "use" : {
-        "\"next sentence prediction\" task" : {
-          "jointly pretrains" : "text-pair representations"
+        "\" next sentence prediction \" task" : {
+          "jointly pretrains" : "text - pair representations"
         },
         "from sentence" : "In addition to the masked language model , we also use a \" next sentence prediction \" task that jointly pretrains text - pair representations ."
       }

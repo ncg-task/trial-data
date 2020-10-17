@@ -1,5 +1,5 @@
 (Contribution||has||Results)
-(Results||on||Reranking)
+(Results||has||Reranking)
 (Reranking||see that||multitasking with paraphrase data)
 (multitasking with paraphrase data||improves F1||from 0.60 to 0.68)
 (Reranking||has||Fine - tuning the embedding model)
@@ -8,4 +8,4 @@
 (5 points||of||F1)
 (Reranking||has||All versions of our system)
 (All versions of our system||greatly outperform||paralex)
-(All versions of our system||improves the F1-score||by almost 20 points)
+(All versions of our system||improves the F1 - score||by almost 20 points)

@@ -5,7 +5,7 @@
 (ADAMAX||with||coefficients ? 1 = 0.9 and ? 2 = 0.999)
 (coefficients ? 1 = 0.9 and ? 2 = 0.999||to optimize||model)
 (Hyperparameters||use||word embeddings)
-(word embeddings||GloVe||to initialize model)
+(word embeddings||GloVe||to initialize the model)
 (Hyperparameters||has||update)
 (update||computed through||minibatch)
 (minibatch||of||30 instances)

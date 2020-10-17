@@ -93,7 +93,7 @@ We introduce four more useful modifications to wv - LSTM that lead to higher acc
 Pooling : simplifying sub - problems
 Our framework of ' region embedding + pooling ' has a simplification effect as follows .
 In wv - LSTM , the sub-problem that LSTM needs to solve is to represent the entire document by one vector ( document embedding ) .
-We make this easy by changing it to detecting regions of text ( of arbitrary sizes ) that are relevant to the task and representing them by vectors ( region embedding ) .
+We make this easy by changing it to detecting regions of text ( of arbitrary sizes ) thatare relevant to the task and representing them by vectors ( region embedding ) .
 As illustrated in , we let the LSTM layer emit vectors ht at each time step , and let pooling aggregate them into a document vector .
 With wv - LSTM , LSTM has to remember relevant information until it gets to the end of the document even if relevant information was observed 10 K words away .
 The task of our LSTM is easier as it is allowed to forget old things via the forget gate and can focus on representing the concepts conveyed by smaller segments such as phrases or sentences .
@@ -227,14 +227,14 @@ We experimented with this idea in the following two settings ..
 Comparison with previous best results .
 Error rates ( % ) .
 " U " : Was unlabeled data used ?
-" Co - tr. optimized " : co-training using oh - CNN as abase learner with parameters ( e.g. , when to stop ) optimized on the test data ; it demonstrates the difficulty of exploiting unlabeled data on these tasks .
+" Co - tr. optimized " : co-training using oh - CNN as a base learner with parameters ( e.g. , when to stop ) optimized on the test data ; it demonstrates the difficulty of exploiting unlabeled data on these tasks .
 In one setting , oh - 2 LSTMp takes additional input from five embeddings : two LSTM tv-embeddings used in and three CNN tv-embeddings from JZ15 b obtained by three distinct combinations of training objectives and input representations , which are publicly provided .
 These CNN tv-embeddings were trained to be applied to text regions of size k at every location taking bow input , where k is 5 on IMDB / Elec and 20 on RCV1 .
 We connect each of the CNN tv-embeddings to an LSTM by aligning the centers of the regions of the former with the LSTM time steps ; e.g. , the CNN tv-embedding result on the first five words is passed to the LSTM at the time step on the third word .
 In the second setting , we trained one - hot CNN with these five types of tv-embeddings by replacing ( 1 ) max ( 0 , Wx + b ) by max ( 0 , Wx + j W ( j ) x j + b ) where x j is the output of the j - th tv-embedding with the same alignment as above .
 Rows 3 - 4 of show the results of these two types of models .
 For comparison , we also show the results of the LSTM with LSTM tv-embeddings only ( row# 1 ) and the CNN with CNN tv-embeddings only ( row # 2 ) .
-To seethe effects of combination , compare row# 3 with row# 1 , and compare row # 4 with row # 2 .
+To see the effects of combination , compare row# 3 with row# 1 , and compare row # 4 with row # 2 .
 For example , adding the CNN tv-embeddings to the LSTM of row# 1 , the error rate on IMDB improved from 6.66 to 5.94 , and adding the LSTM tv-embeddings to the CNN of row # 2 , the error rate on RCV1 improved from 7.71 to 7.15 .
 The results indicate that , as expected , LSTM tv-embeddings and CNN tv-embeddings complement each other and improve performance when combined .
 Comparison with the previous best results

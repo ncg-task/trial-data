@@ -3,7 +3,7 @@
     "Hyperparameters" : {
       "use" : {
         "word embeddings" : {
-          "GloVe" : "to initialize model",
+          "GloVe" : "to initialize the model",
           "from sentence" : "We use word embeddings from GloVe to initialize the model ."          
         },
         "ADAMAX" : {

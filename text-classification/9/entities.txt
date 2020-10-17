@@ -3,14 +3,8 @@
 153	48	61	three filters
 153	62	66	with
 153	67	103	different window sizes h = 3 , 4 , 5
-153	62	66	with
+153	104	108	with
 153	109	130	100 feature maps each
-155	7	14	dropout
-155	15	17	on
-155	18	43	all nonlinear connections
-155	44	48	with
-155	51	63	dropout rate
-155	67	70	0.5
 154	0	3	For
 154	8	29	final sentence vector
 154	35	46	concatenate
@@ -41,18 +35,19 @@
 42	33	40	present
 42	43	99	neural attentionbased multiple context fixing attachment
 42	102	106	MCFA
-42	1	3	as
-42	74	81	context
 43	5	7	is
 43	10	27	series of modules
 43	33	37	uses
 43	38	62	all the sentence vectors
 43	65	69	e.g.
 43	70	95	Arabic , English , Korean
+43	105	107	as
+43	108	115	context
 43	116	122	to fix
 43	125	156	sentence vector ( e.g. Korean )
 44	0	18	Fixing the vectors
-44	22	29	done by
+44	19	26	is done
+44	27	29	by
 44	30	60	selectively moving the vectors
 44	61	74	to a location
 44	75	99	in the same vector space
@@ -80,7 +75,7 @@
 172	14	33	ensemble classifier
 172	34	58	additionally outperforms
 172	59	79	all competing models
-172	40	42	on
+172	80	82	on
 172	87	98	MR data set
 170	0	4	When
 170	5	10	N = 1
@@ -95,5 +90,5 @@
 171	14	18	MCFA
 171	19	37	additionally beats
 171	42	58	state of the art
-171	25	27	on
+171	59	61	on
 171	66	79	TREC data set

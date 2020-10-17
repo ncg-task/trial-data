@@ -7,7 +7,7 @@
 (general framework of ' region embedding + pooling '||explore||more sophisticated region embedding)
 (more sophisticated region embedding||via||Long Short - Term Memory ( LSTM ))
 (Model||consider||more general framework)
-(more general framework||subsuming||one-hot CNN)
+(more general framework||subsuming||one - hot CNN)
 (more general framework||jointly trains||feature generator and a linear model)
 (feature generator and a linear model||where||feature generator)
 (feature generator||consists of||region embedding + pooling)

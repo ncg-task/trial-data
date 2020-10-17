@@ -4,7 +4,7 @@
 (word embeddings from a word2 vec skip - gram model||trained on||corpus)
 (corpus||of||news data)
 (word embeddings from a word2 vec skip - gram model||input to||convolutional neural network models)
-(convolutional neural network models||has acronym||CNN)
+(convolutional neural network models||name||CNN)
 (word embeddings from a word2 vec skip - gram model||input to||DAN)
 (Baselines||has||Additional baseline)
 (Additional baseline||has||CNN and DAN models)

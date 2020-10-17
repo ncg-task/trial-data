@@ -22,7 +22,7 @@
             }
           }
         },
-        "from sentence" : "Each time the proposed model generates a word in a translation , it ( soft - ) searches fora set of positions in a source sentence where the most relevant information is concentrated ."        
+        "from sentence" : "Each time the proposed model generates a word in a translation , it ( soft - ) searches for a set of positions in a source sentence where the most relevant information is concentrated ."        
       },
       "predicts" : {
         "target word" : {

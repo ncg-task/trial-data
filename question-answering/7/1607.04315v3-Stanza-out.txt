@@ -11,7 +11,7 @@ Recurrent neural networks ( RNNs ) have been successful for modeling sequences
 Particularly , RNNs equipped with internal short memories , such as long short - term memories ( LSTM )
 [ 2 ] have achieved a notable success in sequential tasks [ 3 , 4 ] .
 LSTM is powerful because it learns to control it s short term memories .
-However , the short term memories in LSTM area part of the training parameters .
+However , the short term memories in LSTM are a part of the training parameters .
 This imposes some practical difficulties in training and modeling long sequences with LSTM .
 Recently several studies have explored ways of extending the neural networks with an external memory [ 5 ] [ 6 ] [ 7 ] .
 Unlike LSTM , the short term memories and the training parameters of such a neural network are no longer coupled and can be adapted .
@@ -234,7 +234,7 @@ The corpus consists of sentence - aligned translation of TED talks .
 The data was pre-processed and lowercased with the Moses toolkit .
 We merged the dev2010 and dev2012 sets for development and the tst2010 , tst2011 and tst 2012 sets for test data :
 Word association or composition graphs produced by NSE memory access .
-The directed arcs connect the words that are composed via compose module .
+The directed arcs connect the words thatare composed via compose module .
 The source nodes are input words and the destination nodes ( pointed by the arrows ) correspond to the accessed memory slots .
 < S > denotes the beginning of sequence .
 the number of parameters of the models is roughly the equal .
@@ -243,13 +243,13 @@ We set the batch size to 128 , the initial learning rate to 1e - 3 for LSTM - LS
 We report BLEU score for each models .
 11 5 Qualitative Analysis
 Memory Access and Compositionality
-NSE is capabable of performing multiscale composition by retrieving associative slots fora particular input at a time step .
+NSE is capabable of performing multiscale composition by retrieving associative slots for a particular input at a time step .
 We analyzed the memory access order and the compositionality of memory slot and the input word in the NSE model trained on the SNLI data .
 shows the word association graphs for the two sentence picked from SNLI test set .
 The association graph was constructed by inspecting the key vector z .
 For an input word , we connect it to the most active slot pointed by z 12 .
 Note the graph components clustered around the semantically rich words : " sits " , " wall " and " autumn " ( a ) and " Three " , " puppies " , " tub " and " vet " ( b ) .
-The memory slots corresponding to words that are semantically rich in the current context are the most frequently accessed .
+The memory slots corresponding to words thatare semantically rich in the current context are the most frequently accessed .
 The graph is able to capture certain syntactic structures including phrases ( e.g. , " hand built rock wall " ) and modifier relations ( between " sits " and " quietly " and between " tub " and " sprayed with water " ) .
 Another interesting property is that the model tends to perform sensible compositions while processing the input sentence .
 For example , NSE retrieved the memory slot corresponding to " wall " or " Three " when reading the input " rock " or " are " .
@@ -259,15 +259,15 @@ Note how the encoding memory is evolved overtime .
 In time step four ( t = 4 ) , the memory slot for " quietly " encodes information about " quiet ( ly ) little child " .
 When t = 6 , the model forms another composition involving " quietly " , " quietly sits " .
 In the last time step , we are able to find the most or the least frequently accessed slots in the memory .
-The least accessed slots correspond to function words while the frequently accessed slots are content words and tend to carryout rich semantics and intrinsic compositions found in the input sentence .
+The least accessed slots correspond to function words while the frequently accessed slots are content words and tend to carry out rich semantics and intrinsic compositions found in the input sentence .
 Overall the model is less constrained and is able to compose multiword expressions .
 Conclusion
 Our proposed memory augmented neural networks have achieved the state - of - the - art results when evaluated on five representative NLP tasks .
-NSE is capable of building an efficient architecture of the single , shared and multiple memory accesses fora specific NLP task .
+NSE is capable of building an efficient architecture of the single , shared and multiple memory accesses for a specific NLP task .
 For example , for the NLI task NSE accesses premise encoded memory when processing hypothesis .
 For the QA task , NSE accesses answer encoded memory when reading question for QA .
 In machine translation , NSE shares a single encoded memory between encoder and decoder .
-Such flexibility in the architectural choice of the NSE memory access allows for the robust models fora better performance .
+Such flexibility in the architectural choice of the NSE memory access allows for the robust models for a better performance .
 The initial state of the NSE memory stores information about each word in the input sequence .
 We in this paper used word embeddings to represent the words in the memory .
 Different variations of word representations such as character - based models are left to be evaluated for memory initialization in the future .

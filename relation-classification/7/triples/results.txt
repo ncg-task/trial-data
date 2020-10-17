@@ -9,7 +9,7 @@
 (strict accuracy||of||38.77)
 (QA||has||biomedical QA datasets)
 (biomedical QA datasets||has||BioBERT)
-(BioBERT||achieves||new state - of - the - art performance)
+(BioBERT||achieved||new state - of - the - art performance)
 (new state - of - the - art performance||in terms of||MRR)
 (QA||has||BioBERT)
 (BioBERT||significantly outperformed||BERT)

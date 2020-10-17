@@ -15,18 +15,22 @@
           "with" : ["? 1 = 0.7" , "? 2 = 0.99", {"from sentence" : "We use Adam with ? 1 = 0.7 instead of the default ? 1 = 0.9 and ? 2 = 0.99 , similar to ."}]
         },
         "batch size" : {
-          "of" : "64",
-          "from sentence" : "We use a batch size of 64 , abase learning rate of 0.004 and 0.01 for finetuning the LM and the classifier respectively , and tune the number of epochs on the validation set of each task 7 ."
+          "of" : "64"
         },
         "base learning rate" : {
           "0.004 and 0.01" : {
             "for" : {
               "finetuning" : "LM and the classifier"  
             }
-          },
-          "from sentence" : "We use a batch size of 64 , abase learning rate of 0.004 and 0.01 for finetuning the LM and the classifier respectively , and tune the number of epochs on the validation set of each task 7 ."        
+          }
         }
       },
+      "tune" : {
+        "number of epochs" : {
+          "on" : "validation set"
+        },
+        "from sentence" : "We use a batch size of 64 , a base learning rate of 0.004 and 0.01 for finetuning the LM and the classifier respectively , and tune the number of epochs on the validation set of each task 7 ."
+      },	  
       "apply" : {
         "dropout" : {
           "0.4" : ["to layers", "to input embedding layers"],
@@ -47,12 +51,6 @@
           },
           "from sentence" : "The classifier has a hidden layer of size 50 ."          
         }
-      },
-      "tune" : {
-        "number of epochs" : {
-          "on" : "validation set"
-        },
-        "from sentence" : "We use a batch size of 64 , abase learning rate of 0.004 and 0.01 for finetuning the LM and the classifier respectively , and tune the number of epochs on the validation set of each task 7 ."
       }
     }
   }

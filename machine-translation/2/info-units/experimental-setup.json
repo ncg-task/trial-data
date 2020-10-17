@@ -10,11 +10,13 @@
                   "with" : "8 NVIDIA P100 GPUs"
                 }
               },
-              "from sentence" : "We trained our models on one machine with 8 NVIDIA P100 GPUs ."              
+              "from sentence" : "Hardware and Schedule
+			  We trained our models on one machine with 8 NVIDIA P100 GPUs ."
+			  
             },
             "base models" : {
               "for" : "total of 100,000 steps or 12 hours",
-              "from sentence" : "We trained the base models fora total of 100,000 steps or 12 hours ."
+              "from sentence" : "We trained the base models for a total of 100,000 steps or 12 hours ."
             },
             "big models" : {
               "for" : "300,000 steps ( 3.5 days )",
@@ -26,7 +28,9 @@
           "used" : {
             "Adam optimizer" : {
               "with" : "? 1 = 0.9 , ? 2 = 0.98 and = 10 ?9",
-              "from sentence" : "We used the Adam optimizer with ? 1 = 0.9 , ? 2 = 0.98 and = 10 ?9 ."
+              "from sentence" : "Optimizer
+			  We used the Adam optimizer with ? 1 = 0.9 , ? 2 = 0.98 and = 10 ?9 ."
+			  
             },
             "warmup_steps" : {
               "=" : "4000",
@@ -42,7 +46,8 @@
                   "to" : ["output of each sub - layer", {"sums of the embeddings and the positional encodings" : {"in" : "both the encoder and decoder stacks"}}]
                 }
               },
-              "from sentence" : "Residual Dropout
+              "from sentence" : "Regularization
+Residual Dropout
 We apply dropout to the output of each sub - layer , before it is added to the sub - layer input and normalized .
 In addition , we apply dropout to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks ."
             

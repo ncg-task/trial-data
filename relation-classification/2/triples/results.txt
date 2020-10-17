@@ -2,7 +2,7 @@
 (Results||for||DREC dataset)
 (DREC dataset||use||boundaries and the strict settings)
 (DREC dataset||has||boundaries evaluation)
-(boundaries evaluation||achieves||? 3 % improvement)
+(boundaries evaluation||achieve||? 3 % improvement)
 (? 3 % improvement||for||both tasks)
 (Results||observe||our model)
 (our model||outperforms||all previous models)

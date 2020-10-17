@@ -7,13 +7,13 @@ In this work , we show that this is unfair : lexical features are actually quite
 We propose to embed words and entity types into a lowdimensional vector space we train from annotated data produced by distant supervision thanks to Wikipedia .
 From this , we compute - offline - a feature vector representing each word .
 When used with a vanilla recurrent neural network model , this representation yields substantial improvements .
-We establish anew state - of - the - art F1 score of 87.95 on ONTONOTES 5.0 , while matching state - of - the - art performance with a F 1 score of 91.73 on the over - studied CONLL - 2003 dataset .
+We establish a new state - of - the - art F1 score of 87.95 on ONTONOTES 5.0 , while matching state - of - the - art performance with a F 1 score of 91.73 on the over - studied CONLL - 2003 dataset .
 This work is licensed under a Creative Commons Attribution 4.0 International License .
 License details :
 Introduction
 Named - Entity Recognition ( NER ) is the task of identifying textual mentions and classifying them into a predefined set of types .
 Various approaches have been proposed to tackle the task , from hand - crafted feature - based machine learning models like conditional random fields and perceptron , to deep neural models .
-Word representations , also known as word embeddings , area key element for multiple NLP tasks including NER .
+Word representations , also known as word embeddings , are a key element for multiple NLP tasks including NER .
 Due to the small amount of named - entity annotated data , embeddings are used to extend , rather than replace , hand - crafted features in order to obtain state - of - the - art performance .
 Recent studies have explored methods for supplying deep sequential taggers with complementary features to standard embeddings .
 and tested special embeddings extracted from a neural language model ( LM ) trained on a large corpus .
@@ -22,15 +22,15 @@ When this information is added to standard features , it leads to significant im
 Also , showed that external knowledge resources ( namely gazetteers ) are crucial to NER performance .
 Gazetteer features encode the presence of word n-grams in predefined lists of NEs .
 In this work , we discuss some of the limitations of gazetteer features and propose an alternative lexical representation which is trained offline and that can be added to any neural NER system .
-Ina nutshell , we embed words and entity types into a joint vector space by leveraging WiFiNE , a ressource which automatically annotates mentions in Wikipedia with 120 entity types .
+In a nutshell , we embed words and entity types into a joint vector space by leveraging WiFiNE , a ressource which automatically annotates mentions in Wikipedia with 120 entity types .
 From this vector space , we compute for each word a 120 - dimensional vector , where each dimension encodes the similarity of the word with an entity type .
 We call this vector an LS representation , for Lexical Similarity .
 When included in a vanilla LSTM - CRF NER model , LS representations lead to significant gains .
-We establish anew state - of - the - art F 1 score of 87.95 on ONTONOTES 5.0 , while matching state - of - the - art performance on the over - studied In the rest of this paper , we motivate our work in Section 2 .
+We establish a new state - of - the - art F 1 score of 87.95 on ONTONOTES 5.0 , while matching state - of - the - art performance on the over - studied In the rest of this paper , we motivate our work in Section 2 .
 We describe how we compute LS vectors in Section 3 .
 We present our system in Section 4 and report results in Section 5 . In Section 6 , we discuss related works before concluding in Section 7 .
 Motivation
-Gazetteers are lists of entities that are associated with specific NE categories .
+Gazetteers are lists of entities thatare associated with specific NE categories .
 They are widely used as a feature source in NER , and have been successfully included in feature - based models .
 Typically , lists of entities are compiled from structured data sources such as DBpedia or Freebase .
 The surface form of the title of a Wikipedia article , as well as aliases and redirects are mapped to an entity type using the object type attribute of the related DBpedia ( or Freebase ) page .
@@ -48,7 +48,7 @@ Gazetteer features do not capture signal from non-entity words , while earlier f
 For instance , words such as " eat " , " directed " or " born " are words that typically appear after a mention of type PER .
 To overcome those limitations , we propose an alternative approach where we embed annotations mined from Wikipedia into a vector space from which we compute a feature vector that represent words .
 This vector compactly and efficiently encodes both gazetteer and lexical information .
-Note that attest time , we only have to feed our model with this feature vector , which is efficient .
+Note that at test time , we only have to feed our model with this feature vector , which is efficient .
 Our Method
 Embedding Words and Entity Types
 Turning Wikipedia into a corpus of named - entities annotated with types is a task that received continuous attention over the years .
@@ -73,7 +73,7 @@ Words were randomly and proportionally sampled according to the frequency of eac
 In addition , words have the color associated with the most frequent type they were annotated within WiFiNE .
 We observe that mentions often annotated by a given type in our resource tend to cluster around this entity type .
 For instance , " firefox " is close to the type / product / software , while " enzyme " is close to the / biology entity type .
-We also notice that words that are labelled with different types tend to appear between types they were annotated with .
+We also notice that words thatare labelled with different types tend to appear between types they were annotated with .
 For instance , " gpx2 " , which is used both as a software and as a gene , has it s embedding in between / product / software and / biology .
 We inspected some of the words plotted in , and found that " jrun " and " xp " are incorrectly labelled as / product / weapon in WiFiNE .
 But since these words are seen in a software context , their embeddings are closer to the / product / software embedding than the / product / weapon one .
@@ -87,15 +87,15 @@ Entity .
 shows the topmost similar entity types for proper names ( left column ) and common words ( right column ) .
 We observe that ambiguous mentions ( those annotated with several types ) are adequately handled .
 For instance , the LS representation of the word " hilton " encodes that it more often refers to a hotel or a restaurant than to an actress .
-Also , we observe that entity words that are either not or rarely annotated in WiFiNE are still adequately associated with their right type .
+Also , we observe that entity words thatare either not or rarely annotated in WiFiNE are still adequately associated with their right type .
 For instance , " dammstadt " , which appears only 5 times in WiFiNE , and which refers to the Damm city in Germany , is most similar to / location / city and / location / railway .
 Interestingly , this mention does not have its page in English Wikipedia .
 Furthermore , we observe that non-entity context words have a strong similarity to types they precede or succeed .
 For instance the verb " directed " is very close to / person / director , an entity type that usually precedes it , and to / art / film , that usually follows it .
 Likewise , the preposition " in " is near / date and / location / city , which frequently follow " in " .
 Strength of the LS Representation
-To summarize , we propose a compact lexical representation which is computed offline , therefore incurring no computation burden attest time
-This representation encodes the preference of an entity - mention word fora given type , an information out of reach of binary gazetteer features .
+To summarize , we propose a compact lexical representation which is computed offline , therefore incurring no computation burden at test time
+This representation encodes the preference of an entity - mention word for a given type , an information out of reach of binary gazetteer features .
 It also lends itself nicely to the inclusion of lexical features that have been successfully used in earlier feature - based systems .
 Also , because entity types are well represented in WiFiNE , their embeddings are robust :
 Our representation does accommodate unfrequent words and seems tolerant to the inherent noise of distant supervision .
@@ -195,7 +195,7 @@ Pre-trained embeddings obtained by unsupervised learning are core features of th
 In this work , we show that deep NN architectures can also benefit from lexical features , at least when encoded in the compact form we propose .
 and propose an alternative approach different from ours .
 They incorporate LM embeddings that were pre-trained on a large unlabelled corpus as features for NER .
-These embeddings allow to generate a representation fora word depending on its context .
+These embeddings allow to generate a representation for a word depending on its context .
 For instance , the LM embeddings of the word France in " France is a developed country " is different than that in " Anatole France began his literary career " .
 Such embeddings are trained on very large amount of texts .
 Our feature set is crafted from distant supervision applied to Wikipedia , a much less time - consuming process which we showed to be nevertheless adapted to rare words .
@@ -206,7 +206,7 @@ Conclusion and Future Work
 We have explored the idea of generating lexical features for NER out of Wikipedia data automatically annotated with fine - grained entity types .
 We used WiFiNE , a Wikipedia dump annotated with fine entity type mentions , for training a vector space that jointly embeds words and named - entities .
 This vector space is used to compute a 120 dimensional vector per word , which encodes the similarity of the word to each of the entity types .
-Our results show that our proposed lexical representation , even though it is not adjusted at training time , matches state - of - the - art results compared to more complex approaches on the well - studied CONLL dataset , and delivers anew state - of - the - art F 1 score of 87.95 on the more diversified ONTONOTES dataset .
+Our results show that our proposed lexical representation , even though it is not adjusted at training time , matches state - of - the - art results compared to more complex approaches on the well - studied CONLL dataset , and delivers a new state - of - the - art F 1 score of 87.95 on the more diversified ONTONOTES dataset .
 We further observe larger gains on collections with more unfrequent words .
 The source code and the data we used in this work are publicly available at http://rali.iro. umontreal.ca/rali/en/wikipedia-lex-sim , with the hope that other researchers will report gains , when using our lexical representation .
 As a future work , we want to investigate the usefulness of our LS feature representation on other NER tasks , including NER in tweets where out - of - vocabulary and low - frequency words represent a challenge ; as well as finer - grained NER which suffers from the lack of manually annotated training data .

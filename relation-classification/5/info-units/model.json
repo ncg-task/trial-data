@@ -42,7 +42,7 @@
       },
       "for" : {
         "relation classification" : {
-          "propose novel use of" : "deep biaffine attention mechanism"
+          "propose a novel use of" : "deep biaffine attention mechanism"
         },
         "from sentence" : "In particular , for relation classification we propose a novel use of the deep biaffine attention mechanism which was first introduced in dependency parsing ."        
       }

@@ -33,7 +33,7 @@ The two CNNs use increasing factors of dilation to rapidly grow the receptive fi
 The convolutions in the decoder CNN are masked to prevent the network from seeing future tokens in the target sequence .
 The network has beneficial computational and learning properties .
 From a computational perspective , the network has a running time that is linear in the length of the source and target sequences ( up to a constant c ?
-log d where dis the size of the desired dependency field ) .
+log d where d is the size of the desired dependency field ) .
 The computation in the encoder during training and decoding and in the decoder during training can also be run efficiently in parallel along the sequences ( Sect. 2 ) .
 From a learning perspective , the representation of the source sequence in the ByteNet is resolution preserving ; the representation sidesteps the need for memorization and allows for maximal bandwidth between encoder and decoder .
 In addition , the distance traversed by forward and backward signals between any input and output tokens corresponds to the fixed depth of the networks and is largely independent of the dis - tance between the tokens .
@@ -92,7 +92,7 @@ Once the encoder representation is computed , we let the decoder unfold stepby -
 gives an example of dynamic unfolding .
 Input Embedding Tensor
 Given the target sequence t = t 0 , ... , tn the ByteNet decoder embeds each of the first n tokens t 0 , ... , t n?1 via a look - up table ( the n tokens t 1 , ... , tn serve as targets for the predictions ) .
-The resulting embeddings are concatenated into a tensor of size n 2 d where dis the number of inner channels in the network .
+The resulting embeddings are concatenated into a tensor of size n 2 d where d is the number of inner channels in the network .
 Masked One-dimensional
 Convolutions
 The decoder applies masked one - dimensional convolutions ( van den to the input embedding tensor that have a masked kernel of size k.
@@ -122,7 +122,7 @@ The target RNN is then placed on top of the source RNN .
 Considering the latter Recurrent ByteNet , we can see that the RNN Enc - Dec network ) is a Recurrent ByteNet where all connections between source and target - except for the first one that connects s 0 and t 0 - have been severed .
 The Recurrent ByteNet is a generalization of the RNN Enc - Dec and , modulo the type of weight - sharing scheme , so is the convolutional ByteNet .
 Comparison of Properties
-In our comparison we consider the following neural translation models : the Recurrent Continuous Translation Model ( RCTM ) 1 and 2 ; the RNN Enc - Dec ; the RNN Enc - Dec Att with the attentional pooling mechanism of which there area few variations ; the Grid LSTM translation model ) that uses a multi-dimensional architecture ; the Extended Neural GPU model ) that has a convolutional RNN architecture ; the ByteNet and the two Recurrent ByteNet variants .
+In our comparison we consider the following neural translation models : the Recurrent Continuous Translation Model ( RCTM ) 1 and 2 ; the RNN Enc - Dec ; the RNN Enc - Dec Att with the attentional pooling mechanism of which there are a few variations ; the Grid LSTM translation model ) that uses a multi-dimensional architecture ; the Extended Neural GPU model ) that has a convolutional RNN architecture ; the ByteNet and the two Recurrent ByteNet variants .
 Our comparison criteria reflect the desiderata set out in Sect. 2.1 .
 We separate the first ( computation time ) desider - atum into three columns .
 The first column indicates the time complexity of the network as a function of the length of the sequences and is denoted by Time .
@@ -180,7 +180,7 @@ For the optimization we use Adam with a learning rate of 0.0003 .
 Each sentence is padded with special characters to the nearest greater multiple of 50 ; 20 % of further padding is ap - plied to each source sentence as apart of dynamic unfolding ( eq. 2 ) .
 Each pair of sentences is mapped to a bucket based on the pair of padded lengths for efficient batching during training .
 We use vanilla beam search according to the total likelihood of the generated candidate and accept only candidates which end in a end -of - sentence token .
-We use abeam of size 12 .
+We use a beam of size 12 .
 We do not use length normalization , nor do we keep score of which parts of the source sentence have been translated .
 and contain the results of the experiments .
 On NewsTest 2014 the ByteNet achieves the highest performance in character - level and subword - level neural machine translation , and compared to the word - level systems it is second only to the version of GNMT that uses word - pieces .

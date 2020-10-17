@@ -1,25 +1,25 @@
 {
   "has" : {
     "Tasks" : {
-      "name" : {
+      "has" : {
         "Named Entity Recognition" : {
-          "has acronym" : "NER",
+          "name" : "NER",
           "from sentence" : "Named Entity Recognition ( NER )"
         },
         "PICO Extraction" : {
-          "has acronym" : "PICO",
+          "name" : "PICO",
           "from sentence" : "2 . PICO Extraction ( PICO )"
         },
         "Text Classification" : {
-          "has acronym" : "CLS",
+          "name" : "CLS",
           "from sentence" : "3 . Text Classification ( CLS )"
         },
         "Relation Classification" : {
-          "has acronym" : "REL",
+          "name" : "REL",
           "from sentence" : "4 . Relation Classification ( REL )"
         },
         "Dependency Parsing" : {
-          "has acronym" : "DEP",
+          "name" : "DEP",
           "from sentence" : "5 . Dependency Parsing ( DEP )"
         }
       }

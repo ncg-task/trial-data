@@ -42,7 +42,7 @@ It is hard to imagine that the labels of these images provide a sufficient signa
 In this work , we for the first time address all of the above challenges and finally realize the promise of conditional computation .
 We obtain greater than 1000x improvements in model capacity with only minor losses in computational efficiency and significantly advance the state - of - the - art results on public language modeling and translation data sets .
 OUR APPROACH : THE SPARSELY - GATED MIXTURE - OF - EXPERTS LAYER
-Our approach to conditional computation is to introduce anew type of general purpose neural network component : a Sparsely - Gated Mixture - of - Experts Layer ( MoE ) .
+Our approach to conditional computation is to introduce a new type of general purpose neural network component : a Sparsely - Gated Mixture - of - Experts Layer ( MoE ) .
 The MoE consists of a number of experts , each a simple feed - forward neural network , and a trainable gating network which selects a sparse combination of the experts to process each input ( see ) .
 All parts of the network are trained jointly by back - propagation .
 While the introduced technique is generic , in this paper we focus on language modeling and machine translation tasks , which are known to benefit from very large models .
@@ -70,12 +70,12 @@ The Mixture - of - Experts ( MoE ) layer consists of a set of n " expert network
 shows an overview of the MoE module .
 The experts are themselves neural networks , each with their own parameters .
 Although in principle we only require that the experts accept the same sized inputs and produce the same - sized outputs , in our initial investigations in this paper , we restrict ourselves to the case where the models are feed - forward networks with identical architectures , but with separate parameters .
-Let us denote by G ( x ) and E i ( x ) the output of the gating network and the output of the i - th expert network fora given input x .
+Let us denote by G ( x ) and E i ( x ) the output of the gating network and the output of the i - th expert network for a given input x .
 The output y of the MoE module can be written as follows :
 We save computation based on the sparsity of the output of G ( x ) .
 Wherever G (x ) i = 0 , we need not compute E i ( x ) .
 In our experiments , we have up to thousands of experts , but only need to evaluate a handful of them for every example .
-If the number of experts is very large , we can reduce the branching factor by using a two - level hierarchical MoE. Ina hierarchical MoE , a primary gating network chooses a sparse weighted combination of " experts " , each of which is itself a secondary mixture - of - experts with its own gating network .
+If the number of experts is very large , we can reduce the branching factor by using a two - level hierarchical MoE. In a hierarchical MoE , a primary gating network chooses a sparse weighted combination of " experts " , each of which is itself a secondary mixture - of - experts with its own gating network .
 In the following we focus on ordinary MoEs .
 We provide more details on hierarchical MoEs in Appendix B.
 Our implementation is related to other models of conditional computation .
@@ -103,13 +103,13 @@ ADDRESSING PERFORMANCE
 CHALLENGES
 THE SHRINKING BATCH PROBLEM
 On modern CPUs and GPUs , large batch sizes are necessary for computational efficiency , so as to amortize the overhead of parameter loads and updates .
-If the gating network chooses k out of n experts for each example , then fora batch of b examples , each expert receives a much smaller batch of approximately kb n b examples .
+If the gating network chooses k out of n experts for each example , then for a batch of b examples , each expert receives a much smaller batch of approximately kb n b examples .
 This causes a naive MoE implementation to become very inefficient as the number of experts increases .
 The solution to this shrinking batch problem is to make the original batch size as large as possible .
 However , batch size tends to be limited by the memory necessary to store activations between the forwards and backwards passes .
 We propose the following techniques for increasing the batch size :
 Mixing Data Parallelism and Model Parallelism :
-Ina conventional distributed training setting , multiple copies of the model on different devices asynchronously process distinct batches of data , and parameters are synchronized through a set of parameter servers .
+In a conventional distributed training setting , multiple copies of the model on different devices asynchronously process distinct batches of data , and parameters are synchronized through a set of parameter servers .
 In our technique , these different batches run synchronously so that they can be combined for the MoE layer .
 We distribute the standard layers of the model and the gating network according to conventional data - parallel schemes , but keep only one shared copy of each expert .
 Each expert in the MoE layer receives a combined batch consisting of the relevant examples from all of the data - parallel input batches .
@@ -127,12 +127,12 @@ Taking Advantage of Convolutionality :
 In our language models , we apply the same MoE to each time step of the previous layer .
 If we wait for the previous layer to finish , we can apply the MoE to all the time steps together as one big batch .
 Doing so increases the size of the input batch to the MoE layer by a factor of the number of unrolled time steps .
-Increasing Batch Size fora
+Increasing Batch Size for a
 Recurrent MoE :
 We suspect that even more powerful models may involve applying a MoE recurrently .
 For example , the weight matrices of a LSTM or other RNN could be replaced by a MoE. Sadly , such models break the convolutional trick from the last paragraph , since the input to the MoE atone timestep depends on the output of the MoE at the previous timestep .
 Gruslys et al . ( 2016 ) describe a technique for drastically reducing the number of stored activations in an unrolled RNN , at the cost of recomputing forward activations .
-This would allow fora large increase in batch size .
+This would allow for a large increase in batch size .
 NETWORK BANDWIDTH
 Another major performance concern in distributed computing is network bandwidth .
 Since the experts are stationary ( see above ) and the number of gating parameters is small , most of the communication involves sending the inputs and outputs of the experts across the network .
@@ -148,7 +148,7 @@ describe the same phenomenon , and use a hard constraint at the beginning of tra
 include a soft constraint on the batch - wise average of each gate .
 We take a soft constraint approach .
 We define the importance of an expert relative to a batch of training examples to be the batchwise sum of the gate values for that expert .
-We define an additional loss L importance , which is added to the overall loss function for the model .
+We define an additional loss L importance , which is added to the over all loss function for the model .
 This loss is equal to the square of the coefficient of variation of the set of importance values , multiplied by a hand - tuned scaling factor w importance .
 This additional loss encourages all experts to have equal importance .
 L importance ( X ) = w importance CV ( Importance ( X ) )
@@ -179,7 +179,7 @@ Our highest - computation MoE model was more efficient at 1.56 TFLOPS / GPU , li
 These numbers represent a significant fraction of the theoretical maximum of 4.29 TFLOPS / GPU claimed by NVIDIA .
 Detailed results are in Appendix C , .
 On the 1 - billion - word corpus , adding additional capacity seems to produce diminishing returns as the number of parameters in the MoE layer exceeds 1 billion , as can be seen in - left .
-We hypothesized that fora larger training set , even higher capacities would produce significant quality improvements .
+We hypothesized that for a larger training set , even higher capacities would produce significant quality improvements .
 100 BILLION WORD GOOGLE NEWS CORPUS
 We constructed a similar training set consisting of shuffled unique sentences from Google 's internal news corpus , totalling roughly 100 billion words .
 Similarly to the previous section , we tested a series of models with similar computational costs of about 8 million ops / timestep .
@@ -223,10 +223,10 @@ We look forward to seeing many novel implementations and applications of conditi
 APPENDICES A LOAD - BALANCING LOSS
 As discussed in section 4 , for load - balancing purposes , we want to define an additional loss function to encourage experts to receive roughly equal numbers of training examples .
 Unfortunately , the number of examples received by an expert is a discrete quantity , so it can not be used in backpropagation .
-Instead , we define a smooth estimator Load ( X ) of the number of examples assigned to each expert fora batch X of inputs .
+Instead , we define a smooth estimator Load ( X ) of the number of examples assigned to each expert for a batch X of inputs .
 The smoothness allows us to back - propagate gradients through the estimator .
 This is the purpose of the noise term in the gating function .
-We define P ( x , i ) as the probability that G (x ) i is nonzero , given anew random choice of noise on element i , but keeping the already - sampled choices of noise on the other elements .
+We define P ( x , i ) as the probability that G (x ) i is nonzero , given a new random choice of noise on element i , but keeping the already - sampled choices of noise on the other elements .
 To compute P ( x , i ) , we note that the G ( x ) i is nonzero if and only if H ( x ) i is greater than the k th - greatest element of H ( x ) excluding itself .
 The probability works out to be :
 Where kth_excluding ( v , k , i ) means the kth highest component of v , excluding component i .
@@ -249,7 +249,7 @@ Results are reported in .
 All the combinations containing at least one the two losses led to very similar model quality , where having no loss was much worse .
 Models with higher values of w load had lower loads on the most overloaded expert .
 B HIERACHICAL MIXTURE OF EXPERTS
-If the number of experts is very large , we can reduce the branching factor by using a two - level hierarchical MoE. Ina hierarchical MoE , a primary gating network chooses a sparse weighted combination of " experts " , each of which is itself a secondary mixture - of - experts with its own gating network .
+If the number of experts is very large , we can reduce the branching factor by using a two - level hierarchical MoE. In a hierarchical MoE , a primary gating network chooses a sparse weighted combination of " experts " , each of which is itself a secondary mixture - of - experts with its own gating network .
 3
 If the hierarchical MoE consists of a groups of b experts each , we denote the primary gating network by G primary , the secondary gating networks by , and the expert networks by ( E 0 , 0 , E 0 , 1 ..E a , b ) .
 The output of the MoE is given by :
@@ -268,7 +268,7 @@ After dropout , the output of the previous layer is added to the layer output .
 This residual connection encourages gradient flow .
 For the hierarchical MoE layers , the first level branching factor was 16 , corresponding to the number of GPUs in our cluster .
 We use Noisy - Top - K Gating ( see Section 2.1 ) with k = 4 for the ordinary MoE layers and k = 2 at each level of the hierarchical MoE layers .
-Thus , each example is processed by exactly 4 experts fora total of 4M ops / timestep .
+Thus , each example is processed by exactly 4 experts for a total of 4M ops / timestep .
 The two LSTM layers contribute 2M ops / timestep each for the desired total of 8 M .
 Computationally - Matched Baselines :
 The MoE - 4 model does not employ sparsity , since all 4 experts are always used .
@@ -296,7 +296,7 @@ For each model , we performed a hyper - parmeter search to find the best dropout
 To ensure balanced expert utilization we set w importance = 0.1 and w load = 0.1 , as described in Section 4 and Appendix A.
 Results :
 We evaluate our model using perplexity on the holdout dataset , used by .
-We follow the standard procedure and sum overall the words including the end of sentence symbol .
+We follow the standard procedure and sum over all the words including the end of sentence symbol .
 Results are reported in .
 For each model , we report the test perplexity , the computational budget , the parameter counts , the value of DropP rob , and the computational efficiency .
 We implement several memory optimizations in order to fit up to 1 billion parameters per GPU .
@@ -315,7 +315,7 @@ Results are reported in .
 Perplexity after 100 billion training words is 39 % lower for the 68 - billion - parameter MoE model than for the baseline model .
 It is notable that the measured computational efficiency of the largest model ( 0.30 TFLOPS / GPU ) is very low compared to the other models .
 This is likely a result of the fact that , for purposes of comparison to the other models , we did not increase the training batch size proportionally to the number of GPUs .
-For comparison , we include results fora computationally matched baseline model consisting of 4 LSTMs , and for an unpruned 5 - gram model with Kneser - Ney smoothing .
+For comparison , we include results for a computationally matched baseline model consisting of 4 LSTMs , and for an unpruned 5 - gram model with Kneser - Ney smoothing .
 4
 E MACHINE TRANSLATION - EXPERIMENTAL DETAILS
 Model Architecture for Single Language

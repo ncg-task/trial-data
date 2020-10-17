@@ -2,7 +2,7 @@ title
 Universal Language Model Fine - tuning for Text Classification
 abstract
 Inductive transfer learning has greatly impacted computer vision , but existing approaches in NLP still require task - specific modifications and training from scratch .
-We propose Universal Language Model Fine - tuning ( ULMFiT ) , an effective transfer learning method that can be applied to any task in NLP , and introduce techniques that are key for fine - tuning a language model .
+We propose Universal Language Model Fine - tuning ( ULMFiT ) , an effective transfer learning method that can be applied to any task in NLP , and introduce techniques thatare key for fine - tuning a language model .
 Our method significantly outperforms the state - of - the - art on six text classification tasks , reducing the error by 18 - 24 % on the majority of datasets .
 Furthermore , with only 100 labeled examples , it matches the performance of training from scratch on 100 more data .
 We opensource our pretrained models and code 1 .
@@ -15,7 +15,7 @@ Equal contribution .
 Jeremy focused on the algorithm development and implementation , Sebastian focused on the experiments and writing .
 While Deep Learning models have achieved state - of - the - art on many NLP tasks , these models are trained from scratch , requiring large datasets , and days to converge .
 Research in NLP focused mostly on transductive transfer .
-For inductive transfer , fine - tuning pretrained word embeddings , a simple transfer technique that only targets a model 's first layer , has had a large impact in practice and is used inmost state - of - the - art models .
+For inductive transfer , fine - tuning pretrained word embeddings , a simple transfer technique that only targets a model 's first layer , has had a large impact in practice and is used in most state - of - the - art models .
 Recent approaches that concatenate embeddings derived from other tasks with the input at different layers ) still train the main task model from scratch and treat pretrained embeddings as fixed parameters , limiting their usefulness .
 In light of the benefits of pretraining , we should be able to do better than randomly initializing the remaining parameters of our models .
 However , inductive transfer via finetuning has been unsuccessful for NLP .
@@ -23,7 +23,7 @@ first proposed finetuning a language model ( LM ) but require millions of in - d
 We show that not the idea of LM fine - tuning but our lack of knowledge of how to train them effectively has been hindering wider adoption .
 LMs overfit to small datasets and suffered catastrophic forgetting when fine - tuned with a classifier .
 Compared to CV , NLP models are typically more shallow and thus require different fine - tuning methods .
-We propose anew method , Universal Language Model Fine - tuning ( ULMFiT ) that addresses these issues and enables robust inductive transfer learning for any NLP task , akin to fine - tuning Image Net models :
+We propose a new method , Universal Language Model Fine - tuning ( ULMFiT ) that addresses these issues and enables robust inductive transfer learning for any NLP task , akin to fine - tuning Image Net models :
 The same 3 - layer LSTM architecturewith the same hyperparameters and no additions other than tuned dropout hyperparametersoutperforms highly engineered models and trans - fer learning approaches on six widely studied text classification tasks .
 On IMDb , with 100 labeled examples , ULMFiT matches the performance of training from scratch with 10 and - given 50 k unlabeled examples - with 100 more data .
 Contributions
@@ -119,7 +119,7 @@ In Section 5 , we compare against aggressive cosine annealing , a similar schedu
 Target task classifier fine - tuning
 Finally , for fine - tuning the classifier , we augment the pretrained language model with two additional linear blocks .
 Following standard practice for CV classifiers , each block uses batch normalization and dropout , with ReLU activations for the intermediate layer and a softmax activation that outputs a probability distribution over target classes at the last layer .
-Note that the parameters in these task - specific classifier layers are the only ones that are learned from scratch .
+Note that the parameters in these task - specific classifier layers are the only ones thatare learned from scratch .
 The first linear layer takes as the input the pooled last hidden layer states .
 Concat pooling
 The signal in text classification tasks is often contained in a few words , which may occur anywhere in the document .
@@ -163,7 +163,7 @@ We use the AWD - LSTM language model with an embedding size of 400 , 3 layers , 
 We apply dropout of 0.4 to layers , 0.3 to RNN layers , 0.4 to input embedding layers , 0.05 to embedding layers , and weight dropout of 0.5 to the RNN hidden - to - hidden matrix .
 The classifier has a hidden layer of size 50 .
 We use Adam with ? 1 = 0.7 instead of the default ? 1 = 0.9 and ? 2 = 0.99 , similar to .
-We use a batch size of 64 , abase learning rate of 0.004 and 0.01 for finetuning the LM and the classifier respectively , and tune the number of epochs on the validation set of each task 7 .
+We use a batch size of 64 , a base learning rate of 0.004 and 0.01 for finetuning the LM and the classifier respectively , and tune the number of epochs on the validation set of each task 7 .
 We otherwise use the same practices used in .
 Baselines and comparison models
 For each task , we compare against the current state - of - theart .
@@ -187,7 +187,7 @@ On AG , we observe a similarly dramatic error reduction by 23.7 % compared to th
 On DBpedia , Yelp - bi , and Yelp - full , we reduce the error by 4.8 % , 18.2 % , 2.0 % respectively .
 Analysis
 In order to assess the impact of each contribution , we perform a series of analyses and ablations .
-We run experiments on three corpora , IMDb , TREC - 6 , and AG that are representative of different tasks , genres , and sizes .
+We run experiments on three corpora , IMDb , TREC - 6 , and AG thatare representative of different tasks , genres , and sizes .
 For all experiments , we split off 10 % of the training set and report error rates on this validation set with unidirectional LMs .
 We fine - tune the classifier for 50 epochs and train all methods but ULMFiT with early stopping .
 Low - shot learning

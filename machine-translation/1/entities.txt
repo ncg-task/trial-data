@@ -1,10 +1,10 @@
-156	32	35	for
+152	0	20	Character Prediction
 156	4	19	ByteNet Decoder
 156	51	69	30 residual blocks
 156	70	80	split into
 156	81	104	six sets of five blocks
 156	32	35	for
-156	93	104	five blocks
+156	120	131	five blocks
 156	148	162	dilation rates
 156	184	204	1 , 2 , 4 , 8 and 16
 157	4	17	masked kernel
@@ -25,7 +25,7 @@
 162	81	99	probability of 0.1
 164	16	22	sample
 164	25	43	batch of sequences
-164	31	33	of
+164	44	46	of
 164	47	66	500 characters each
 164	69	72	use
 164	77	97	first 100 characters
@@ -37,6 +37,7 @@
 167	58	66	test set
 167	20	28	achieves
 167	29	50	1.31 bits / character
+168	0	37	Character - Level Machine Translation
 174	4	11	ByteNet
 174	40	58	30 residual blocks
 174	17	19	in
@@ -56,7 +57,7 @@
 175	52	76	arranged in sets of five
 175	77	81	with
 175	96	110	dilation rates
-175	69	71	of
+175	111	113	of
 175	114	134	1 , 2 , 4 , 8 and 16
 176	17	20	use
 176	25	40	residual blocks
@@ -67,9 +68,9 @@
 182	44	87	total likelihood of the generated candidate
 182	92	98	accept
 182	104	154	candidates which end in a end -of - sentence token
-183	8	12	beam
-183	13	15	of
-183	16	23	size 12
+183	9	13	beam
+183	14	16	of
+183	17	24	size 12
 177	14	26	hidden units
 177	27	34	dis 800
 178	23	25	in
@@ -78,8 +79,7 @@
 178	48	49	3
 178	97	111	target network
 178	64	89	size of the masked kernel
-178	48	49	3
-181	81	84	for
+178	115	116	3
 181	26	32	mapped
 181	5	22	pair of sentences
 181	33	35	to
@@ -88,7 +88,7 @@
 181	58	80	pair of padded lengths
 181	81	84	for
 181	85	119	efficient batching during training
-186	127	129	on
+186	0	2	On
 186	3	16	NewsTest 2014
 186	29	37	achieves
 186	42	61	highest performance
@@ -98,7 +98,7 @@
 186	179	185	second
 186	136	147	compared to
 186	152	172	word - level systems
-186	145	147	to
+186	191	193	to
 186	198	213	version of GNMT
 186	219	223	uses
 186	224	237	word - pieces
@@ -131,7 +131,6 @@
 38	7	27	learning perspective
 38	34	71	representation of the source sequence
 38	90	111	resolution preserving
-2	0	41	Neural Machine Translation in Linear Time
 10	66	102	character - level language modelling
 11	64	110	character - to - character machine translation
 14	3	28	neural language modelling
