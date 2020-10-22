@@ -23,7 +23,7 @@ We find that : The entity representations and feedforward layers contribute 1.0 
           },
           "Removing" : {
             "pruning" : {
-              "using" : "full trees as input"
+              "using" : "full trees as input",
               "hurts the result by" : "another 9.7 F 1"
             },
             "from sentence" : "( 4 ) Removing the pruning ( i.e. , using full trees as input ) further hurts the result by another 9.7 F 1 ."

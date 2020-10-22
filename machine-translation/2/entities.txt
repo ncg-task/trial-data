@@ -25,7 +25,7 @@
 173	9	16	dropout
 173	17	19	to
 173	24	50	output of each sub - layer
-173	91	93	in
+174	90	92	in
 174	38	89	sums of the embeddings and the positional encodings
 174	93	128	both the encoder and decoder stacks
 176	0	15	Label Smoothing

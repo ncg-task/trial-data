@@ -2,7 +2,7 @@
   "has" : {
     "Baselines" : {
       "has" : {
-        "previous work" : {
+        "previous works" : {
           "that predict" : "single relation per pass",
           "from sentence" : "We compare our solution with previous works that predict a single relation per pass , our model that predicts single relation per pass for MRE , and with the following naive modifications of BERT that could achieve MRE in one - pass ."
         },

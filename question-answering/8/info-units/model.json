@@ -13,7 +13,7 @@
       "two ways to apply" : {
         "Ptr - Net model" : {
           "has" : ["sequence model", {"boundary model" : {"with" : "search mechanism"}}]
-        }
+        },
         "from sentence" : "We propose two ways to apply the Ptr - Net model for our task : a sequence model and a boundary model .
 We also further extend the boundary model with a search mechanism ."
 

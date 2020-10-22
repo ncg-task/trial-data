@@ -13,7 +13,7 @@
 30	199	254	relational information with regard to multiple entities
 30	255	271	at each layer of
 30	272	285	hidden states
-76	29	42	previous work
+76	29	43	previous works
 76	44	56	that predict
 76	59	83	single relation per pass
 77	0	7	BERT SP

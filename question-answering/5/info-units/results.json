@@ -37,7 +37,7 @@ The results show that our model ( line 8 ) improves state - of - the - art accur
           "achieve" : {
             "state - of - the - art test performance" : {
               "has" : {
-                "ensemble" : {
+                "ensembles" : {
                   "of" : "75.2 and 76.1 on validation and test respectively",
                   "outperforming" : "previously published results"      
                 }

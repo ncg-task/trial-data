@@ -49,7 +49,7 @@
             "comparable results" : {
               "to methods that explicitly use" : "order"
             }
-          }
+          },
           "from sentence" : "Instead , we use a bag of n-grams as additional features to capture some partial information about the local word order .
 This is very efficient in practice while achieving comparable results to methods that explicitly use the order ."
 

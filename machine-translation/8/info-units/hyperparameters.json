@@ -27,7 +27,7 @@ The first one is an RNN Encoder - Decoder ( RNNencdec , , and the other is the p
           }
         },
         "from sentence" : "The encoder and decoder of the RNNencdec have 1000 hidden units each ."
-      }
+      },
       "encoder of" : {
         "RNNsearch" : {
           "consists of" : {

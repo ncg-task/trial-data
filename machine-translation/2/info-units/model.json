@@ -125,7 +125,7 @@ This consists of two linear transformations with a ReLU activation in between ."
               "input tokens and output tokens" : {
                   "to" : "vectors of dimension d model"
                 }
-            }
+            },
             "from sentence" : "Embeddings and Softmax
 Similarly to other sequence transduction models , we use learned embeddings to convert the input tokens and output tokens to vectors of dimension d model ."
 

@@ -7,7 +7,7 @@
 262	31	40	decreases
 262	73	77	when
 262	81	114	remove the label embeddings layer
-262	119	149	only use the LSTM hidden state
+262	119	150	only use the LSTM hidden states
 262	151	153	as
 262	154	160	inputs
 264	0	8	Removing
@@ -26,12 +26,12 @@
 267	72	89	a slight decrease
 267	90	92	in
 267	97	112	F 1 performance
-267	34	36	of
+267	113	115	of
 267	120	130	NER module
 267	137	151	? 2 % decrease
 267	152	154	in
 267	159	170	performance
-267	54	56	of
+267	171	173	of
 267	178	185	RE task
 208	8	17	developed
 208	18	33	our joint model

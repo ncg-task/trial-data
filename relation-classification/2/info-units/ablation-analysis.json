@@ -13,7 +13,7 @@
 			  "decreases" : {
 				"when" : [
 					"remove the label embeddings layer",
-					{"only use the LSTM hidden state" : {
+					{"only use the LSTM hidden states" : {
 					  "as" : "inputs"
 					}}
 				]

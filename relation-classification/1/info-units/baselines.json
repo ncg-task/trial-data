@@ -69,7 +69,7 @@ These methods are :
               "entity recognition" : {
                 "by using" : {
                   "bidirectional LSTM" : {
-                    "to encode" : "input sentence",
+                    "to encode" : "input sentence"
                   },
                   "conditional random fields" : {
                     "to predict" : "entity tag sequence"

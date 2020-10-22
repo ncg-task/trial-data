@@ -29,7 +29,7 @@
 107	22	54	constant learning rate ? = 0.001
 2	0	32	Semi-supervised sequence tagging
 6	33	156	general semi-supervised approach for adding pretrained context embeddings from bidirectional language models to NLP systems
-118	100	102	in
+118	0	2	In
 118	7	26	CoNLL 2003 NER task
 118	39	45	scores
 118	46	60	91.93 mean F 1

@@ -41,7 +41,7 @@
 170	54	73	up to four K80 GPUs
 170	88	90	in
 170	93	110	multi - GPU setup
-170	80	82	on
+170	111	113	on
 170	116	130	single machine
 26	36	42	extend
 26	47	69	encoder - shared model
