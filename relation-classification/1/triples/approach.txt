@@ -15,6 +15,6 @@
 (Tag " O "||represents||" Other " tag)
 (" Other " tag||means||corresponding word is independent of the extracted results)
 (Approach||propose||novel tagging scheme)
-(Approach||propose||end-to-end model)
-(end-to-end model||with||biased objective function)
+(Approach||propose||end -toend model)
+(end -toend model||with||biased objective function)
 (biased objective function||to jointly extract||entities and their relations)
