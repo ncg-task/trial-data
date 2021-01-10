@@ -135,3 +135,4 @@
 11	64	110	character - to - character machine translation
 14	3	28	neural language modelling
 15	3	29	neural machine translation
+2	0	41	Neural Machine Translation in Linear Time
