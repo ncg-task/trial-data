@@ -32,6 +32,7 @@
 140	54	61	size 25
 140	62	65	for
 140	66	80	other datasets
+40	4	19	capsule network
 44	0	28	N - gram Convolutional Layer
 45	11	15	is a
 45	16	44	standard convolutional layer

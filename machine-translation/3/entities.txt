@@ -65,4 +65,3 @@
 244	4	14	Deep - Att
 244	21	52	performance is further improved
 244	56	60	37.7
-4	7	26	machine translation

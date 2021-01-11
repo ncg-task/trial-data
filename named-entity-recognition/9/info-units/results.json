@@ -72,7 +72,9 @@ On average ( micro ) , BioBERT v1.0 ( PubMed ) obtained a higher F1 score ( 2.80
                   "of" : "44.77"
                 }
               },
-              "from sentence" : "All versions of BioBERT significantly outperformed BERT and the state - of - the - art models , and in particular , BioBERT v1.1 ( PubMed ) obtained a strict accuracy of 38.77 , a lenient accuracy of 53.81 and a mean reciprocal rank score of 44.77 , all of which were micro averaged ."
+              "from sentence" : "The QA results are shown in .
+			  All versions of BioBERT significantly outperformed BERT and the state - of - the - art models , and in particular , BioBERT v1.1 ( PubMed ) obtained a strict accuracy of 38.77 , a lenient accuracy of 53.81 and a mean reciprocal rank score of 44.77 , all of which were micro averaged ."
+			  
             },
             "biomedical QA datasets" : {
               "has" : {

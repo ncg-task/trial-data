@@ -58,3 +58,8 @@
 257	131	138	answers
 257	139	141	on
 257	146	162	companion QA set
+259	4	16	best results
+259	21	34	67 % accuracy
+259	41	45	68 %
+259	46	49	for
+259	54	74	ensemble of 5 models

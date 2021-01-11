@@ -24,8 +24,6 @@
             }
           },
           "from sentence" : "For the pipelined methods , we follow ) 's settings :
-The NER results are obtained by CoType then several classical relation classification methods are applied to detect the relations .
-These methods are :
 ( 1 ) DS-logistic ) is a distant supervised and feature based method , which combines the advantages of supervised IE and unsupervised IE features ; ( 2 ) LINE is a network embedding method , which is suitable for arbitrary types of information networks ;
 ( 3 ) FCM ) is a compositional model that combines lexicalized linguistic context and word embeddings for relation extraction ."
   

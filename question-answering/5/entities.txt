@@ -88,7 +88,6 @@
 135	133	137	over
 135	142	165	best baseline AS Reader
 149	0	3	CNN
-151	106	108	on
 151	43	51	improves
 151	52	83	state - of - the - art accuracy
 151	84	86	by

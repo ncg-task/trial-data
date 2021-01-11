@@ -77,6 +77,7 @@
 144	28	46	highest F 1 scores
 144	47	49	on
 144	50	80	2 out of 3 biomedical datasets
+145	4	6	QA
 148	16	23	BioBERT
 148	24	50	significantly outperformed
 148	51	55	BERT
@@ -92,7 +93,6 @@
 148	212	238	mean reciprocal rank score
 148	197	199	of
 148	242	247	44.77
-149	22	24	QA
 149	11	33	biomedical QA datasets
 149	36	43	BioBERT
 149	44	52	achieved

@@ -32,7 +32,6 @@
 68	135	159	standard hyperparameters
 2	15	65	Text Preprocessing in Neural Network Architectures
 4	0	18	Text preprocessing
-23	30	66	role of preprocessing the input text
 94	0	35	Experiment 1 : Preprocessing effect
 95	19	25	use of
 95	26	63	more complex preprocessing techniques

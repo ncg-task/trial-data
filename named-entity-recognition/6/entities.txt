@@ -26,6 +26,15 @@
 140	64	79	0.009 and 0.013
 140	80	83	for
 140	84	103	CONLL and ONTONOTES
+147	3	9	varied
+147	10	17	dropout
+147	29	41	hidden units
+147	46	60	capitalization
+147	67	94	char ) embedding dimensions
+147	97	110	learning rate
+147	113	130	[ 0.001 , 0.015 ]
+147	131	133	by
+147	134	144	step 0.002
 148	3	14	implemented
 148	19	25	system
 148	26	31	using
