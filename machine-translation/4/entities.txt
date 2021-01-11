@@ -109,3 +109,4 @@
 200	93	121	poor translation performance
 200	122	124	in
 200	125	159	all of the three translation tasks
+4	20	39	machine translation
